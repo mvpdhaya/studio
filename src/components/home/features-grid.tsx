@@ -69,16 +69,16 @@ export default function FeaturesGrid() {
                     <div className="relative flex overflow-x-hidden group">
                         <div className="py-2 animate-marquee group-hover:pause whitespace-nowrap flex gap-3">
                             {animatedRow.map((item, index) => (
-                                <Badge key={`a-${index}`} variant="outline" className="flex items-center gap-2 text-sm py-1 px-3 border-green-500/50 bg-green-500/10 text-green-700 dark:text-green-400">
-                                    <CheckCircle className="h-4 w-4"/>
+                                <Badge key={`a-${index}`} variant="outline" className="flex items-center gap-2 text-sm py-1 px-3 bg-black text-white border-white">
+                                    <CheckCircle className="h-4 w-4 text-white"/>
                                     {item}
                                 </Badge>
                             ))}
                         </div>
                         <div className="absolute top-0 py-2 animate-marquee2 group-hover:pause whitespace-nowrap flex gap-3">
                             {animatedRow.map((item, index) => (
-                                <Badge key={`b-${index}`} variant="outline" className="flex items-center gap-2 text-sm py-1 px-3 border-green-500/50 bg-green-500/10 text-green-700 dark:text-green-400">
-                                    <CheckCircle className="h-4 w-4"/>
+                                <Badge key={`b-${index}`} variant="outline" className="flex items-center gap-2 text-sm py-1 px-3 bg-black text-white border-white">
+                                    <CheckCircle className="h-4 w-4 text-white"/>
                                     {item}
                                 </Badge>
                             ))}
