@@ -20,9 +20,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { scheduleDemo, ScheduleDemoInput } from '@/ai/flows/schedule-demo-flow';
-import { cn } from '@/lib/utils';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '@/components/ui/command';
+import { ChevronsUpDown } from 'lucide-react';
 
 const allTimeSlots = ["7:30pm", "9:00pm", "10:00pm", "10:30pm", "11:00pm", "11:30pm"];
+const timezones = Intl.supportedValuesOf('timeZone');
 
 const parseTime = (timeString: string, date: Date): Date => {
     const meetingDateTime = new Date(date);
@@ -57,11 +60,11 @@ export default function ScheduleDemoPage() {
   const [step, setStep] = useState<'select-time' | 'enter-details' | 'confirmed'>('select-time');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [timeZone, setTimeZone] = useState('');
+  const [isTimezonePopoverOpen, setTimezonePopoverOpen] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     const today = new Date();
-    // find the next available Wednesday
     const nextWednesday = new Date(today);
     nextWednesday.setDate(today.getDate() + (3 - today.getDay() + 7) % 7);
     setDate(nextWednesday);
@@ -71,18 +74,22 @@ export default function ScheduleDemoPage() {
   }, []);
 
   useEffect(() => {
-    if (date && isToday(date)) {
-        const now = new Date();
-        const availableSlots = allTimeSlots.filter(slot => {
-            const slotTime = parseTime(slot, date);
-            return slotTime > now;
-        });
-        setTimeSlots(availableSlots);
+    if (date) {
+      const now = new Date(new Date().toLocaleString('en-US', { timeZone: timeZone || undefined }));
+      if (date.toDateString() === now.toDateString()) { // is today in the selected timezone
+          const availableSlots = allTimeSlots.filter(slot => {
+              const slotTime = parseTime(slot, date);
+              return slotTime > now;
+          });
+          setTimeSlots(availableSlots);
+      } else {
+          setTimeSlots(allTimeSlots);
+      }
     } else {
-        setTimeSlots(allTimeSlots);
+       setTimeSlots(allTimeSlots);
     }
     setSelectedTime(null);
-  }, [date])
+  }, [date, timeZone])
 
 
   const form = useForm<FormValues>({
@@ -209,10 +216,41 @@ export default function ScheduleDemoPage() {
               <Video className="w-5 h-5 text-blue-500" />
               <span>Zoom Video</span>
             </div>
-            <div className="flex items-center gap-3">
-              <Globe className="w-5 h-5" />
-              <span>{timeZone}</span>
-              <ChevronDown className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-neutral-300">
+              <Globe className="w-5 h-5 shrink-0" />
+              <Popover open={isTimezonePopoverOpen} onOpenChange={setTimezonePopoverOpen}>
+                  <PopoverTrigger asChild>
+                      <Button
+                          variant="ghost"
+                          role="combobox"
+                          aria-expanded={isTimezonePopoverOpen}
+                          className="w-full justify-between hover:bg-neutral-800 px-1"
+                      >
+                          <span className='truncate'>{timeZone}</span>
+                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-[300px] p-0">
+                      <Command>
+                          <CommandInput placeholder="Search timezone..." />
+                          <CommandEmpty>No timezone found.</CommandEmpty>
+                          <CommandGroup className='max-h-64 overflow-y-auto'>
+                              {timezones.map((tz) => (
+                                  <CommandItem
+                                      key={tz}
+                                      value={tz}
+                                      onSelect={(currentValue) => {
+                                          setTimeZone(currentValue === timeZone ? "" : currentValue)
+                                          setTimezonePopoverOpen(false)
+                                      }}
+                                  >
+                                      {tz}
+                                  </CommandItem>
+                              ))}
+                          </CommandGroup>
+                      </Command>
+                  </PopoverContent>
+              </Popover>
             </div>
           </div>
         </div>
@@ -404,3 +442,5 @@ export default function ScheduleDemoPage() {
     </div>
   );
 }
+
+    
