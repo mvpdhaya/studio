@@ -1,6 +1,7 @@
+
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Rocket, TrendingUp, Building, TestTube2, Search, Settings, ShieldCheck } from "lucide-react";
-import Logo from "../layout/logo";
+import Image from "next/image";
 
 const processSteps = [
     {
@@ -35,7 +36,7 @@ export default function Process() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {processSteps.map((step) => (
                 <div key={step.title} className="text-center flex flex-col items-center">
                     <div className="flex justify-center mb-4">
@@ -49,10 +50,10 @@ export default function Process() {
             ))}
         </div>
         
-        <div id="partnership" className="grid lg:grid-cols-1 gap-x-12 gap-y-16 items-center pt-8">
-            <div className="space-y-4">
-                 <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Example Scenario</h3>
-                <Card className="p-6 bg-card shadow-lg max-w-2xl mx-auto">
+        <div id="partnership" className="grid lg:grid-cols-1 gap-x-12 gap-y-8 items-center pt-8">
+            <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Example Scenario</h3>
+            <div className="space-y-4 max-w-2xl mx-auto">
+                <Card className="p-6 bg-card shadow-lg">
                     <div className="flex items-start gap-4">
                         <div className="bg-muted rounded-full p-2 flex-shrink-0 flex items-center justify-center">
                            <Building className="h-6 w-6 text-muted-foreground" />
@@ -60,10 +61,10 @@ export default function Process() {
                         <p className="text-foreground/90 italic">"We need an AI agent to automate invoice extraction and reconciliation."</p>
                     </div>
                 </Card>
-                <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg max-w-2xl mx-auto">
+                <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg">
                     <div className="flex items-start gap-4">
                          <div className="bg-primary-foreground/20 rounded-full p-2 flex-shrink-0 flex items-center justify-center">
-                            <Logo className="h-6 w-6 text-primary-foreground" />
+                            <Image src="/logo.png" alt="Axzron Logo" width={24} height={24} className="h-6 w-6" />
                         </div>
                         <p className="font-medium">"Axzron can build a POC, deploy an AI agent, and integrate it with your systems for fast, accurate results."</p>
                     </div>
