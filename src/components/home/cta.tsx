@@ -12,7 +12,7 @@ export default function Cta() {
           <p className="mt-4 mb-8 text-lg text-foreground/80">
             Ready to move from AI concepts to real-world results? Let's build production-ready AI agents tailored precisely to your workflows.
           </p>
-          <Button size="lg" asChild className="btn-schedule-demo">
+          <Button size="lg" asChild className="btn-schedule-demo text-white">
               <Link href="#">Schedule a demo</Link>
           </Button>
         </div>
