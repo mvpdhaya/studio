@@ -49,7 +49,7 @@ const industries = [
     {
         icon: BookOpen,
         title: "Education & Training",
-        description: "AI tutors, content generation, and administrative task automation for educational institutions.",
+        description: "AI tutors, content generation, and administrative task automation.",
     }
 ]
 
@@ -63,7 +63,7 @@ export default function Process() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {processSteps.map((step) => (
                 <div key={step.title} className="text-center flex flex-col items-center">
                     <div className="flex justify-center mb-4">
@@ -72,12 +72,12 @@ export default function Process() {
                         </div>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">{step.title}</h3>
-                    <p className="text-foreground/80 text-sm">{step.description}</p>
+                    <p className="text-foreground/80 text-sm max-w-xs mx-auto">{step.description}</p>
                 </div>
             ))}
         </div>
         
-        <div id="industries" className="py-16">
+        <div id="industries">
             <div className="max-w-3xl mx-auto text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Industries We Serve</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
@@ -86,33 +86,22 @@ export default function Process() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {industries.map((industry) => (
-                    <Card key={industry.title} className="bg-card/80 flex flex-col text-center items-center">
+                    <Card key={industry.title} className="bg-card/80 flex flex-col text-center items-center p-4">
                         <CardHeader className="items-center pb-4">
                             <div className="bg-primary/10 p-3 rounded-full mb-2">
                                 <industry.icon className="h-6 w-6 text-primary" />
                             </div>
                             <CardTitle className="text-xl">{industry.title}</CardTitle>
                         </CardHeader>
-                        <CardContent>
+                        <CardContent className="flex-grow">
                             <p className="text-foreground/80">{industry.description}</p>
                         </CardContent>
                     </Card>
                 ))}
-                 <Card className="bg-card/80 flex flex-col text-center items-center md:col-span-2 lg:col-span-1 lg:col-start-2">
-                    <CardHeader className="items-center pb-4">
-                        <div className="bg-primary/10 p-3 rounded-full mb-2">
-                            <BookOpen className="h-6 w-6 text-primary" />
-                        </div>
-                        <CardTitle className="text-xl">Education & Training</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-foreground/80">AI tutors, content generation, and administrative task automation.</p>
-                    </CardContent>
-                </Card>
             </div>
         </div>
 
-        <div id="partnership" className="grid lg:grid-cols-1 gap-x-12 gap-y-8 items-center pt-8">
+        <div id="partnership" className="grid lg:grid-cols-1 gap-x-12 gap-y-8 items-center pt-28">
             <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Example Scenario</h3>
             <div className="space-y-4 max-w-2xl mx-auto">
                 <Card className="p-6 bg-card shadow-lg">

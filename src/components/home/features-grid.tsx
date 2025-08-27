@@ -45,12 +45,12 @@ export default function FeaturesGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-card/80 flex flex-col">
+            <Card key={index} className="bg-card/80 flex flex-col p-2">
               <CardHeader className="flex-row items-center gap-4">
                  <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
+                <CardTitle className="text-xl leading-tight">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
                 <p className="text-foreground/80">{feature.description}</p>
