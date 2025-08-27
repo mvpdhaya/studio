@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -34,12 +34,21 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 export default function ScheduleDemoPage() {
-  const [currentMonth, setCurrentMonth] = useState(new Date(2025, 7));
-  const [date, setDate] = useState<Date | undefined>(new Date(2025, 7, 27));
+  const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [date, setDate] = useState<Date | undefined>(undefined);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [step, setStep] = useState<'select-time' | 'enter-details' | 'confirmed'>('select-time');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const today = new Date();
+    // find the next available Wednesday
+    const nextWednesday = new Date(today);
+    nextWednesday.setDate(today.getDate() + (3 - today.getDay() + 7) % 7);
+    setDate(nextWednesday);
+    setCurrentMonth(nextWednesday);
+  }, []);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -70,8 +79,10 @@ export default function ScheduleDemoPage() {
     if (!date || !selectedTime) return;
     setIsSubmitting(true);
     
-    const [hours, minutes] = selectedTime.replace('pm','').replace('am','').split(':');
-    const isPM = selectedTime.includes('pm');
+    const [hours, minutesPart] = selectedTime.split(':');
+    const minutes = minutesPart.slice(0,2);
+    const isPM = minutesPart.toLowerCase().includes('pm');
+
     let hour = parseInt(hours);
     if (isPM && hour !== 12) {
         hour += 12;
@@ -224,9 +235,9 @@ export default function ScheduleDemoPage() {
                                     head_row: "flex justify-between text-neutral-400 text-xs uppercase",
                                     head_cell: "w-auto",
                                     row: "flex justify-between mt-4",
-                                    cell: "h-9 w-9 text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
-                                    day: "h-9 w-9 p-0 font-normal rounded-full hover:bg-neutral-800 aria-selected:opacity-100",
-                                    day_selected: "bg-white text-black hover:bg-white focus:bg-white",
+                                    cell: "text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
+                                    day: cn("h-9 w-9 p-0 font-normal rounded-full hover:bg-neutral-800 aria-selected:opacity-100", date && "aria-selected:bg-white aria-selected:text-black"),
+                                    day_selected: "bg-white text-black hover:bg-white hover:text-black focus:bg-white focus:text-black",
                                     day_today: "bg-neutral-800 text-white rounded-full",
                                     day_outside: "text-neutral-600 opacity-50",
                                     day_disabled: "text-neutral-700 opacity-50",
@@ -364,3 +375,5 @@ export default function ScheduleDemoPage() {
     </div>
   );
 }
+
+    
