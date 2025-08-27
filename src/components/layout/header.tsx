@@ -35,7 +35,7 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl" prefetch={true}>
-          <Logo className="h-7 w-7 text-primary" />
+          <Logo className="h-8 w-8 text-primary" />
           <span className="text-foreground">Axzron</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -60,7 +60,7 @@ export default function Header() {
               <SheetContent side="right">
                 <div className="flex flex-col items-start p-6">
                    <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-8" onClick={() => setMobileMenuOpen(false)}>
-                      <Logo className="h-7 w-7 text-primary" />
+                      <Logo className="h-8 w-8 text-primary" />
                       <span className="text-foreground">Axzron</span>
                    </Link>
                    <nav className="flex flex-col items-start gap-6 text-lg font-medium">

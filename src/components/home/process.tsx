@@ -44,7 +44,7 @@ export default function Process() {
             {processSteps.map((step, index) => (
                 <div key={step.title} className="text-center flex flex-col items-center">
                     <div className="flex justify-center mb-4">
-                        <div className="bg-primary/10 p-4 rounded-full">
+                        <div className="bg-primary/10 p-4 rounded-full flex items-center justify-center">
                            <step.icon className="h-8 w-8 text-primary" />
                         </div>
                     </div>
@@ -59,7 +59,7 @@ export default function Process() {
                  <h3 className="text-2xl font-semibold text-foreground mb-6 text-center lg:text-left">Example Scenario</h3>
                 <Card className="p-6 bg-card shadow-lg">
                     <div className="flex items-start gap-4">
-                        <div className="bg-muted rounded-full p-2 flex-shrink-0">
+                        <div className="bg-muted rounded-full p-2 flex-shrink-0 flex items-center justify-center">
                            <Building className="h-6 w-6 text-muted-foreground" />
                         </div>
                         <p className="text-foreground/90 italic">"We need an automated system to extract invoice data and reconcile it with our accounting system."</p>
@@ -67,7 +67,7 @@ export default function Process() {
                 </Card>
                 <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg">
                     <div className="flex items-start gap-4">
-                         <div className="bg-primary-foreground/20 rounded-full p-2 flex-shrink-0">
+                         <div className="bg-primary-foreground/20 rounded-full p-2 flex-shrink-0 flex items-center justify-center">
                             <Logo className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <p className="font-medium">"Absolutely. Axzron can create a POC that automates extraction and reconciliation, providing accurate and reliable results."</p>
