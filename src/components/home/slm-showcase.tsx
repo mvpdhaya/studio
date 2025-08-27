@@ -11,10 +11,10 @@ export default function SlmShowcase() {
             </h2>
             <div className="space-y-4 text-lg text-foreground/80">
               <p>
-                Most AI tools are built to be generic, which often makes them complex and less relevant to real business needs. At Axzron, we take a different path. We create purpose-driven automation systems and intelligent chatbots designed specifically for your workflows.
+                Generic AI tools often fall short when applied to real business scenarios. Axzron builds purpose-driven automation systems, AI agents, and chatbots designed around your exact needs.
               </p>
               <p>
-                By combining code-based and n8n automation with RAG-powered and SQL-driven chatbots, we turn your data—documents, databases, emails—into actionable intelligence. Our solutions are lightweight, cost-effective, and integrate seamlessly with your existing infrastructure, whether on-premise or cloud, keeping your data secure and your operations efficient.
+                By combining custom code automation, n8n workflows, and chatbots that integrate with your documents, databases, and systems, we turn your data into actionable intelligence. Our solutions are lightweight, cost-efficient, and fit seamlessly into your on-premise or cloud infrastructure.
               </p>
             </div>
           </div>

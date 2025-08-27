@@ -7,23 +7,23 @@ import {
 
 const faqItems = [
     {
-        question: "What types of automation can Axzron build?",
-        answer: "We build a wide range of automation solutions, including code-based scripts for complex tasks, n8n workflows for streamlined process integration, and intelligent bots for data handling. Each solution is tailored to your specific operational needs to ensure maximum efficiency and impact.",
+        question: "What types of automation and agents does Axzron build?",
+        answer: "We build a wide range of automation solutions, including code-based scripts for complex tasks, n8n workflows for streamlined process integration, and intelligent AI agents and chatbots tailored to your specific operational needs to ensure maximum efficiency and impact.",
     },
     {
-        question: "Can your chatbots access and query SQL databases?",
-        answer: "Yes. We develop SQL-driven bots that can securely connect to your databases, retrieve information, and provide real-time answers. This allows your team to get instant insights from your data through a simple conversational interface.",
+        question: "Can chatbots connect directly to SQL databases?",
+        answer: "Yes. We develop SQL-integrated chatbots that can securely connect to your databases, retrieve information, and provide real-time answers. This allows your team to get instant insights from your data through a simple conversational interface.",
     },
     {
-        question: "How do you handle private and sensitive data?",
+        question: "How secure are Axzron’s deployments?",
         answer: "Data security is our top priority. We deploy solutions on-premises or in your private cloud to ensure your data never leaves your control. Our systems include robust security guardrails and role-based access to meet strict compliance and privacy standards.",
     },
     {
-        question: "How long does it take to deploy a solution?",
+        question: "How long does it take to launch a solution?",
         answer: "We focus on delivering value quickly. A proof of concept (POC) is typically ready in a few weeks. Full deployment timelines vary based on complexity, but our iterative approach ensures you see results fast and can provide feedback throughout the process.",
     },
     {
-        question: "How do you measure ROI from automation and chatbots?",
+        question: "How do you measure ROI?",
         answer: "We work with you to define clear KPIs from the start, such as cost savings, time reduction, and error rate improvement. By focusing on high-impact use cases, we ensure our solutions deliver measurable and meaningful returns on your investment.",
     }
 ];

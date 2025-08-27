@@ -5,22 +5,22 @@ const benefits = [
   {
     icon: Target,
     title: "Precision through context",
-    description: "Generic AI often misses the details that matter. Our RAG-powered chatbots and SQL-integrated bots extract meaningful context from your documents, databases, and business workflows. Meanwhile, our automation solutions—built with custom code and n8n—handle repetitive tasks efficiently, so your teams can focus on innovation instead of manual work.",
+    description: "Our AI agents and chatbots leverage RAG techniques and SQL integration to understand your data—whether it’s PDFs, emails, or databases—delivering accurate and context-aware answers. Meanwhile, our automation systems handle repetitive tasks, freeing your team to focus on innovation.",
   },
   {
     icon: Waypoints,
     title: "From prototype to production",
-    description: "A working demo is just the start. We ensure your automation and chatbot solutions are robust, scalable, and reliable. With monitoring, security guardrails, and performance optimization, one-off prototypes become fully dependable business systems.",
+    description: "We start with a proof of concept but build with production in mind. Solutions are hardened with monitoring, security guardrails, and optimization so they scale reliably.",
   },
   {
     icon: Zap,
-    title: "Build fast, iterate smart, drive adoption",
-    description: "We deliver working automation and chatbots in weeks, collect early feedback, and refine quickly. This approach ensures your teams see results immediately, stay engaged, and help shape solutions that truly fit your workflows.",
+    title: "Build fast, iterate smart",
+    description: "We develop functional solutions quickly, gather feedback early, and refine continuously to ensure your teams see value right away.",
   },
   {
     icon: Gem,
-    title: "Excellence in every detail",
-    description: "For mission-critical workflows, average results aren’t enough. We focus on fine-tuning and continuous improvement, ensuring your bots and automations achieve near-perfect accuracy and deliver dependable performance you can trust.",
+    title: "Focus on accuracy and performance",
+    description: "We don’t settle for “good enough.” Every AI agent, automation, and chatbot is fine-tuned for precision and reliability in real-world business settings.",
   },
 ];
 
