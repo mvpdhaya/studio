@@ -1,9 +1,10 @@
 import { Card } from "@/components/ui/card";
-import { CheckCircle, BrainCircuit, Rocket, TrendingUp, Building } from "lucide-react";
+import { CheckCircle, Rocket, TrendingUp, Building } from "lucide-react";
+import Logo from "../layout/logo";
 
 const processSteps = [
     {
-        icon: BrainCircuit,
+        icon: Logo,
         title: "Collaborative Planning",
         description: "We work with your team to identify high-value tasks, define success metrics, and analyze data and workflow requirements to accelerate results.",
     },
@@ -67,7 +68,7 @@ export default function Process() {
                 <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg">
                     <div className="flex items-start gap-4">
                          <div className="bg-primary-foreground/20 rounded-full p-2 flex-shrink-0">
-                            <BrainCircuit className="h-6 w-6 text-primary-foreground" />
+                            <Logo className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <p className="font-medium">"Absolutely. Axzron can create a POC that automates extraction and reconciliation, providing accurate and reliable results."</p>
                     </div>
