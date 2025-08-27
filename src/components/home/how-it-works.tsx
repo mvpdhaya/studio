@@ -5,22 +5,22 @@ const benefits = [
   {
     icon: Target,
     title: "Precision through context",
-    description: "Generic AI misses nuance. Our Advanced RAG techniques extract deep, accurate context from your specific data (PDFs, emails, databases), fueling smarter agents. We handle this complexity, letting your engineers focus on innovation, not data plumbing.",
+    description: "Generic AI often misses the details that matter. Our RAG-powered chatbots and SQL-integrated bots extract meaningful context from your documents, databases, and business workflows. Meanwhile, our automation solutions—built with custom code and n8n—handle repetitive tasks efficiently, so your teams can focus on innovation instead of manual work.",
   },
   {
     icon: Waypoints,
-    title: "Bridge the pilot‑to‑production gap",
-    description: "A proof of concept shows it can work; production demands it never breaks. We harden your pilot with autoscaling, observability, security guardrails, and cost optimization, turning one‑off demos into dependable, enterprise‑grade AI agents.",
+    title: "From prototype to production",
+    description: "A working demo is just the start. We ensure your automation and chatbot solutions are robust, scalable, and reliable. With monitoring, security guardrails, and performance optimization, one-off prototypes become fully dependable business systems.",
   },
   {
     icon: Zap,
     title: "Build fast, iterate smart, drive adoption",
-    description: "Speed beats perfection in the real world. We ship lean agents in weeks, gather human feedback early, and iterate in tight loops—so your teams see quick wins, stay engaged, and help refine the solution until it becomes an indispensable part of their workflow.",
+    description: "We deliver working automation and chatbots in weeks, collect early feedback, and refine quickly. This approach ensures your teams see results immediately, stay engaged, and help shape solutions that truly fit your workflows.",
   },
   {
     icon: Gem,
-    title: "The last 10% matters most",
-    description: "90% accuracy is table stakes. We obsess over the final 10%. Through slice‑based evaluations, domain‑expert labeling, and relentless fine‑tuning, we close that gap—delivering near‑perfect answers that let you automate with confidence.",
+    title: "Excellence in every detail",
+    description: "For mission-critical workflows, average results aren’t enough. We focus on fine-tuning and continuous improvement, ensuring your bots and automations achieve near-perfect accuracy and deliver dependable performance you can trust.",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function HowItWorks() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            From raw data to real results: How Axzron helps you?
+            From tasks to tangible results: How Axzron powers your business
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
