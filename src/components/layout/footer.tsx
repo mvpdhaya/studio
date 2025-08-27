@@ -12,7 +12,7 @@ export default function Footer() {
               <span className="text-foreground">Axzron</span>
             </Link>
             <p className="text-foreground/80 max-w-xs">
-              Empowering organizations with intelligent, context-aware AI.
+              Simplifying business with intelligent automation and chatbots
             </p>
           </div>
           

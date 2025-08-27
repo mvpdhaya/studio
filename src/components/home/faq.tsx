@@ -7,28 +7,24 @@ import {
 
 const faqItems = [
     {
-        question: "What is a Small Language Model (SLM), and how does it differ from an LLM?",
-        answer: "An SLM is a specialized AI model trained for specific tasks or domains, making it more efficient, cost-effective, and precise than a general-purpose Large Language Model (LLM). Unlike LLMs, which have broad knowledge, SLMs excel at understanding the nuances of your business.",
+        question: "What types of automation can Axzron build?",
+        answer: "We build a wide range of automation solutions, including code-based scripts for complex tasks, n8n workflows for streamlined process integration, and intelligent bots for data handling. Each solution is tailored to your specific operational needs to ensure maximum efficiency and impact.",
     },
     {
-        question: "When should I use an SLM instead of an LLM?",
-        answer: "Use an SLM when you need high accuracy for a specific workflow, require data privacy with on-premise deployment, or want a more cost-effective solution. LLMs are better for general-purpose tasks like creative writing or broad-topic Q&A.",
+        question: "Can your chatbots access and query SQL databases?",
+        answer: "Yes. We develop SQL-driven bots that can securely connect to your databases, retrieve information, and provide real-time answers. This allows your team to get instant insights from your data through a simple conversational interface.",
     },
     {
-        question: "Can SLMs be fine-tuned for my business use case?",
-        answer: "Absolutely. We specialize in fine-tuning SLMs on your private data using techniques like Advanced RAG. This ensures the AI agent understands your unique context, terminology, and processes, delivering highly relevant and accurate results.",
+        question: "How do you handle private and sensitive data?",
+        answer: "Data security is our top priority. We deploy solutions on-premises or in your private cloud to ensure your data never leaves your control. Our systems include robust security guardrails and role-based access to meet strict compliance and privacy standards.",
     },
     {
-        question: "What business problems can custom AI agents solve?",
-        answer: "Custom AI agents can automate a wide range of tasks, such as invoice processing, customer support ticket routing, compliance monitoring, data extraction from documents, sentiment analysis in communications, and evaluating credit applications.",
+        question: "How long does it take to deploy a solution?",
+        answer: "We focus on delivering value quickly. A proof of concept (POC) is typically ready in a few weeks. Full deployment timelines vary based on complexity, but our iterative approach ensures you see results fast and can provide feedback throughout the process.",
     },
     {
-        question: "What is a custom AI agent, and how is it different from a chatbot?",
-        answer: "A chatbot typically follows predefined scripts or answers general questions. A custom AI agent, powered by an SLM, is a more sophisticated system that integrates into your workflows, processes complex data, makes decisions, and performs actions, acting like an automated team member.",
-    },
-    {
-        question: "What is your pricing model and what factors affect cost?",
-        answer: "Our pricing is ROI-focused and tailored to each project. Costs depend on factors like the complexity of the workflow, the volume of data, the required level of model customization (fine-tuning), and the deployment environment (cloud vs. on-premise). We start with a focused POC to prove value before scaling.",
+        question: "How do you measure ROI from automation and chatbots?",
+        answer: "We work with you to define clear KPIs from the start, such as cost savings, time reduction, and error rate improvement. By focusing on high-impact use cases, we ensure our solutions deliver measurable and meaningful returns on your investment.",
     }
 ];
 
@@ -40,9 +36,6 @@ export default function Faq() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-lg text-foreground/80">
-            Find quick, clear responses to common queries about our solutions.
-          </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
