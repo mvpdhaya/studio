@@ -149,25 +149,25 @@ export default function ScheduleDemoPage() {
 
   if (step === 'confirmed') {
     return (
-        <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4 font-body">
-            <div className='absolute top-4 left-4'>
-                <Button variant="ghost" asChild>
-                    <Link href="/"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Home</Link>
-                </Button>
-            </div>
-            <div className="w-full max-w-2xl mx-auto bg-neutral-900 rounded-2xl border border-neutral-800 shadow-2xl p-8 md:p-12 text-center">
-                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                <h1 className="text-3xl font-bold text-white mb-3">Booking Confirmed!</h1>
-                <p className="text-neutral-300 mb-4">You are scheduled for a Discovery call with Arun Karunagaran.</p>
-                <div className="text-lg text-white mb-8">{formattedDate}</div>
-                <p className="text-sm text-neutral-400 mb-6">A calendar invitation with all the details has been sent to your email address.</p>
-            </div>
+      <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4 font-body">
+        <div className='absolute top-4 left-4'>
+          <Button variant="ghost" asChild>
+            <Link href="/"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Home</Link>
+          </Button>
         </div>
+        <div className="w-full max-w-2xl mx-auto bg-neutral-900 rounded-2xl border border-neutral-800 shadow-2xl p-8 md:p-12 text-center">
+            <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
+            <h1 className="text-3xl font-bold text-white mb-3">Booking Confirmed!</h1>
+            <p className="text-neutral-300 mb-4">You are scheduled for a Discovery call with Arun Karunagaran.</p>
+            <div className="text-lg text-white mb-8">{formattedDate}</div>
+            <p className="text-sm text-neutral-400 mb-6">A calendar invitation with all the details has been sent to your email address.</p>
+        </div>
+      </div>
     )
   }
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4 font-body">
+    <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4 font-body relative">
         <div className='absolute top-4 left-4'>
             <Button variant="ghost" asChild>
                 <Link href="/"><ChevronLeft className="mr-2 h-4 w-4" /> Back to Home</Link>
@@ -247,7 +247,7 @@ export default function ScheduleDemoPage() {
                                 onSelect={setDate}
                                 month={currentMonth}
                                 onMonthChange={setCurrentMonth}
-                                disabled={{ before: new Date() }}
+                                disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
                                 className="p-0"
                                 classNames={{
                                     root: "w-full",
@@ -404,5 +404,3 @@ export default function ScheduleDemoPage() {
     </div>
   );
 }
-
-    
