@@ -20,9 +20,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '#features', label: 'Features' },
-    { href: '#our-process', label: 'Our Process' },
-    { href: '#partnership', label: 'Partnership' },
+    { href: '/#features', label: 'Features' },
+    { href: '/#our-process', label: 'Our Process' },
+    { href: '/#partnership', label: 'Partnership' },
   ];
 
   return (
@@ -33,20 +33,20 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl">
+        <Link href="/" className="flex items-center gap-2 font-bold text-xl" prefetch={true}>
           <BrainCircuit className="h-7 w-7 text-primary" />
           <span className="text-foreground">madhi.ai</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
-             <Link key={link.href} href={link.href} className="text-foreground/80 hover:text-foreground transition-colors">
+             <Link key={link.href} href={link.href} className="text-foreground/80 hover:text-foreground transition-colors" prefetch={true}>
               {link.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-4">
           <Button asChild className="btn-get-in-touch">
-             <Link href="/schedule-demo">Get in touch</Link>
+             <Link href="/schedule-demo" prefetch={true}>Get in touch</Link>
           </Button>
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -64,7 +64,7 @@ export default function Header() {
                    </Link>
                    <nav className="flex flex-col items-start gap-6 text-lg font-medium">
                     {navLinks.map((link) => (
-                      <Link key={link.href} href={link.href} className="text-foreground/80 hover:text-foreground transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                      <Link key={link.href} href={link.href} className="text-foreground/80 hover:text-foreground transition-colors" onClick={() => setMobileMenuOpen(false)} prefetch={true}>
                         {link.label}
                       </Link>
                     ))}
@@ -78,5 +78,3 @@ export default function Header() {
     </header>
   );
 }
-
-    
