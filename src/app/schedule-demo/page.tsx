@@ -20,6 +20,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { scheduleDemo, ScheduleDemoInput } from '@/ai/flows/schedule-demo-flow';
+import { cn } from '@/lib/utils';
 
 const timeSlots = ["7:30pm", "9:00pm", "10:00pm", "10:30pm", "11:00pm", "11:30pm"];
 
