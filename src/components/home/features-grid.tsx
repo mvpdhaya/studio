@@ -1,25 +1,19 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle, FileText, Lock, Search, Bot, Database, Mail } from "lucide-react";
+import { CheckCircle, FileText, Lock, Bot, Database, Mail, Workflow, MessageSquare, Briefcase } from "lucide-react";
 
-const bestFitModels = [
-    { name: "Microsoft", icon: Bot },
-    { name: "Mixedbread", icon: Bot },
-    { name: "Google", icon: Bot },
-    { name: "google/gemma-3-12b-it", textClass: "text-sm" },
-    { name: "Multimodal", textClass: "text-sm" },
-];
-
-const advancedRagItems = [
-    { name: "PDFs", icon: FileText },
-    { name: "Emails", icon: Mail },
-    { name: "Database", icon: Database },
-    { name: "CRM", icon: Bot },
+const dataSources = [
+    { name: "PDFs, manuals, and documents", icon: FileText },
+    { name: "Emails and internal communications", icon: Mail },
+    { name: "Databases and CRMs", icon: Database },
+    { name: "Unstructured business data", icon: Briefcase },
 ];
 
 const roiItems = [
-    "Sentiment Alert", "Invoice Reconciliated", "Expense Report Generated",
-    "Invoice Extracted", "Negative Sentiment Alert"
+    "Invoice extraction and reconciliation",
+    "Expense report generation",
+    "Sentiment monitoring and alerts",
+    "Customer support and knowledge management",
 ];
 
 export default function FeaturesGrid() {
@@ -27,72 +21,47 @@ export default function FeaturesGrid() {
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">For precise, efficient, and secure AI</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Efficient, reliable, and secure AI for your business</h2>
           <p className="mt-4 text-lg text-foreground/80">
-            We don't believe in one-size-fits-all AI. Our focus is delivering measurable results through tailored solutions.
+            At Axzron, we don’t believe in generic solutions. Every automation system and chatbot we build is customized to your workflows, ensuring measurable impact and real business value.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Best-Fit model strategy */}
             <Card className="bg-card/80 h-full">
                 <CardHeader>
-                    <CardTitle>Best-Fit model strategy</CardTitle>
-                    <CardDescription>Pick the best SLM, hybrid, or open-source models based on your workflow to build efficient, high-performance AI.</CardDescription>
+                    <CardTitle>Tailored Automation & Chatbot Strategy</CardTitle>
+                    <CardDescription>We choose the best approach for your needs—whether it’s code-based automation, n8n workflows, RAG-powered chatbots, or SQL-driven bots—to deliver fast, accurate, and high-performance solutions.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <div className="relative h-48 flex flex-col items-center justify-center">
-                        {bestFitModels.map((model, index) => (
-                            <Badge
-                                key={model.name}
-                                variant="secondary"
-                                className={`absolute bg-card border border-border/50 shadow-lg p-2 ${
-                                    index === 0 ? 'top-4 left-8' :
-                                    index === 1 ? 'top-12 right-12' :
-                                    index === 2 ? 'top-20 left-16' :
-                                    index === 3 ? 'bottom-12 left-24' :
-                                    'bottom-4 right-20'
-                                }`}
-                                style={{ transform: `scale(${1 - index * 0.05})`}}
-                            >
-                                <div className="flex items-center gap-2">
-                                    {model.icon && <model.icon className="h-4 w-4" />}
-                                    <span className={model.textClass || 'font-medium'}>{model.name}</span>
-                                </div>
-                            </Badge>
-                        ))}
+                    <div className="flex flex-wrap gap-4 justify-center">
+                        <Badge variant="secondary" className="py-2 px-4 text-sm"><Workflow className="mr-2" /> Code-based Automation</Badge>
+                        <Badge variant="secondary" className="py-2 px-4 text-sm"><Bot className="mr-2" /> n8n Workflows</Badge>
+                        <Badge variant="secondary" className="py-2 px-4 text-sm"><MessageSquare className="mr-2" /> RAG Chatbots</Badge>
+                        <Badge variant="secondary" className="py-2 px-4 text-sm"><Database className="mr-2" /> SQL-driven Bots</Badge>
                     </div>
                 </CardContent>
             </Card>
 
-            {/* Advanced RAG techniques */}
             <Card className="bg-card/80 h-full">
                 <CardHeader>
-                    <CardTitle>Advanced RAG techniques</CardTitle>
-                    <CardDescription>Our advanced RAG delivers precise, contextually accurate results from your data that generic platforms can't match.</CardDescription>
+                    <CardTitle>Data-Driven Intelligence</CardTitle>
+                    <CardDescription>Our AI bots and automation tools extract precise, context-aware insights from:</CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col items-center gap-4">
-                    <div className="flex flex-wrap gap-3 justify-center">
-                        {advancedRagItems.map(item => <Badge key={item.name} variant="secondary">{item.name}</Badge>)}
-                    </div>
-                    <div className="w-full max-w-sm bg-card p-4 rounded-lg border border-border/50 text-center relative mt-4">
-                        <p className="font-medium text-foreground">Unstructured Data Processing</p>
-                        <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-card p-2 rounded-full border border-border/50">
-                            <Search className="h-5 w-5 text-foreground"/>
+                <CardContent className="flex flex-col gap-3">
+                    {dataSources.map(item => (
+                        <div key={item.name} className="flex items-center gap-3 bg-card p-3 rounded-lg border border-border/50">
+                            <item.icon className="h-5 w-5 text-primary"/>
+                            <span className="font-medium text-foreground">{item.name}</span>
                         </div>
-                    </div>
-                     <div className="w-full max-w-sm grid grid-cols-2 gap-4 mt-8">
-                        <Badge variant="secondary" className="justify-center py-2">Employee Manual</Badge>
-                        <Badge variant="secondary" className="justify-center py-2">Invoices</Badge>
-                    </div>
+                    ))}
                 </CardContent>
             </Card>
 
-            {/* Enterprise-grade privacy & security */}
             <Card className="bg-card/80 h-full">
                 <CardHeader>
-                    <CardTitle>Enterprise-grade privacy & security</CardTitle>
-                    <CardDescription>Deploy on-premise or private cloud. Built-in security guardrails, adhere to compliance standards.</CardDescription>
+                    <CardTitle>Secure and Compliant</CardTitle>
+                    <CardDescription>Deploy on-premises or in private cloud environments with built-in security guardrails, role-based access, and adherence to compliance standards.</CardDescription>
                 </CardHeader>
                 <CardContent className="flex items-center justify-center h-48">
                     <div className="relative w-48 h-48">
@@ -107,11 +76,10 @@ export default function FeaturesGrid() {
                 </CardContent>
             </Card>
 
-            {/* ROI-Focused implementation */}
             <Card className="bg-card/80 h-full overflow-hidden">
                 <CardHeader>
-                    <CardTitle>ROI-Focused implementation</CardTitle>
-                    <CardDescription>Automate high-impact use cases directly aligned with your business goals, ensuring your AI investment delivers value.</CardDescription>
+                    <CardTitle>ROI-Focused Automation</CardTitle>
+                    <CardDescription>We prioritize automating high-impact tasks aligned with your business goals to maximize value:</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-4">
                      <div className="flex flex-wrap gap-3 justify-center">
