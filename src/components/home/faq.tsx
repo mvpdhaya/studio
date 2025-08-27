@@ -8,23 +8,23 @@ import {
 const faqItems = [
     {
         question: "What types of automation and agents does Axzron build?",
-        answer: "We build a wide range of automation solutions, including code-based scripts for complex tasks, n8n workflows for streamlined process integration, and intelligent AI agents and chatbots tailored to your specific operational needs to ensure maximum efficiency and impact.",
+        answer: "We specialize in custom AI agents, RAG-based knowledge systems, workflow automation bots, intelligent document processing, and domain-specific Small Language Models (SLMs) designed to solve real business challenges.",
     },
     {
         question: "Can chatbots connect directly to SQL databases?",
-        answer: "Yes. We develop SQL-integrated chatbots that can securely connect to your databases, retrieve information, and provide real-time answers. This allows your team to get instant insights from your data through a simple conversational interface.",
+        answer: "Yes. Our agents can securely connect to SQL or NoSQL databases, perform read/write operations, and provide real-time insights while maintaining strict data governance.",
     },
     {
         question: "How secure are Axzron’s deployments?",
-        answer: "Data security is our top priority. We deploy solutions on-premises or in your private cloud to ensure your data never leaves your control. Our systems include robust security guardrails and role-based access to meet strict compliance and privacy standards.",
+        answer: "Security is built into every stage. We offer on-premise or private cloud deployment, data encryption, role-based access, and compliance-ready solutions (GDPR, SOC 2, etc.).",
     },
     {
         question: "How long does it take to launch a solution?",
-        answer: "We focus on delivering value quickly. A proof of concept (POC) is typically ready in a few weeks. Full deployment timelines vary based on complexity, but our iterative approach ensures you see results fast and can provide feedback throughout the process.",
+        answer: "Timelines vary by complexity. POCs typically take 2–4 weeks, while full-scale deployments range from 6–12 weeks. We focus on iterative delivery for quick wins.",
     },
     {
         question: "How do you measure ROI?",
-        answer: "We work with you to define clear KPIs from the start, such as cost savings, time reduction, and error rate improvement. By focusing on high-impact use cases, we ensure our solutions deliver measurable and meaningful returns on your investment.",
+        answer: "We track ROI using defined KPIs, such as cost savings, efficiency gains, accuracy improvements, and user adoption rates, ensuring clear business value.",
     }
 ];
 
