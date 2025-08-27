@@ -1,3 +1,4 @@
+
 import Header from '@/components/layout/header';
 import Hero from '@/components/home/hero';
 import SlmShowcase from '@/components/home/slm-showcase';
@@ -8,7 +9,7 @@ import Faq from '@/components/home/faq';
 import Cta from '@/components/home/cta';
 import Footer from '@/components/layout/footer';
 
-export default function Home({ params }: { params: {} }) {
+export default function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
