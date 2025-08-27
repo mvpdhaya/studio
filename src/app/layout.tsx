@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'MadhAI Portfolio',
+  title: 'Axzron Portfolio',
   description: 'Build smarter, faster, secure AI agents with custom SLMs.',
 };
 

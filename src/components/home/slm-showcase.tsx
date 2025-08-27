@@ -11,7 +11,7 @@ export default function SlmShowcase() {
             </h2>
             <div className="space-y-4 text-lg text-foreground/80">
               <p>
-                Large Language Models (LLMs) promise transformative intelligence, but their generic, one-size-fits-all approach struggles with the precision, scalability, and security. Madhi.ai offers a focused alternative: we build specialized Small Language Models (SLMs), purpose-driven AI agents designed exclusively for your workflows, ensuring relevance and alignment with your specific goals.
+                Large Language Models (LLMs) promise transformative intelligence, but their generic, one-size-fits-all approach struggles with the precision, scalability, and security. Axzron offers a focused alternative: we build specialized Small Language Models (SLMs), purpose-driven AI agents designed exclusively for your workflows, ensuring relevance and alignment with your specific goals.
               </p>
               <p>
                 Leveraging your private data with techniques like Advanced RAG and domain-specific fine-tuning, we achieve highly accurate, context-aware results. Crucially, our SLMs integrate seamlessly into your infrastructure—on-premise or private cloud—inherently safeguarding your privacy and providing a significantly more cost-effective path to powerful, specialized AI compared to generic models.

@@ -84,7 +84,7 @@ export default function Process() {
                         </div>
                     ))}
                 </div>
-                <p className="text-right mt-4 font-semibold text-primary/80">by madhi.ai</p>
+                <p className="text-right mt-4 font-semibold text-primary/80">by Axzron</p>
             </div>
         </div>
 

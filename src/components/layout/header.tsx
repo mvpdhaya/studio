@@ -35,7 +35,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl" prefetch={true}>
           <BrainCircuit className="h-7 w-7 text-primary" />
-          <span className="text-foreground">madhi.ai</span>
+          <span className="text-foreground">Axzron</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
@@ -60,7 +60,7 @@ export default function Header() {
                 <div className="flex flex-col items-start p-6">
                    <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-8" onClick={() => setMobileMenuOpen(false)}>
                       <BrainCircuit className="h-7 w-7 text-primary" />
-                      <span className="text-foreground">madhi.ai</span>
+                      <span className="text-foreground">Axzron</span>
                    </Link>
                    <nav className="flex flex-col items-start gap-6 text-lg font-medium">
                     {navLinks.map((link) => (

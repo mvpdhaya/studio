@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl">
               <BrainCircuit className="h-7 w-7 text-primary" />
-              <span className="text-foreground">madhi.ai</span>
+              <span className="text-foreground">Axzron</span>
             </Link>
             <p className="text-foreground/80 max-w-xs">
               Empowering organizations with intelligent, context-aware AI.
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary/10 text-center text-foreground/60 text-sm">
-          <p>© {new Date().getFullYear()} Madhi AI LLC. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Axzron LLC. All rights reserved.</p>
         </div>
       </div>
     </footer>
