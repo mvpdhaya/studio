@@ -24,7 +24,7 @@ export default function Header() {
   const navLinks = [
     { href: '/#features', label: 'Features' },
     { href: '/#our-process', label: 'Our Process' },
-    { href: '/#partnership', label: 'Partnership' },
+    { href: '/#industries', label: 'Industries' },
   ];
 
   return (
