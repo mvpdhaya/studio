@@ -1,5 +1,5 @@
-import { Card } from "@/components/ui/card";
-import { CheckCircle, Rocket, TrendingUp, Building, TestTube2, Search, Settings, ShieldCheck } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Search, TestTube2, Rocket, Settings, Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Building } from "lucide-react";
 import Image from "next/image";
 
 const processSteps = [
@@ -23,6 +23,34 @@ const processSteps = [
         title: "Monitor & Improve",
         description: "Ongoing support, KPI tracking, and refinements.",
     },
+]
+
+const industries = [
+    {
+        icon: Landmark,
+        title: "Finance & Banking",
+        description: "Automate invoice processing, reconciliations, and fraud detection. AI chatbots for customer support and portfolio insights.",
+    },
+    {
+        icon: HeartPulse,
+        title: "Healthcare",
+        description: "Intelligent assistants for patient queries and appointment management. Secure data handling and compliance-ready solutions.",
+    },
+    {
+        icon: ShoppingCart,
+        title: "E-Commerce & Retail",
+        description: "Product recommendation engines, inventory automation, and personalized chatbots. Multichannel integration with CRMs and databases.",
+    },
+    {
+        icon: Building2,
+        title: "Enterprises & Startups",
+        description: "AI-powered workflow automation and document intelligence. Custom agents for HR, sales, and operations.",
+    },
+    {
+        icon: BookOpen,
+        title: "Education & Training",
+        description: "AI tutors, content generation, and administrative task automation for educational institutions.",
+    }
 ]
 
 export default function Process() {
@@ -49,6 +77,41 @@ export default function Process() {
             ))}
         </div>
         
+        <div id="industries" className="py-16">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Industries We Serve</h2>
+                <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
+                    We design automation, AI agents, and data-driven solutions tailored for multiple industries.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {industries.map((industry) => (
+                    <Card key={industry.title} className="bg-card/80 flex flex-col text-center items-center">
+                        <CardHeader className="items-center pb-4">
+                            <div className="bg-primary/10 p-3 rounded-full mb-2">
+                                <industry.icon className="h-6 w-6 text-primary" />
+                            </div>
+                            <CardTitle className="text-xl">{industry.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-foreground/80">{industry.description}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+                 <Card className="bg-card/80 flex flex-col text-center items-center md:col-span-2 lg:col-span-1 lg:col-start-2">
+                    <CardHeader className="items-center pb-4">
+                        <div className="bg-primary/10 p-3 rounded-full mb-2">
+                            <BookOpen className="h-6 w-6 text-primary" />
+                        </div>
+                        <CardTitle className="text-xl">Education & Training</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-foreground/80">AI tutors, content generation, and administrative task automation.</p>
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+
         <div id="partnership" className="grid lg:grid-cols-1 gap-x-12 gap-y-8 items-center pt-8">
             <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Example Scenario</h3>
             <div className="space-y-4 max-w-2xl mx-auto">
