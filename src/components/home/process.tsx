@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Search, TestTube2, Rocket, Settings, Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Building } from "lucide-react";
+import { Search, TestTube2, Rocket, Settings, Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Building, Factory } from "lucide-react";
 import Image from "next/image";
 
 const processSteps = [
@@ -50,6 +50,11 @@ const industries = [
         icon: BookOpen,
         title: "Education & Training",
         description: "AI tutors, content generation, and administrative task automation.",
+    },
+    {
+        icon: Factory,
+        title: "Manufacturing & Supply Chain",
+        description: "Predictive maintenance and quality control using AI. Automated inventory tracking and logistics optimization."
     }
 ]
 
