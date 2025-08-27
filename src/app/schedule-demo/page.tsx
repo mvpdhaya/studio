@@ -2,29 +2,82 @@
 "use client";
 
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Switch } from "@/components/ui/switch";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Clock, Globe, Video, UserPlus, ArrowLeft } from "lucide-react";
+import { CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Clock, Globe, Video, UserPlus, ArrowLeft, CheckCircle } from "lucide-react";
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { useToast } from '@/hooks/use-toast';
+import { scheduleDemo, ScheduleDemoInput } from '@/ai/flows/schedule-demo-flow';
 
 const timeSlots = ["7:30pm", "9:00pm", "10:00pm", "10:30pm", "11:00pm", "11:30pm"];
+
+const formSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Invalid email address'),
+  companyWebsite: z.string().url('Invalid URL'),
+  aiSolution: z.enum(['yes', 'no', 'exploring']),
+  notes: z.string().optional(),
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 export default function ScheduleDemoPage() {
   const [date, setDate] = useState<Date | undefined>(new Date(2025, 7, 27));
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
-  const [step, setStep] = useState<'select-time' | 'enter-details'>('select-time');
+  const [step, setStep] = useState<'select-time' | 'enter-details' | 'confirmed'>('select-time');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      companyWebsite: '',
+      notes: '',
+    },
+  });
 
   const handleTimeSelect = (time: string) => {
     setSelectedTime(time);
     setStep('enter-details');
   }
+
+  const onSubmit = async (values: FormValues) => {
+    if (!date || !selectedTime) return;
+    setIsSubmitting(true);
+
+    const input: ScheduleDemoInput = {
+      ...values,
+      dateTime: new Date(date.getFullYear(), date.getMonth(), date.getDate(), parseInt(selectedTime.split(':')[0]), parseInt(selectedTime.split(':')[1].replace('pm','')) + (selectedTime.includes('pm') ? 12: 0) ).toISOString(),
+    };
+
+    try {
+      await scheduleDemo(input);
+      setStep('confirmed');
+    } catch (error) {
+      console.error(error);
+      toast({
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: 'There was a problem with your request. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
 
   const formattedDate = date && selectedTime ? 
     new Intl.DateTimeFormat('en-US', { 
@@ -32,7 +85,24 @@ export default function ScheduleDemoPage() {
         year: 'numeric', 
         month: 'long', 
         day: 'numeric' 
-    }).format(date) + ` ${selectedTime}` : "Select a date and time";
+    }).format(date) + ` at ${selectedTime}` : "Select a date and time";
+
+  if (step === 'confirmed') {
+    return (
+        <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4 font-body">
+            <div className="w-full max-w-2xl mx-auto bg-neutral-900 rounded-2xl border border-neutral-800 shadow-2xl p-8 md:p-12 text-center">
+                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
+                <h1 className="text-3xl font-bold text-white mb-3">Booking Confirmed!</h1>
+                <p className="text-neutral-300 mb-4">You are scheduled for a Discovery call with Arun Karunagaran.</p>
+                <div className="text-lg text-white mb-8">{formattedDate}</div>
+                <p className="text-sm text-neutral-400 mb-6">A calendar invitation with all the details has been sent to your email address.</p>
+                 <Button variant="ghost" asChild>
+                    <Link href="/"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Home</Link>
+                </Button>
+            </div>
+        </div>
+    )
+  }
 
   return (
     <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4 font-body">
@@ -51,7 +121,7 @@ export default function ScheduleDemoPage() {
             <p className="text-neutral-400 mt-4 mb-1">Arun Karunagaran</p>
             <h1 className="text-3xl font-bold text-white mb-4">Discovery call</h1>
 
-             {step === 'enter-details' && date && selectedTime && (
+             {(step === 'enter-details' || step === 'confirmed') && date && selectedTime && (
                 <div className="space-y-3 text-neutral-300 mb-6">
                     <div className="flex items-center gap-3">
                         <CalendarDays className="w-5 h-5" />
@@ -160,56 +230,107 @@ export default function ScheduleDemoPage() {
                     </div>
                 </>
             ) : (
-                <div className="flex flex-col h-full">
-                    <div className="flex-grow space-y-6">
-                        <div>
-                            <Label htmlFor="name">Your name *</Label>
-                            <Input id="name" type="text" className="bg-neutral-800 border-neutral-700 mt-2" />
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col h-full">
+                        <div className="flex-grow space-y-4">
+                            <FormField
+                                control={form.control}
+                                name="name"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Your name *</FormLabel>
+                                        <FormControl>
+                                            <Input className="bg-neutral-800 border-neutral-700 mt-1" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Email address *</FormLabel>
+                                        <FormControl>
+                                            <Input type="email" className="bg-neutral-800 border-neutral-700 mt-1" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="companyWebsite"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Your company's website *</FormLabel>
+                                        <FormControl>
+                                            <Input type="url" className="bg-neutral-800 border-neutral-700 mt-1" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="aiSolution"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Have you already implemented any AI solutions in your product or workflows?</FormLabel>
+                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                            <FormControl>
+                                                <SelectTrigger className="w-full bg-neutral-800 border-neutral-700 mt-1">
+                                                    <SelectValue placeholder="Select an option" />
+                                                </SelectTrigger>
+                                            </FormControl>
+                                            <SelectContent>
+                                                <SelectItem value="yes">Yes</SelectItem>
+                                                <SelectItem value="no">No</SelectItem>
+                                                <SelectItem value="exploring">Currently exploring</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="notes"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Additional notes</FormLabel>
+                                        <FormControl>
+                                            <Textarea placeholder="Please share anything that will help prepare for our meeting." className="bg-neutral-800 border-neutral-700 mt-1 min-h-[100px]" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <div>
+                                <Button variant="ghost" type="button" className="p-0 hover:bg-transparent text-white hover:text-white">
+                                    <UserPlus className="mr-2 h-4 w-4" /> Add guests
+                                </Button>
+                            </div>
                         </div>
-                        <div>
-                            <Label htmlFor="email">Email address *</Label>
-                            <Input id="email" type="email" className="bg-neutral-800 border-neutral-700 mt-2" />
+                        <div className="mt-8">
+                            <p className="text-xs text-neutral-400 mb-4">By proceeding, you agree to our Terms and Privacy Policy.</p>
+                            <div className="flex justify-end gap-4">
+                                <Button type="button" variant="outline" className="border-neutral-700 bg-black hover:bg-neutral-900 hover:text-white" onClick={() => setStep('select-time')}>
+                                    <ArrowLeft className="mr-2 h-4 w-4" /> Back
+                                </Button>
+                                <Button type="submit" className="bg-white text-black hover:bg-neutral-200" disabled={isSubmitting}>
+                                    {isSubmitting ? 'Confirming...' : 'Confirm'}
+                                </Button>
+                            </div>
                         </div>
-                        <div>
-                            <Label htmlFor="website">Your company's website *</Label>
-                            <Input id="website" type="url" className="bg-neutral-800 border-neutral-700 mt-2" />
-                        </div>
-                        <div>
-                            <Label htmlFor="ai-solutions">Have you already implemented any AI solutions in your product or workflows?</Label>
-                            <Select>
-                                <SelectTrigger className="w-full bg-neutral-800 border-neutral-700 mt-2">
-                                    <SelectValue placeholder="Select an option" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="yes">Yes</SelectItem>
-                                    <SelectItem value="no">No</SelectItem>
-                                    <SelectItem value="exploring">Currently exploring</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
-                        <div>
-                            <Label htmlFor="notes">Additional notes</Label>
-                            <Textarea id="notes" placeholder="Please share anything that will help prepare for our meeting." className="bg-neutral-800 border-neutral-700 mt-2 min-h-[100px]" />
-                        </div>
-                        <div>
-                            <Button variant="ghost" className="p-0 hover:bg-transparent text-white hover:text-white">
-                                <UserPlus className="mr-2 h-4 w-4" /> Add guests
-                            </Button>
-                        </div>
-                    </div>
-                    <div className="mt-8">
-                        <p className="text-xs text-neutral-400 mb-4">By proceeding, you agree to our Terms and Privacy Policy.</p>
-                        <div className="flex justify-end gap-4">
-                            <Button variant="outline" className="border-neutral-700 bg-black hover:bg-neutral-900 hover:text-white" onClick={() => setStep('select-time')}>
-                                <ArrowLeft className="mr-2 h-4 w-4" /> Back
-                            </Button>
-                            <Button className="bg-white text-black hover:bg-neutral-200">Confirm</Button>
-                        </div>
-                    </div>
-                </div>
+                    </form>
+                </Form>
             )}
         </div>
       </div>
     </div>
   );
 }
+
+    
