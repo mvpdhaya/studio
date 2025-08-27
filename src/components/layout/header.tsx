@@ -48,7 +48,7 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <Button asChild className="btn-get-in-touch">
-             <Link href="/schedule-demo" prefetch={true}>Get in touch</Link>
+             <Link href="/#contact" prefetch={true}>Get in touch</Link>
           </Button>
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
