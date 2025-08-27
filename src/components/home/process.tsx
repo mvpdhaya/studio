@@ -34,7 +34,7 @@ export default function Process() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Our collaborative path to value
           </h2>
-          <p className="mt-4 text-lg text-foreground/80">
+          <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             Ready to move from AI concepts to real-world results? Let's build production-ready AI agents tailored precisely to your workflows.
           </p>
         </div>

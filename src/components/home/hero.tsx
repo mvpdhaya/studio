@@ -20,15 +20,15 @@ export default function Hero() {
           </div>
         </div>
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-y-8 gap-x-4 max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
+          <div className="flex items-center gap-3 justify-center">
             <Layers className="h-7 w-7 text-accent" />
             <h3 className="font-semibold text-foreground">End-to-end orchestration</h3>
           </div>
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
+          <div className="flex items-center gap-3 justify-center">
             <Cloud className="h-7 w-7 text-accent" />
             <h3 className="font-semibold text-foreground">100% Cloud agnostic</h3>
           </div>
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
+          <div className="flex items-center gap-3 justify-center">
             <ShieldCheck className="h-7 w-7 text-accent" />
             <h3 className="font-semibold text-foreground">Enterprise-grade security</h3>
           </div>
