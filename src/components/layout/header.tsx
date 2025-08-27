@@ -45,7 +45,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <Button asChild>
+          <Button asChild className="btn-get-in-touch">
              <Link href="#contact">Get in touch</Link>
           </Button>
           <div className="md:hidden">

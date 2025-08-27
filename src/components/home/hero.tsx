@@ -14,7 +14,7 @@ export default function Hero() {
             We build privacy-focused, high-performance AI agents tailored to automate your specific workflows, driving down costs and boosting operational speed and efficiency.
           </p>
           <div className="flex justify-center">
-            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button size="lg" asChild className="btn-schedule-demo">
               <Link href="#contact">Schedule a demo</Link>
             </Button>
           </div>
