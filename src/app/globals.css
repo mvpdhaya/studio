@@ -51,47 +51,20 @@
   }
 
   .btn-schedule-demo {
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      background: #000;
-      color: #fff;
-      border: 1px solid #fff;
+      @apply bg-black text-white border-white/20 border;
+      background: linear-gradient(180deg, hsl(0 0% 12%), hsl(0 0% 4%));
+      box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.1), 0 1px 2px hsl(0 0% 0% / 0.5);
+      transition: all 0.2s ease-in-out;
   }
-
-  .btn-schedule-demo::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300px;
-      height: 300px;
-      background: conic-gradient(from 0deg, #ffffff, #000000, #ffffff);
-      z-index: -1;
-      transform: translate(-50%, -50%);
-      animation: rotate 4s linear infinite;
-      filter: blur(15px);
+  .btn-schedule-demo:hover {
+      background: linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 6%));
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.15), 0 4px 8px hsl(0 0% 0% / 0.4);
   }
-
-  .btn-schedule-demo::after {
-      content: '';
-      position: absolute;
-      z-index: -2;
-      left: 1px;
-      top: 1px;
-      width: calc(100% - 2px);
-      height: calc(100% - 2px);
-      background: #000;
-      border-radius: 0.25rem;
-  }
-
-  @keyframes rotate {
-      0% {
-          transform: translate(-50%, -50%) rotate(0deg);
-      }
-      100% {
-          transform: translate(-50%, -50%) rotate(360deg);
-      }
+  .btn-schedule-demo:active {
+      transform: translateY(0);
+      background: linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 3%));
+      box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.1), 0 1px 2px hsl(0 0% 0% / 0.5);
   }
 }
 
