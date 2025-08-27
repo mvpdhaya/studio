@@ -8,7 +8,7 @@ import Faq from '@/components/home/faq';
 import Cta from '@/components/home/cta';
 import Footer from '@/components/layout/footer';
 
-export default function Home() {
+export default function Home({ params }: { params: {} }) {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
