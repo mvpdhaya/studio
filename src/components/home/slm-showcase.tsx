@@ -7,14 +7,14 @@ export default function SlmShowcase() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
-              Smaller models, bigger impact: AI built for your workflow
+              Smarter workflows, bigger results: AI built for your business
             </h2>
             <div className="space-y-4 text-lg text-foreground/80">
               <p>
-                Large Language Models (LLMs) promise transformative intelligence, but their generic, one-size-fits-all approach struggles with the precision, scalability, and security. Axzron offers a focused alternative: we build specialized Small Language Models (SLMs), purpose-driven AI agents designed exclusively for your workflows, ensuring relevance and alignment with your specific goals.
+                Most AI tools are built to be generic, which often makes them complex and less relevant to real business needs. At Axzron, we take a different path. We create purpose-driven automation systems and intelligent chatbots designed specifically for your workflows.
               </p>
               <p>
-                Leveraging your private data with techniques like Advanced RAG and domain-specific fine-tuning, we achieve highly accurate, context-aware results. Crucially, our SLMs integrate seamlessly into your infrastructure—on-premise or private cloud—inherently safeguarding your privacy and providing a significantly more cost-effective path to powerful, specialized AI compared to generic models.
+                By combining code-based and n8n automation with RAG-powered and SQL-driven chatbots, we turn your data—documents, databases, emails—into actionable intelligence. Our solutions are lightweight, cost-effective, and integrate seamlessly with your existing infrastructure, whether on-premise or cloud, keeping your data secure and your operations efficient.
               </p>
             </div>
           </div>
