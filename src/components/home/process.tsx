@@ -49,10 +49,10 @@ export default function Process() {
             ))}
         </div>
         
-        <div id="partnership" className="grid lg:grid-cols-2 gap-x-12 gap-y-16 items-center pt-8">
+        <div id="partnership" className="grid lg:grid-cols-1 gap-x-12 gap-y-16 items-center pt-8">
             <div className="space-y-4">
-                 <h3 className="text-2xl font-semibold text-foreground mb-6 text-center lg:text-left">Example Scenario</h3>
-                <Card className="p-6 bg-card shadow-lg">
+                 <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Example Scenario</h3>
+                <Card className="p-6 bg-card shadow-lg max-w-2xl mx-auto">
                     <div className="flex items-start gap-4">
                         <div className="bg-muted rounded-full p-2 flex-shrink-0 flex items-center justify-center">
                            <Building className="h-6 w-6 text-muted-foreground" />
@@ -60,7 +60,7 @@ export default function Process() {
                         <p className="text-foreground/90 italic">"We need an AI agent to automate invoice extraction and reconciliation."</p>
                     </div>
                 </Card>
-                <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg">
+                <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg max-w-2xl mx-auto">
                     <div className="flex items-start gap-4">
                          <div className="bg-primary-foreground/20 rounded-full p-2 flex-shrink-0 flex items-center justify-center">
                             <Logo className="h-6 w-6 text-primary-foreground" />
@@ -68,26 +68,6 @@ export default function Process() {
                         <p className="font-medium">"Axzron can build a POC, deploy an AI agent, and integrate it with your systems for fast, accurate results."</p>
                     </div>
                 </Card>
-            </div>
-            <div>
-                 <h3 className="text-2xl font-semibold text-foreground mb-6 text-center lg:text-left">FAQs</h3>
-                 <dl className="space-y-4">
-                    <div>
-                        <dt className="font-semibold">What types of automation and agents does Axzron build?</dt>
-                    </div>
-                     <div>
-                        <dt className="font-semibold">Can chatbots connect directly to SQL databases?</dt>
-                    </div>
-                     <div>
-                        <dt className="font-semibold">How secure are Axzron’s deployments?</dt>
-                    </div>
-                     <div>
-                        <dt className="font-semibold">How long does it take to launch a solution?</dt>
-                    </div>
-                     <div>
-                        <dt className="font-semibold">How do you measure ROI?</dt>
-                    </div>
-                 </dl>
             </div>
         </div>
 
