@@ -13,10 +13,12 @@ export default function Cta() {
             Ready to move from AI concepts to real-world results? Let's build production-ready AI agents tailored precisely to your workflows.
           </p>
           <Button size="lg" asChild className="btn-schedule-demo text-white">
-              <Link href="#">Schedule a demo</Link>
+              <Link href="/schedule-demo">Schedule a demo</Link>
           </Button>
         </div>
       </div>
     </section>
   );
 }
+
+    

@@ -46,7 +46,7 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <Button asChild className="btn-get-in-touch">
-             <Link href="#contact">Get in touch</Link>
+             <Link href="/schedule-demo">Get in touch</Link>
           </Button>
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -78,3 +78,5 @@ export default function Header() {
     </header>
   );
 }
+
+    
