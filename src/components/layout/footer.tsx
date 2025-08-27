@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary/10 text-center text-foreground/60 text-sm">
-          <p>© {new Date().getFullYear()} Axzron LLC. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Axzron. All rights reserved.</p>
         </div>
       </div>
     </footer>
