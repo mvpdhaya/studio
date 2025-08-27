@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Rocket, TrendingUp, Building, TestTube2, Search, Settings, ShieldCheck } from "lucide-react";
 import Image from "next/image";
