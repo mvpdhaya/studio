@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { addMonths, subMonths, format } from 'date-fns';
+import { addMonths, subMonths, format, isToday } from 'date-fns';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -22,7 +22,22 @@ import { useToast } from '@/hooks/use-toast';
 import { scheduleDemo, ScheduleDemoInput } from '@/ai/flows/schedule-demo-flow';
 import { cn } from '@/lib/utils';
 
-const timeSlots = ["7:30pm", "9:00pm", "10:00pm", "10:30pm", "11:00pm", "11:30pm"];
+const allTimeSlots = ["7:30pm", "9:00pm", "10:00pm", "10:30pm", "11:00pm", "11:30pm"];
+
+const parseTime = (timeString: string, date: Date): Date => {
+    const meetingDateTime = new Date(date);
+    const [time, period] = timeString.match(/(\d{1,2}:\d{2})(am|pm)/i)!.slice(1);
+    let [hours, minutes] = time.split(':').map(Number);
+
+    if (period.toLowerCase() === 'pm' && hours < 12) {
+        hours += 12;
+    }
+    if (period.toLowerCase() === 'am' && hours === 12) {
+        hours = 0;
+    }
+    meetingDateTime.setHours(hours, minutes, 0, 0);
+    return meetingDateTime;
+};
 
 const formSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -37,6 +52,7 @@ type FormValues = z.infer<typeof formSchema>;
 export default function ScheduleDemoPage() {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [date, setDate] = useState<Date | undefined>(undefined);
+  const [timeSlots, setTimeSlots] = useState<string[]>(allTimeSlots);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [step, setStep] = useState<'select-time' | 'enter-details' | 'confirmed'>('select-time');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,6 +66,21 @@ export default function ScheduleDemoPage() {
     setDate(nextWednesday);
     setCurrentMonth(nextWednesday);
   }, []);
+
+  useEffect(() => {
+    if (date && isToday(date)) {
+        const now = new Date();
+        const availableSlots = allTimeSlots.filter(slot => {
+            const slotTime = parseTime(slot, date);
+            return slotTime > now;
+        });
+        setTimeSlots(availableSlots);
+    } else {
+        setTimeSlots(allTimeSlots);
+    }
+    setSelectedTime(null);
+  }, [date])
+
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -80,20 +111,7 @@ export default function ScheduleDemoPage() {
     if (!date || !selectedTime) return;
     setIsSubmitting(true);
     
-    const [hours, minutesPart] = selectedTime.split(':');
-    const minutes = minutesPart.slice(0,2);
-    const isPM = minutesPart.toLowerCase().includes('pm');
-
-    let hour = parseInt(hours);
-    if (isPM && hour !== 12) {
-        hour += 12;
-    }
-    if (!isPM && hour === 12) { // Handle 12am case
-        hour = 0;
-    }
-
-    const meetingDateTime = new Date(date);
-    meetingDateTime.setHours(hour, parseInt(minutes), 0, 0);
+    const meetingDateTime = parseTime(selectedTime, date);
 
     const input: ScheduleDemoInput = {
       ...values,
@@ -224,6 +242,7 @@ export default function ScheduleDemoPage() {
                                 onSelect={setDate}
                                 month={currentMonth}
                                 onMonthChange={setCurrentMonth}
+                                disabled={{ before: new Date() }}
                                 className="p-0"
                                 classNames={{
                                     root: "w-full",
@@ -237,11 +256,11 @@ export default function ScheduleDemoPage() {
                                     head_cell: "w-auto",
                                     row: "flex justify-between mt-4",
                                     cell: "text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
-                                    day: cn("h-9 w-9 p-0 font-normal rounded-full hover:bg-neutral-800 aria-selected:opacity-100", date && "aria-selected:bg-white aria-selected:text-black"),
+                                    day: "h-9 w-9 p-0 font-normal rounded-full hover:bg-neutral-800 aria-selected:opacity-100",
                                     day_selected: "bg-white text-black hover:bg-white hover:text-black focus:bg-white focus:text-black",
                                     day_today: "bg-neutral-800 text-white rounded-full",
                                     day_outside: "text-neutral-600 opacity-50",
-                                    day_disabled: "text-neutral-700 opacity-50",
+                                    day_disabled: "text-neutral-700 opacity-50 line-through",
                                 }}
                             />
                             <div className="text-center mt-8">
@@ -259,16 +278,20 @@ export default function ScheduleDemoPage() {
                                 </ToggleGroup>
                             </div>
                             <div className="space-y-2 h-96 overflow-y-auto pr-2">
-                                {timeSlots.map(time => (
-                                    <Button 
-                                        key={time} 
-                                        variant="outline"
-                                        className="w-full justify-center py-3 h-auto border-neutral-700 bg-black hover:bg-neutral-900 hover:text-white"
-                                        onClick={() => handleTimeSelect(time)}
-                                    >
-                                        {time}
-                                    </Button>
-                                ))}
+                                {timeSlots.length > 0 ? (
+                                    timeSlots.map(time => (
+                                        <Button 
+                                            key={time} 
+                                            variant="outline"
+                                            className="w-full justify-center py-3 h-auto border-neutral-700 bg-black hover:bg-neutral-900 hover:text-white"
+                                            onClick={() => handleTimeSelect(time)}
+                                        >
+                                            {time}
+                                        </Button>
+                                    ))
+                                ) : (
+                                    <p className="text-sm text-neutral-400 text-center">No available slots for this day.</p>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -376,5 +399,6 @@ export default function ScheduleDemoPage() {
     </div>
   );
 }
+
 
     
