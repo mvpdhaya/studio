@@ -51,20 +51,26 @@
   }
 
   .btn-schedule-demo {
-      @apply bg-black text-white border-white/20 border;
-      background: linear-gradient(180deg, hsl(0 0% 12%), hsl(0 0% 4%));
-      box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.1), 0 1px 2px hsl(0 0% 0% / 0.5);
+      @apply bg-black text-white rounded-lg border-transparent border;
+      background: radial-gradient(ellipse at top, hsl(0 0% 15%), hsl(0 0% 5%));
+      box-shadow: 0 0 0 1px hsl(0 0% 40% / 0.8), 
+                  0 1px 2px hsl(0 0% 0% / 0.6),
+                  inset 0 1px 0 hsl(0 0% 100% / 0.1);
       transition: all 0.2s ease-in-out;
   }
   .btn-schedule-demo:hover {
-      background: linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 6%));
+      background: radial-gradient(ellipse at top, hsl(0 0% 18%), hsl(0 0% 8%));
+      box-shadow: 0 0 0 1px hsl(0 0% 60% / 0.8), 
+                  0 2px 4px hsl(0 0% 0% / 0.5),
+                  inset 0 1px 0 hsl(0 0% 100% / 0.1);
       transform: translateY(-1px);
-      box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.15), 0 4px 8px hsl(0 0% 0% / 0.4);
   }
   .btn-schedule-demo:active {
       transform: translateY(0);
-      background: linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 3%));
-      box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.1), 0 1px 2px hsl(0 0% 0% / 0.5);
+      background: radial-gradient(ellipse at top, hsl(0 0% 12%), hsl(0 0% 4%));
+      box-shadow: 0 0 0 1px hsl(0 0% 40% / 0.8), 
+                  0 1px 2px hsl(0 0% 0% / 0.6),
+                  inset 0 1px 0 hsl(0 0% 100% / 0.1);
   }
 }
 
