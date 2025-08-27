@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { addMonths, subMonths, format } from 'date-fns';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -33,6 +34,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 export default function ScheduleDemoPage() {
+  const [currentMonth, setCurrentMonth] = useState(new Date(2025, 7));
   const [date, setDate] = useState<Date | undefined>(new Date(2025, 7, 27));
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [step, setStep] = useState<'select-time' | 'enter-details' | 'confirmed'>('select-time');
@@ -46,8 +48,18 @@ export default function ScheduleDemoPage() {
       email: '',
       companyWebsite: '',
       notes: '',
+      aiSolution: 'exploring',
     },
   });
+  
+  const handlePreviousMonth = () => {
+    setCurrentMonth(subMonths(currentMonth, 1));
+  };
+
+  const handleNextMonth = () => {
+    setCurrentMonth(addMonths(currentMonth, 1));
+  };
+
 
   const handleTimeSelect = (time: string) => {
     setSelectedTime(time);
@@ -57,10 +69,23 @@ export default function ScheduleDemoPage() {
   const onSubmit = async (values: FormValues) => {
     if (!date || !selectedTime) return;
     setIsSubmitting(true);
+    
+    const [hours, minutes] = selectedTime.replace('pm','').replace('am','').split(':');
+    const isPM = selectedTime.includes('pm');
+    let hour = parseInt(hours);
+    if (isPM && hour !== 12) {
+        hour += 12;
+    }
+    if (!isPM && hour === 12) { // Handle 12am case
+        hour = 0;
+    }
+
+    const meetingDateTime = new Date(date);
+    meetingDateTime.setHours(hour, parseInt(minutes), 0, 0);
 
     const input: ScheduleDemoInput = {
       ...values,
-      dateTime: new Date(date.getFullYear(), date.getMonth(), date.getDate(), parseInt(selectedTime.split(':')[0]), parseInt(selectedTime.split(':')[1].replace('pm','')) + (selectedTime.includes('pm') ? 12: 0) ).toISOString(),
+      dateTime: meetingDateTime.toISOString(),
     };
 
     try {
@@ -86,6 +111,8 @@ export default function ScheduleDemoPage() {
         month: 'long', 
         day: 'numeric' 
     }).format(date) + ` at ${selectedTime}` : "Select a date and time";
+    
+  const formattedDay = date ? format(date, 'EEE dd') : '';
 
   if (step === 'confirmed') {
     return (
@@ -173,21 +200,26 @@ export default function ScheduleDemoPage() {
                         {/* Calendar */}
                         <div className="flex-1">
                             <div className="flex items-center justify-between mb-4">
-                                <h2 className="text-lg font-semibold">August 2025</h2>
+                                <h2 className="text-lg font-semibold">{format(currentMonth, 'MMMM yyyy')}</h2>
                                 <div className="flex items-center gap-2">
-                                    <Button variant="ghost" size="icon" className="hover:bg-neutral-800"><ChevronLeft className="w-5 h-5" /></Button>
-                                    <Button variant="ghost" size="icon" className="hover:bg-neutral-800"><ChevronRight className="w-5 h-5" /></Button>
+                                    <Button variant="ghost" size="icon" className="hover:bg-neutral-800" onClick={handlePreviousMonth}><ChevronLeft className="w-5 h-5" /></Button>
+                                    <Button variant="ghost" size="icon" className="hover:bg-neutral-800" onClick={handleNextMonth}><ChevronRight className="w-5 h-5" /></Button>
                                 </div>
                             </div>
                             <Calendar
                                 mode="single"
                                 selected={date}
                                 onSelect={setDate}
+                                month={currentMonth}
+                                onMonthChange={setCurrentMonth}
                                 className="p-0"
                                 classNames={{
                                     root: "w-full",
                                     months: "w-full",
                                     month: "w-full",
+                                    caption_label: "hidden",
+                                    nav_button: "hidden",
+                                    nav: "hidden",
                                     table: "w-full",
                                     head_row: "flex justify-between text-neutral-400 text-xs uppercase",
                                     head_cell: "w-auto",
@@ -208,7 +240,7 @@ export default function ScheduleDemoPage() {
                         {/* Time Slots */}
                         <div className="w-full md:w-56">
                             <div className="flex items-center justify-between mb-4">
-                                <h3 className="font-semibold text-white">Wed 27</h3>
+                                <h3 className="font-semibold text-white">{formattedDay}</h3>
                                 <ToggleGroup type="single" defaultValue="12h" className="border border-neutral-700 rounded-md p-0.5">
                                     <ToggleGroupItem value="12h" className="px-2 py-0.5 text-xs data-[state=on]:bg-neutral-700 h-auto">12h</ToggleGroupItem>
                                     <ToggleGroupItem value="24h" className="px-2 py-0.5 text-xs data-[state=on]:bg-neutral-700 h-auto">24h</ToggleGroupItem>
@@ -332,5 +364,3 @@ export default function ScheduleDemoPage() {
     </div>
   );
 }
-
-    
