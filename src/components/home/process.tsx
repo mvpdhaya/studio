@@ -1,3 +1,4 @@
+
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Search, TestTube2, Rocket, Settings, Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Building, Factory } from "lucide-react";
 import Image from "next/image";
@@ -106,7 +107,7 @@ export default function Process() {
             </div>
         </div>
 
-        <div id="partnership" className="grid lg:grid-cols-1 gap-x-12 gap-y-8 items-center pt-28">
+        <div id="partnership" className="pt-28">
             <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Example Scenario</h3>
             <div className="space-y-4 max-w-2xl mx-auto">
                 <Card className="p-6 bg-card shadow-lg">

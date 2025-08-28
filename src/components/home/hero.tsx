@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Cloud, Layers, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
@@ -19,17 +20,17 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-y-8 gap-x-4 max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 justify-center">
-            <Layers className="h-7 w-7 text-primary" />
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-4 max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 justify-center text-center sm:text-left">
+            <Layers className="h-7 w-7 text-primary flex-shrink-0" />
             <h3 className="font-semibold text-foreground">End-to-end automation and AI agent development</h3>
           </div>
-          <div className="flex items-center gap-3 justify-center">
-            <Cloud className="h-7 w-7 text-primary" />
+          <div className="flex items-center gap-3 justify-center text-center sm:text-left">
+            <Cloud className="h-7 w-7 text-primary flex-shrink-0" />
             <h3 className="font-semibold text-foreground">Works across any platform or cloud</h3>
           </div>
-          <div className="flex items-center gap-3 justify-center">
-            <ShieldCheck className="h-7 w-7 text-primary" />
+          <div className="flex items-center gap-3 justify-center text-center sm:text-left">
+            <ShieldCheck className="h-7 w-7 text-primary flex-shrink-0" />
             <h3 className="font-semibold text-foreground">Enterprise-grade security and privacy</h3>
           </div>
         </div>

@@ -34,7 +34,7 @@ export default function Header() {
         scrolled ? 'bg-background/80 backdrop-blur-sm border-b' : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl" prefetch={true}>
           <Image src="/logo.png" alt="Axzron Logo" width={32} height={32} className="h-8 w-8 text-primary" />
           <span className="text-foreground">Axzron</span>
@@ -47,7 +47,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <Button asChild className="btn-get-in-touch">
+          <Button asChild className="btn-get-in-touch hidden sm:inline-flex">
              <Link href="/#contact" prefetch={true}>Get in touch</Link>
           </Button>
           <div className="md:hidden">
@@ -71,6 +71,9 @@ export default function Header() {
                       </Link>
                     ))}
                   </nav>
+                  <Button asChild className="mt-8" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/#contact" prefetch={true}>Get in touch</Link>
+                  </Button>
                 </div>
               </SheetContent>
             </Sheet>
