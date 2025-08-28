@@ -28,17 +28,6 @@ export default function Footer() {
                   <li><Link href="#industries" className="text-foreground/80 hover:text-foreground transition-colors">Industries We Serve</Link></li>
                 </ul>
               </div>
-
-              <div className="sm:col-span-2">
-                 <h4 className="font-semibold text-foreground mb-4">Address</h4>
-                 <p className="text-foreground/80">
-                   30 N Gould St, Suite R,
-                   <br />
-                   Sheridan, WY 82801,
-                   <br />
-                   United States.
-                 </p>
-              </div>
             </div>
           </div>
           
