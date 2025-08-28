@@ -44,10 +44,6 @@ export default function Footer() {
           {/* Right Side */}
           <div className="relative flex-1 flex items-center justify-center min-h-[150px] md:min-h-0">
              <div className="group relative text-7xl md:text-8xl lg:text-9xl font-extrabold whitespace-nowrap">
-                <span className="text-layer layer-1">AXZRON</span>
-                <span className="text-layer layer-2">AXZRON</span>
-                <span className="text-layer layer-3">AXZRON</span>
-                <span className="text-layer layer-4">AXZRON</span>
                 <h2 className="relative text-foreground [-webkit-text-stroke:0]">AXZRON</h2>
              </div>
           </div>
