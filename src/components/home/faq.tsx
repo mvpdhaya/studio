@@ -20,7 +20,7 @@ const faqItems = [
     },
     {
         question: "How long does it take to launch a solution?",
-        answer: "Timelines vary by complexity. POCs typically take 2–4 weeks, while full-scale deployments range from 6–12 weeks. We focus on iterative delivery for quick wins.",
+        answer: "Simple automations or chatbots: 2–4 weeks. Full-scale automation systems or agents: 1–3 months. We deliver quick proofs of concept (POCs) first, then scale to production-ready solutions.",
     },
     {
         question: "How do you measure ROI?",
