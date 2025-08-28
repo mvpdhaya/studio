@@ -24,7 +24,7 @@ export default function Header() {
   const navLinks = [
     { href: '/#features', label: 'Axzron’s AI Services' },
     { href: '/#our-process', label: 'Our Process' },
-    { href: '/#industries', label: 'Industries' },
+    { href: '/#industries', label: 'Industries We Serve' },
   ];
 
   return (
