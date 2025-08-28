@@ -16,7 +16,7 @@ const faqItems = [
     },
     {
         question: "How secure are Axzron’s deployments?",
-        answer: "Security is built into every stage. We offer on-premise or private cloud deployment, data encryption, role-based access, and compliance-ready solutions (GDPR, SOC 2, etc.).",
+        answer: "All solutions follow strict security practices, including encryption, access controls, and secure integrations. Whether deployed on cloud or on-premise, Axzron ensures compliance with client data policies and industry standards.",
     },
     {
         question: "How long does it take to launch a solution?",
