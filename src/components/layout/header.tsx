@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -48,7 +47,7 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <Button asChild className="btn-get-in-touch hidden sm:inline-flex">
-             <Link href="/#contact" prefetch={true}>Get in touch</Link>
+             <Link href="/#contact" prefetch={true}>change Get in Touch</Link>
           </Button>
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -75,7 +74,7 @@ export default function Header() {
                     ))}
                   </nav>
                   <Button asChild className="mt-8" onClick={() => setMobileMenuOpen(false)}>
-                    <Link href="/#contact" prefetch={true}>Get in touch</Link>
+                    <Link href="/#contact" prefetch={true}>change Get in Touch</Link>
                   </Button>
                 </div>
               </SheetContent>
