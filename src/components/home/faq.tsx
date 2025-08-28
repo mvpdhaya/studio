@@ -24,7 +24,7 @@ const faqItems = [
     },
     {
         question: "How do you measure ROI?",
-        answer: "We track ROI using defined KPIs, such as cost savings, efficiency gains, accuracy improvements, and user adoption rates, ensuring clear business value.",
+        answer: "We define ROI through KPIs agreed with the client—such as time saved, reduced manual effort, faster response times, increased accuracy, and operational cost savings. We also provide post-deployment tracking to ensure ongoing value.",
     }
 ];
 
