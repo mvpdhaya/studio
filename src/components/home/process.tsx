@@ -5,23 +5,23 @@ import Image from "next/image";
 const processSteps = [
     {
         icon: Search,
-        title: "Collaborative Planning",
-        description: "Identify workflows, define KPIs, and scope needs.",
+        title: "1. Discover & Define",
+        description: "Gather requirements and align on goals.",
     },
     {
         icon: TestTube2,
-        title: "Proof of Concept (POC)",
-        description: "Rapid prototypes to validate functionality and ROI.",
+        title: "2. Propose & Validate",
+        description: "Share quotation and validate with POC.",
     },
     {
         icon: Rocket,
-        title: "Build & Deploy",
-        description: "Develop, optimize, and integrate securely.",
+        title: "3. Build & Deploy",
+        description: "Develop, integrate, and launch solutions.",
     },
     {
         icon: Settings,
-        title: "Monitor & Improve",
-        description: "Ongoing support, KPI tracking, and refinements.",
+        title: "4. Support & Evolve",
+        description: "Monitor, optimize, and refine continuously.",
     },
 ]
 
