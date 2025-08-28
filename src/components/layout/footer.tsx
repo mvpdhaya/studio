@@ -43,9 +43,12 @@ export default function Footer() {
           
           {/* Right Side */}
           <div className="relative flex-1 flex items-center justify-center min-h-[150px] md:min-h-0">
-             <div className="absolute inset-0 flex items-center justify-center">
-                 <h2 className="text-7xl md:text-8xl lg:text-9xl font-extrabold text-foreground/10 whitespace-nowrap animate-pulse-glow">
-                   AXZRON
+             <div className="absolute inset-x-0 flex items-center">
+                 <h2 className="text-7xl md:text-8xl lg:text-9xl font-extrabold text-foreground/10 whitespace-nowrap animate-marquee">
+                   AXZRON AXZRON AXZRON
+                 </h2>
+                 <h2 className="text-7xl md:text-8xl lg:text-9xl font-extrabold text-foreground/10 whitespace-nowrap animate-marquee2">
+                   AXZRON AXZRON AXZRON
                  </h2>
              </div>
           </div>
