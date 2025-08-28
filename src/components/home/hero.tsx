@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="bg-background/50 pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl lg:leading-[1.15] font-extrabold bg-clip-text text-transparent bg-[radial-gradient(61.17%_178.53%_at_48.83%_-23.54%,#3B3B3B_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#3B3B3B_100%)] mb-6">
             Automate smarter, faster, and securely with Axzron
           </h1>
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-10">
