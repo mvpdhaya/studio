@@ -14,7 +14,7 @@ export default function Cta() {
           </p>
           <div className="mt-8">
             <Button size="lg" asChild className="btn-schedule-demo text-white">
-                <Link href="/schedule-demo">Schedule a demo</Link>
+                <Link href="/#contact">Schedule a demo</Link>
             </Button>
           </div>
         </div>
