@@ -5,22 +5,22 @@ import Image from "next/image";
 const processSteps = [
     {
         icon: Search,
-        title: "1. Discover & Define",
+        title: "Discover & Define",
         description: "Gather requirements and align on goals.",
     },
     {
         icon: TestTube2,
-        title: "2. Propose & Validate",
+        title: "Propose & Validate",
         description: "Share quotation and validate with POC.",
     },
     {
         icon: Rocket,
-        title: "3. Build & Deploy",
+        title: "Build & Deploy",
         description: "Develop, integrate, and launch solutions.",
     },
     {
         icon: Settings,
-        title: "4. Support & Evolve",
+        title: "Support & Evolve",
         description: "Monitor, optimize, and refine continuously.",
     },
 ]
