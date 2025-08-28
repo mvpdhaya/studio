@@ -70,10 +70,10 @@
     pointer-events: none;
   }
 
-  .group:hover .layer-1 { @apply opacity-100; transform: translateY(-30px); }
-  .group:hover .layer-2 { @apply opacity-100; transform: translateY(-15px); }
-  .group:hover .layer-3 { @apply opacity-100; transform: translateY(15px); }
-  .group:hover .layer-4 { @apply opacity-100; transform: translateY(30px); }
+  .group:hover .layer-1 { @apply opacity-100; transform: translateY(-71px); }
+  .group:hover .layer-2 { @apply opacity-100; transform: translateY(-35px); }
+  .group:hover .layer-3 { @apply opacity-100; transform: translateY(35px); }
+  .group:hover .layer-4 { @apply opacity-100; transform: translateY(71px); }
 }
 
 @layer utilities {
