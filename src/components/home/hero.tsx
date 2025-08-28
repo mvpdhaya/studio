@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { Cloud, Layers, ShieldCheck } from 'lucide-react';
+import { Bot, Brain, Shuffle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -22,16 +22,16 @@ export default function Hero() {
         </div>
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-4 max-w-5xl mx-auto">
           <div className="flex items-center gap-3 justify-center text-center sm:text-left">
-            <Layers className="h-7 w-7 text-primary flex-shrink-0" />
-            <h3 className="font-semibold text-foreground">AI-Powered Automation, End-to-End</h3>
+            <Bot className="h-7 w-7 text-primary flex-shrink-0" />
+            <h3 className="font-semibold text-foreground">Automate Smarter</h3>
           </div>
           <div className="flex items-center gap-3 justify-center text-center sm:text-left">
-            <Cloud className="h-7 w-7 text-primary flex-shrink-0" />
-            <h3 className="font-semibold text-foreground">Seamless Across Platforms & Clouds</h3>
+            <Brain className="h-7 w-7 text-primary flex-shrink-0" />
+            <h3 className="font-semibold text-foreground">Chatbots that Think</h3>
           </div>
           <div className="flex items-center gap-3 justify-center text-center sm:text-left">
-            <ShieldCheck className="h-7 w-7 text-primary flex-shrink-0" />
-            <h3 className="font-semibold text-foreground">Enterprise-Grade Security & Privacy</h3>
+            <Shuffle className="h-7 w-7 text-primary flex-shrink-0" />
+            <h3 className="font-semibold text-foreground">Agents that Adapt</h3>
           </div>
         </div>
       </div>
