@@ -12,7 +12,7 @@ const faqItems = [
     },
     {
         question: "Can chatbots connect directly to SQL databases?",
-        answer: "Yes. Our agents can securely connect to SQL or NoSQL databases, perform read/write operations, and provide real-time insights while maintaining strict data governance.",
+        answer: "Yes. Our chatbots can connect directly to SQL databases to retrieve, update, and manage data in real time. We also build RAG-powered chatbots that work with unstructured content like documents and emails.",
     },
     {
         question: "How secure are Axzron’s deployments?",
