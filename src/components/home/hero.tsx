@@ -21,15 +21,15 @@ export default function Hero() {
           </div>
         </div>
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-4 max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 justify-center text-center sm:text-left">
+          <div className="flex items-center gap-3 justify-center">
             <Bot className="h-7 w-7 text-primary flex-shrink-0" />
             <h3 className="font-semibold text-foreground">Automate Smarter</h3>
           </div>
-          <div className="flex items-center gap-3 justify-center text-center sm:text-left">
+          <div className="flex items-center gap-3 justify-center">
             <Brain className="h-7 w-7 text-primary flex-shrink-0" />
             <h3 className="font-semibold text-foreground">Chatbots that Think</h3>
           </div>
-          <div className="flex items-center gap-3 justify-center text-center sm:text-left">
+          <div className="flex items-center gap-3 justify-center">
             <Shuffle className="h-7 w-7 text-primary flex-shrink-0" />
             <h3 className="font-semibold text-foreground">Agents that Adapt</h3>
           </div>

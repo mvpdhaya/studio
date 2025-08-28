@@ -92,7 +92,7 @@ export default function Process() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {industries.map((industry) => (
                     <Card key={industry.title} className="bg-card/80 flex flex-col text-center items-center p-4">
-                        <CardHeader className="items-center pb-4">
+                        <CardHeader className="items-center pb-4 text-center">
                             <div className="bg-primary/10 p-3 rounded-full mb-2">
                                 <industry.icon className="h-6 w-6 text-primary" />
                             </div>

@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left Side */}
           <div className="flex-1 max-w-xl">
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-8 md:items-start items-center text-center md:text-left">
+              <div className="flex flex-col gap-4 items-center md:items-start">
                 <Link href="/" className="flex items-center gap-2 font-bold text-xl">
                   <Image src="/logo.png" alt="AXZRON Logo" width={28} height={28} className="h-7 w-7 text-primary rounded-full" />
                   <span className="text-foreground">AXZRON</span>
@@ -32,7 +32,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-4">Contact Us</h4>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 justify-center md:justify-start">
                     <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
                       <Linkedin className="h-6 w-6" />
                     </Link>
