@@ -11,8 +11,8 @@ export default function Footer() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="flex flex-col gap-4">
                 <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-                  <Image src="/logo.png" alt="Axzron Logo" width={28} height={28} className="h-7 w-7 text-primary" />
-                  <span className="text-foreground">Axzron</span>
+                  <Image src="/logo.png" alt="AXZRON Logo" width={28} height={28} className="h-7 w-7 text-primary" />
+                  <span className="text-foreground">AXZRON</span>
                 </Link>
                 <p className="text-foreground/80 max-w-xs">
                   AI automation, agents, and chatbots for business success
