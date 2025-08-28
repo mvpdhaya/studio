@@ -8,7 +8,7 @@ import {
 const faqItems = [
     {
         question: "What types of automation and agents does Axzron build?",
-        answer: "We specialize in custom AI agents, RAG-based knowledge systems, workflow automation bots, intelligent document processing, and domain-specific Small Language Models (SLMs) designed to solve real business challenges.",
+        answer: "Axzron builds code-based automations for custom workflows and n8n-based automations for scalable, low-code process orchestration. We also design AI agents tailored to specific business needs, such as data handling, customer support, and task management.",
     },
     {
         question: "Can chatbots connect directly to SQL databases?",
