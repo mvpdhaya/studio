@@ -44,9 +44,13 @@ export default function Footer() {
           {/* Right Side */}
           <div className="relative flex-1 flex items-center justify-center min-h-[150px] md:min-h-0">
              <div className="absolute inset-0 flex items-center justify-center">
-                 <h2 className="text-7xl md:text-8xl lg:text-9xl font-extrabold text-foreground/10 whitespace-nowrap animate-flicker">
-                   AXZRON
-                 </h2>
+                <div className="relative text-7xl md:text-8xl lg:text-9xl font-extrabold text-foreground/10 whitespace-nowrap">
+                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-depth" style={{ animationDelay: '0s' }}>AXZRON</span>
+                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-depth" style={{ animationDelay: '2s' }}>AXZRON</span>
+                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-depth" style={{ animationDelay: '4s' }}>AXZRON</span>
+                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-depth" style={{ animationDelay: '6s' }}>AXZRON</span>
+                    <h2 className="relative text-foreground">AXZRON</h2>
+                </div>
              </div>
           </div>
         </div>

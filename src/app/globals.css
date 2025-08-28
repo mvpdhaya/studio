@@ -4,34 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 64%;
-
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 100%;
-
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 213 31% 91%;
+    --primary-foreground: 224 71% 4%;
+    --secondary: 218 20% 30%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 218 20% 30%;
+    --muted-foreground: 220 15% 55%;
+    --accent: 190 60% 32%;
+    --accent-foreground: 213 31% 91%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 83%;
-
+    --border: 218 20% 30%;
+    --input: 218 20% 30%;
+    --ring: 213 31% 91%;
     --radius: 0.5rem;
   }
 }
@@ -78,6 +69,9 @@
   .animate-flicker {
     animation: flicker 5s infinite;
   }
+  .animate-depth {
+    animation: depth 8s ease-in-out infinite;
+  }
 }
 
 @keyframes flicker {
@@ -91,5 +85,28 @@
   20%, 24%, 55% {
     text-shadow: none;
     opacity: 1;
+  }
+}
+
+@keyframes depth {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translate(0, 0);
+  }
+  25% {
+    opacity: 0.1;
+    transform: scale(0.9) translate(2px, 2px);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1) translate(0px, 0px);
+  }
+  75% {
+    opacity: 0.1;
+    transform: scale(0.9) translate(-2px, -2px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translate(0, 0);
   }
 }
