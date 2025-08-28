@@ -120,7 +120,7 @@ export default function Process() {
                 <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg">
                     <div className="flex items-start gap-4">
                          <div className="bg-primary-foreground/20 rounded-full flex-shrink-0 flex items-center justify-center h-10 w-10">
-                            <Image src="/logo.png" alt="Axzron Logo" width={40} height={40} />
+                            <Image src="/logo.png" alt="Axzron Logo" width={40} height={40} className="rounded-full" />
                         </div>
                         <p className="font-medium flex items-center">"Axzron can build a POC, deploy an AI agent, and integrate it with your systems for fast, accurate results."</p>
                     </div>
