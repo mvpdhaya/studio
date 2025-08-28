@@ -119,10 +119,10 @@ export default function Process() {
                 </Card>
                 <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg">
                     <div className="flex items-start gap-4">
-                         <div className="bg-primary-foreground/20 rounded-full p-2 flex-shrink-0 flex items-center justify-center">
-                            <Image src="/logo.png" alt="Axzron Logo" width={24} height={24} className="h-6 w-6" />
+                         <div className="bg-primary-foreground/20 rounded-full flex-shrink-0 flex items-center justify-center h-10 w-10">
+                            <Image src="/logo.png" alt="Axzron Logo" width={40} height={40} />
                         </div>
-                        <p className="font-medium">"Axzron can build a POC, deploy an AI agent, and integrate it with your systems for fast, accurate results."</p>
+                        <p className="font-medium flex items-center">"Axzron can build a POC, deploy an AI agent, and integrate it with your systems for fast, accurate results."</p>
                     </div>
                 </Card>
             </div>
