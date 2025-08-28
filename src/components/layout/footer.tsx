@@ -45,11 +45,11 @@ export default function Footer() {
           <div className="relative flex-1 flex items-center justify-center min-h-[150px] md:min-h-0">
              <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative text-7xl md:text-8xl lg:text-9xl font-extrabold whitespace-nowrap">
-                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-depth" style={{ animationDelay: '0s' }}>AXZRON</span>
-                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-depth" style={{ animationDelay: '-1s' }}>AXZRON</span>
-                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-depth" style={{ animationDelay: '-2s' }}>AXZRON</span>
-                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-depth" style={{ animationDelay: '-3s' }}>AXZRON</span>
-                    <h2 className="relative text-foreground">AXZRON</h2>
+                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-move" style={{ animationDelay: '0s' }}>AXZRON</span>
+                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-move" style={{ animationDelay: '0.3s' }}>AXZRON</span>
+                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-move" style={{ animationDelay: '0.6s' }}>AXZRON</span>
+                    <span className="absolute inset-0 text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.2)] animate-move" style={{ animationDelay: '0.9s' }}>AXZRON</span>
+                    <h2 className="relative text-foreground [-webkit-text-stroke:0]">AXZRON</h2>
                 </div>
              </div>
           </div>

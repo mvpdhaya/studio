@@ -72,6 +72,9 @@
   .animate-depth {
     animation: depth 4s ease-in-out infinite;
   }
+  .animate-move {
+    animation: move 4s ease-in-out infinite;
+  }
 }
 
 @keyframes flicker {
@@ -104,5 +107,16 @@
   75% {
     transform: translate(-3px, -3px) scale(1.01);
     opacity: 0.3;
+  }
+}
+
+@keyframes move {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(10px, 10px);
+    opacity: 0.6;
   }
 }
