@@ -15,7 +15,7 @@ export default function Hero() {
           </p>
           <div className="flex justify-center">
             <Button size="lg" asChild className="btn-schedule-demo text-white">
-              <Link href="/#contact">Schedule a demo</Link>
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSe7pkZTCTyDpeucHvWNnyQPEFBw2tWUMF389LQCVajKhHKAcg/viewform" target="_blank" rel="noopener noreferrer">Schedule a demo</Link>
             </Button>
           </div>
         </div>
