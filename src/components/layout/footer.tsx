@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { Linkedin, Instagram, Twitter, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -20,14 +21,34 @@ export default function Footer() {
                 </p>
               </div>
               
-              <div>
-                <h4 className="font-semibold text-foreground mb-4">Company</h4>
-                <ul className="space-y-2">
-                  <li><Link href="#features" className="text-foreground/80 hover:text-foreground transition-colors">Axzron’s AI Services</Link></li>
-                  <li><Link href="#our-process" className="text-foreground/80 hover:text-foreground transition-colors">Our process</Link></li>
-                  <li><Link href="#industries" className="text-foreground/80 hover:text-foreground transition-colors">Industries We Serve</Link></li>
-                </ul>
+              <div className="flex flex-col gap-8">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-4">Company</h4>
+                  <ul className="space-y-2">
+                    <li><Link href="#features" className="text-foreground/80 hover:text-foreground transition-colors">Axzron’s AI Services</Link></li>
+                    <li><Link href="#our-process" className="text-foreground/80 hover:text-foreground transition-colors">Our process</Link></li>
+                    <li><Link href="#industries" className="text-foreground/80 hover:text-foreground transition-colors">Industries We Serve</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-4">Contact Us</h4>
+                  <div className="flex space-x-4">
+                    <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
+                      <Linkedin className="h-6 w-6" />
+                    </Link>
+                    <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
+                      <Instagram className="h-6 w-6" />
+                    </Link>
+                    <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
+                      <Twitter className="h-6 w-6" />
+                    </Link>
+                    <Link href="mailto:example@example.com" className="text-foreground/80 hover:text-foreground transition-colors">
+                      <Mail className="h-6 w-6" />
+                    </Link>
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
           
