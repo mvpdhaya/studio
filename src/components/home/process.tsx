@@ -1,4 +1,3 @@
-
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Search, TestTube2, Rocket, Settings, Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Building, Factory } from "lucide-react";
 import Image from "next/image";
@@ -64,7 +63,7 @@ export default function Process() {
     <section id="our-process" className="py-20 md:py-28 bg-background/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 to-foreground/60">
             Our Collaborative Path to Results
           </h2>
         </div>
@@ -85,7 +84,7 @@ export default function Process() {
         
         <div id="industries">
             <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Industries We Serve</h2>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 to-foreground/60">Industries We Serve</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
                     We design automation, AI agents, and data-driven solutions tailored for multiple industries.
                 </p>
