@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left Side */}
           <div className="flex-1 max-w-xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 <Link href="/" className="flex items-center gap-2 font-bold text-xl">
                   <Image src="/logo.png" alt="AXZRON Logo" width={28} height={28} className="h-7 w-7 text-primary" />
