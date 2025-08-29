@@ -45,7 +45,7 @@ export default function Footer() {
                 <div>
                   <h4 className="font-semibold text-foreground mb-4">Contact Us</h4>
                   <div className="flex space-x-4 justify-center md:justify-start">
-                    <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
+                    <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-foreground transition-colors">
                       <Linkedin className="h-6 w-6" />
                     </Link>
                     <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
