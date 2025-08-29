@@ -54,7 +54,7 @@ export default function Footer() {
                     <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
                       <XLogo />
                     </Link>
-                    <Link href="mailto:example@example.com" className="text-foreground/80 hover:text-foreground transition-colors">
+                    <Link href="mailto:axzron.ai@gmail.com" className="text-foreground/80 hover:text-foreground transition-colors">
                       <Mail className="h-6 w-6" />
                     </Link>
                   </div>
