@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="flex-1 max-w-xl">
             <div className="flex flex-col gap-8 md:items-start items-center text-center md:text-left">
               <div className="flex flex-col gap-4 items-center md:items-start">
-                <Link href="/" className="flex items-center gap-2 font-bold text-xl">
+                <Link href="/" className="flex items-center gap-2 font-bold text-lg">
                   <Image src="/logo.png" alt="AXZRON Logo" width={28} height={28} className="h-7 w-7 text-primary rounded-full" />
                   <span className="text-foreground">AXZRON</span>
                 </Link>
@@ -69,7 +69,7 @@ export default function Footer() {
              <div className="group relative text-7xl md:text-8xl lg:text-9xl font-extrabold whitespace-nowrap">
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/10 -translate-y-[150%]">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/20 -translate-y-[75%]">AXZRON</h2>
-                <h2 className="relative text-foreground">AXZRON</h2>
+                <h2 className="relative text-foreground animate-neon-glow">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/20 translate-y-[75%]">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/10 translate-y-[150%]">AXZRON</h2>
              </div>
