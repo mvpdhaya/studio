@@ -34,7 +34,7 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl" prefetch={true}>
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg" prefetch={true}>
           <Image src="/logo.png" alt="AXZRON Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-full" />
           <span className="text-foreground">AXZRON</span>
         </Link>
