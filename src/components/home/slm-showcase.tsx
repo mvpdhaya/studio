@@ -26,6 +26,7 @@ export default function SlmShowcase() {
               height={450}
               className="rounded-xl shadow-2xl"
               data-ai-hint="workflow diagram"
+              quality={100}
             />
           </div>
         </div>
