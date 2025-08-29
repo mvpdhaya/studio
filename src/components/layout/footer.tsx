@@ -1,7 +1,19 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Linkedin, Instagram, X, Mail } from 'lucide-react';
+import { Linkedin, Instagram, Mail } from 'lucide-react';
+
+const XLogo = () => (
+    <svg 
+        className="h-6 w-6"
+        viewBox="0 0 24 24" 
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+    </svg>
+);
+
 
 export default function Footer() {
   return (
@@ -40,7 +52,7 @@ export default function Footer() {
                       <Instagram className="h-6 w-6" />
                     </Link>
                     <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
-                      <X className="h-6 w-6" />
+                      <XLogo />
                     </Link>
                     <Link href="mailto:example@example.com" className="text-foreground/80 hover:text-foreground transition-colors">
                       <Mail className="h-6 w-6" />
