@@ -1,3 +1,4 @@
+import Image from 'next/image';
 
 export default function SlmShowcase() {
   return (
@@ -18,15 +19,13 @@ export default function SlmShowcase() {
             </div>
           </div>
           <div className="flex justify-center">
-            <video
-              src="/video.mp4"
+            <Image
+              src="/img.jpg"
+              alt="AI Workflow"
               width={600}
               height={450}
               className="rounded-xl shadow-2xl"
-              autoPlay
-              muted
-              loop
-              playsInline
+              data-ai-hint="workflow diagram"
             />
           </div>
         </div>
