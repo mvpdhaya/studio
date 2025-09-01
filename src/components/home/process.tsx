@@ -60,10 +60,10 @@ const industries = [
 
 export default function Process() {
   return (
-    <section id="our-process" className="py-20 md:py-28 bg-background/50">
+    <section id="our-process" className="py-20 md:py-28 bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 to-foreground/60">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
             Our Collaborative Path to Results
           </h2>
         </div>
@@ -84,14 +84,14 @@ export default function Process() {
         
         <div id="industries">
             <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 to-foreground/60">Industries We Serve</h2>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">Industries We Serve</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
                     We design automation, AI agents, and data-driven solutions tailored for multiple industries.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {industries.map((industry) => (
-                    <Card key={industry.title} className="bg-card/80 flex flex-col text-center items-center p-4">
+                    <Card key={industry.title} className="bg-card flex flex-col text-center items-center p-4">
                         <CardHeader className="items-center pb-4 text-center">
                             <div className="bg-primary/10 p-3 rounded-full mb-2">
                                 <industry.icon className="h-6 w-6 text-primary" />
@@ -117,7 +117,7 @@ export default function Process() {
                         <p className="text-foreground/90 italic">"We need an AI agent to automate invoice extraction and reconciliation."</p>
                     </div>
                 </Card>
-                <Card className="p-6 bg-primary/90 text-primary-foreground shadow-lg">
+                <Card className="p-6 bg-primary text-primary-foreground shadow-lg">
                     <div className="flex items-start gap-4">
                          <div className="bg-primary-foreground/20 rounded-full flex-shrink-0 flex items-center justify-center h-10 w-10">
                             <Image src="/logo.png" alt="Axzron Logo" width={40} height={40} className="rounded-full" quality={100} />

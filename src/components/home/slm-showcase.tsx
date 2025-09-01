@@ -6,7 +6,7 @@ export default function SlmShowcase() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 to-foreground/60 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 mb-6">
               Smarter workflows, bigger results: AI built for your business
             </h2>
             <div className="space-y-4 text-lg text-foreground/80">

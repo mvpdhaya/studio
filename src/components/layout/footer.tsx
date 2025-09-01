@@ -17,7 +17,7 @@ const XLogo = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-primary/5 border-t border-primary/10 overflow-hidden">
+    <footer className="bg-secondary/50 border-t border-border overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left Side */}
@@ -69,14 +69,14 @@ export default function Footer() {
              <div className="group relative text-7xl md:text-8xl lg:text-9xl font-extrabold whitespace-nowrap">
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/10 -translate-y-[150%]">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/20 -translate-y-[75%]">AXZRON</h2>
-                <h2 className="relative text-foreground animate-neon-glow">AXZRON</h2>
+                <h2 className="relative text-primary animate-neon-glow">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/20 translate-y-[75%]">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/10 translate-y-[150%]">AXZRON</h2>
              </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary/10 text-center text-foreground/60 text-sm">
+        <div className="mt-12 pt-8 border-t border-border text-center text-foreground/60 text-sm">
           <p>© {new Date().getFullYear()} Axzron. All rights reserved.</p>
         </div>
       </div>

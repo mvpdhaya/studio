@@ -40,12 +40,12 @@ export default function FeaturesGrid() {
     <section id="features" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 to-foreground/60">Axzron’s AI Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">Axzron’s AI Services</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-card/80 flex flex-col p-2">
+            <Card key={index} className="bg-card flex flex-col p-2">
               <CardHeader className="flex-row items-center gap-4">
                  <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
                   <feature.icon className="h-6 w-6 text-primary" />

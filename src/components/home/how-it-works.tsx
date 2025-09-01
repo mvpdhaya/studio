@@ -26,16 +26,16 @@ const benefits = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 md:py-28 bg-background/50">
+    <section className="py-20 md:py-28 bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 to-foreground/60">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
             From tasks to tangible results: How Axzron powers your business
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {benefits.map((item, index) => (
-            <Card key={index} className="bg-card/80 backdrop-blur-sm border-border/50">
+            <Card key={index} className="bg-card backdrop-blur-sm border-border/50">
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 <div className="bg-primary/10 p-3 rounded-full">
                   <item.icon className="h-6 w-6 text-primary" />

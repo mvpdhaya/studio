@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 213 31% 91%;
-    --primary-foreground: 224 71% 4%;
-    --secondary: 218 20% 30%;
-    --secondary-foreground: 213 31% 91%;
-    --muted: 218 20% 30%;
-    --muted-foreground: 220 15% 55%;
-    --accent: 190 60% 32%;
-    --accent-foreground: 213 31% 91%;
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 28% 95%;
+    --secondary-foreground: 224 71.4% 4.1%;
+    --muted: 215 28% 95%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 218 20% 30%;
-    --input: 218 20% 30%;
-    --ring: 213 31% 91%;
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 217 91% 60%;
     --radius: 0.5rem;
   }
 }
@@ -38,19 +38,18 @@
 
 @layer components {
   .btn-get-in-touch {
-      @apply bg-white text-black;
+      @apply bg-primary text-primary-foreground;
   }
 
   .btn-schedule-demo {
-      @apply bg-black text-white rounded-full border-transparent border;
-      background: radial-gradient(ellipse at top, hsl(0 0% 15%), hsl(0 0% 5%));
+      @apply bg-primary text-primary-foreground rounded-full border-transparent border;
       box-shadow: 0 0 0 1px hsl(0 0% 40% / 0.8), 
                   0 1px 2px hsl(0 0% 0% / 0.6),
                   inset 0 1px 0 hsl(0 0% 100% / 0.1);
       transition: all 0.2s ease-in-out;
   }
   .btn-schedule-demo:hover {
-      background: radial-gradient(ellipse at top, hsl(0 0% 18%), hsl(0 0% 8%));
+      @apply bg-primary/90;
       box-shadow: 0 0 0 1px hsl(0 0% 60% / 0.8), 
                   0 2px 4px hsl(0 0% 0% / 0.5),
                   inset 0 1px 0 hsl(0 0% 100% / 0.1);
@@ -58,7 +57,7 @@
   }
   .btn-schedule-demo:active {
       transform: translateY(0);
-      background: radial-gradient(ellipse at top, hsl(0 0% 12%), hsl(0 0% 4%));
+      @apply bg-primary/95;
       box-shadow: 0 0 0 1px hsl(0 0% 40% / 0.8), 
                   0 1px 2px hsl(0 0% 0% / 0.6),
                   inset 0 1px 0 hsl(0 0% 100% / 0.1);

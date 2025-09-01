@@ -46,7 +46,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <Button asChild className="btn-get-in-touch hidden sm:inline-flex">
+          <Button asChild className="hidden sm:inline-flex">
              <Link href="/#contact" prefetch={true}>Contact Us</Link>
           </Button>
           <div className="md:hidden">
