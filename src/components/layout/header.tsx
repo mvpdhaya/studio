@@ -36,7 +36,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg" prefetch={true}>
           <Image src="/logo.png" alt="AXZRON Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
-          <span className="text-foreground">AXZRON</span>
+          <span style={{ color: '#5e17eb' }}>AXZRON</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
@@ -64,7 +64,7 @@ export default function Header() {
                 <div className="flex flex-col items-start p-6">
                    <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-8" onClick={() => setMobileMenuOpen(false)}>
                       <Image src="/logo.png" alt="AXZRON Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
-                      <span className="text-foreground">AXZRON</span>
+                      <span style={{ color: '#5e17eb' }}>AXZRON</span>
                    </Link>
                    <nav className="flex flex-col items-start gap-6 text-lg font-medium">
                     {navLinks.map((link) => (
