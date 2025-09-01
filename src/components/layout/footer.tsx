@@ -17,7 +17,7 @@ const XLogo = () => (
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#8700ff' }} className="border-t border-border overflow-hidden">
+    <footer style={{ backgroundColor: '#5e17eb' }} className="border-t border-border overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left Side */}
