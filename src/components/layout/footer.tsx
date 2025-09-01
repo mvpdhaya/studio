@@ -69,7 +69,7 @@ export default function Footer() {
              <div className="group relative text-7xl md:text-8xl lg:text-9xl font-extrabold whitespace-nowrap">
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/10 -translate-y-[150%]">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/20 -translate-y-[75%]">AXZRON</h2>
-                <h2 className="relative text-primary animate-neon-glow">AXZRON</h2>
+                <h2 className="relative text-primary-foreground animate-neon-glow">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/20 translate-y-[75%]">AXZRON</h2>
                 <h2 className="absolute top-0 left-0 w-full h-full text-foreground/10 translate-y-[150%]">AXZRON</h2>
              </div>
