@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: 'Axzron',
-  description: 'Build smarter, faster, secure AI agents with custom SLMs.',
+  description: 'Automate smarter, faster, seamlessly with AI workflows, agents & chatbots.',
   icons: {
     icon: '/logo.png',
   },
