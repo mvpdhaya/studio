@@ -17,7 +17,7 @@ const XLogo = () => (
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#5e17eb' }} className="border-t border-border overflow-hidden">
+    <footer style={{ backgroundColor: '#c8c9ff' }} className="border-t border-border overflow-hidden text-foreground">
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left Side */}
@@ -26,35 +26,35 @@ export default function Footer() {
               <div className="flex flex-col gap-4 items-center md:items-start">
                 <Link href="/" className="flex items-center gap-2 font-bold text-lg">
                   <Image src="/logo.png" alt="AXZRON Logo" width={28} height={28} className="h-7 w-7 text-primary rounded-full" quality={100} />
-                  <span className="text-primary-foreground">AXZRON</span>
+                  <span className="text-foreground">AXZRON</span>
                 </Link>
-                <p className="text-primary-foreground/80 max-w-xs">
+                <p className="text-foreground/80 max-w-xs">
                   AI automation, agents, and chatbots for business success
                 </p>
               </div>
               
               <div className="flex flex-col gap-8">
                 <div>
-                  <h4 className="font-semibold text-primary-foreground mb-4">Company</h4>
+                  <h4 className="font-semibold text-foreground mb-4">Company</h4>
                   <ul className="space-y-2">
-                    <li><Link href="#features" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Axzron’s AI Services</Link></li>
-                    <li><Link href="#our-process" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Our process</Link></li>
-                    <li><Link href="#industries" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Industries We Serve</Link></li>
+                    <li><Link href="#features" className="text-foreground/80 hover:text-foreground transition-colors">Axzron’s AI Services</Link></li>
+                    <li><Link href="#our-process" className="text-foreground/80 hover:text-foreground transition-colors">Our process</Link></li>
+                    <li><Link href="#industries" className="text-foreground/80 hover:text-foreground transition-colors">Industries We Serve</Link></li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary-foreground mb-4">Contact Us</h4>
+                  <h4 className="font-semibold text-foreground mb-4">Contact Us</h4>
                   <div className="flex space-x-4 justify-center md:justify-start">
-                    <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-foreground transition-colors">
                       <Linkedin className="h-6 w-6" />
                     </Link>
-                    <Link href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
                       <Instagram className="h-6 w-6" />
                     </Link>
-                    <Link href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
                       <XLogo />
                     </Link>
-                    <Link href="mailto:axzron.ai@gmail.com" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                    <Link href="mailto:axzron.ai@gmail.com" className="text-foreground/80 hover:text-foreground transition-colors">
                       <Mail className="h-6 w-6" />
                     </Link>
                   </div>
@@ -67,16 +67,19 @@ export default function Footer() {
           {/* Right Side */}
           <div className="relative flex-1 flex items-center justify-center min-h-[250px] md:min-h-0">
              <div className="group relative text-7xl md:text-8xl lg:text-9xl font-extrabold whitespace-nowrap">
-                <h2 className="absolute top-0 left-0 w-full h-full text-white/10 -translate-y-[150%] text-center">AXZRON</h2>
-                <h2 className="absolute top-0 left-0 w-full h-full text-white/20 -translate-y-[75%] text-center">AXZRON</h2>
-                <h2 className="relative text-primary-foreground animate-neon-glow text-center">AXZRON</h2>
-                <h2 className="absolute top-0 left-0 w-full h-full text-white/20 translate-y-[75%] text-center">AXZRON</h2>
-                <h2 className="absolute top-0 left-0 w-full h-full text-white/10 translate-y-[150%] text-center">AXZRON</h2>
+                <h2 className="absolute top-0 left-0 w-full h-full text-foreground/10 -translate-y-[150%] text-center">AXZRON</h2>
+                <h2 className="absolute top-0 left-0 w-full h-full text-foreground/20 -translate-y-[75%] text-center">AXZRON</h2>
+                <h2 className="relative text-foreground text-center" style={{
+                  textShadow:
+                    '0 0 5px hsl(var(--foreground) / 0.2), 0 0 10px hsl(var(--foreground) / 0.1)'
+                }}>AXZRON</h2>
+                <h2 className="absolute top-0 left-0 w-full h-full text-foreground/20 translate-y-[75%] text-center">AXZRON</h2>
+                <h2 className="absolute top-0 left-0 w-full h-full text-foreground/10 translate-y-[150%] text-center">AXZRON</h2>
              </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border text-center text-primary-foreground/60 text-sm">
+        <div className="mt-12 pt-8 border-t border-border text-center text-foreground/60 text-sm">
           <p>© {new Date().getFullYear()} Axzron. All rights reserved.</p>
         </div>
       </div>
