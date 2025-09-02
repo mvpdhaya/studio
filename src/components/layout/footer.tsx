@@ -37,9 +37,9 @@ export default function Footer() {
                 <div>
                   <h4 className="font-semibold text-white mb-4">Company</h4>
                   <ul className="space-y-2">
-                    <li><Link href="#features" className="text-white/80 hover:text-white transition-colors">Axzron’s AI Services</Link></li>
-                    <li><Link href="#our-process" className="text-white/80 hover:text-white transition-colors">Our process</Link></li>
-                    <li><Link href="#industries" className="text-white/80 hover:text-white transition-colors">Industries We Serve</Link></li>
+                    <li><Link href="#features" className="text-white hover:text-white/80 transition-colors">Axzron’s AI Services</Link></li>
+                    <li><Link href="#our-process" className="text-white hover:text-white/80 transition-colors">Our process</Link></li>
+                    <li><Link href="#industries" className="text-white hover:text-white/80 transition-colors">Industries We Serve</Link></li>
                   </ul>
                 </div>
                 <div>
