@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="bg-background pt-24 pb-20 md:pt-28 md:pb-28">
+    <section className="bg-background pt-24 pb-16 md:pt-28 md:pb-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl lg:leading-[1.15] font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 mb-6">
