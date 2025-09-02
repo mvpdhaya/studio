@@ -51,7 +51,7 @@ export default function Footer() {
                     <Link href="https://www.instagram.com/axzron.ai/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
                       <Instagram className="h-6 w-6" />
                     </Link>
-                    <Link href="#" className="text-white/80 hover:text-white transition-colors">
+                    <Link href="https://x.com/Axzron_ai" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
                       <XLogo />
                     </Link>
                     <Link href="mailto:axzron.ai@gmail.com" className="text-white/80 hover:text-white transition-colors">
