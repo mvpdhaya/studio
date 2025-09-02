@@ -28,7 +28,7 @@ export default function Footer() {
                   <Image src="/logo.png?v=2" alt="AXZRON Logo" width={28} height={28} className="h-7 w-7 text-primary rounded-full" quality={100} />
                   <span className="text-white">AXZRON</span>
                 </Link>
-                <p className="text-white/80 max-w-xs">
+                <p className="text-white max-w-xs">
                   AI automation, agents, and chatbots for business success
                 </p>
               </div>
