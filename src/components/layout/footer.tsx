@@ -65,7 +65,7 @@ export default function Footer() {
                     <Link href="https://x.com/Axzron_ai" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
                       <XLogo />
                     </Link>
-                     <Link href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+                     <Link href="https://wa.me/0781626515" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
                       <WhatsAppLogo />
                     </Link>
                     <Link href="mailto:axzron.ai@gmail.com" className="text-white hover:text-white/80 transition-colors">
