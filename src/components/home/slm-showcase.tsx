@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function SlmShowcase() {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
