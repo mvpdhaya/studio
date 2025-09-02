@@ -20,7 +20,7 @@ export default function SlmShowcase() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/img.jpg"
+              src="/wb.png"
               alt="AI Workflow"
               width={600}
               height={450}
