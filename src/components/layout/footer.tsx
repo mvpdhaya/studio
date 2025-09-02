@@ -48,7 +48,7 @@ export default function Footer() {
                     <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
                       <Linkedin className="h-6 w-6" />
                     </Link>
-                    <Link href="#" className="text-white/80 hover:text-white transition-colors">
+                    <Link href="https://www.instagram.com/axzron.ai/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
                       <Instagram className="h-6 w-6" />
                     </Link>
                     <Link href="#" className="text-white/80 hover:text-white transition-colors">
