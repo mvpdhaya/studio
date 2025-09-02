@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Axzron',
   description: 'Automate smarter, faster, seamlessly with AI workflows, agents & chatbots.',
   icons: {
-    icon: '/logo.png',
+    icon: '/logo.png?v=2',
   },
 };
 
