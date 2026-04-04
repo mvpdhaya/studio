@@ -1,53 +1,42 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Waypoints, Target, Gem } from "lucide-react";
-
-const benefits = [
-  {
-    icon: Target,
-    title: "Precision through context",
-    description: "Our AI agents and chatbots leverage RAG techniques and SQL integration to understand your data—whether it’s PDFs, emails, or databases—delivering accurate and context-aware answers. Meanwhile, our automation systems handle repetitive tasks, freeing your team to focus on innovation.",
-  },
-  {
-    icon: Waypoints,
-    title: "From prototype to production",
-    description: "We start with a proof of concept but build with production in mind. Solutions are hardened with monitoring, security guardrails, and optimization so they scale reliably.",
-  },
-  {
-    icon: Zap,
-    title: "Build fast, iterate smart",
-    description: "We develop functional solutions quickly, gather feedback early, and refine continuously to ensure your teams see value right away.",
-  },
-  {
-    icon: Gem,
-    title: "Focus on accuracy and performance",
-    description: "We don’t settle for “good enough.” Every AI agent, automation, and chatbot is fine-tuned for precision and reliability in real-world business settings.",
-  },
-];
-
 export default function HowItWorks() {
+  const steps = [
+    { num: 1, title: 'Discover', desc: 'Understand your goals' },
+    { num: 2, title: 'Design', desc: 'Prototype & validate' },
+    { num: 3, title: 'Build', desc: 'Develop & test' },
+    { num: 4, title: 'Support', desc: 'Deploy & evolve' },
+  ];
+
   return (
-    <section className="py-16 md:py-20 bg-secondary/50">
+    <section id="how-it-works" className="py-[100px] bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
-            From tasks to tangible results: How Axzron powers your business
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {benefits.map((item, index) => (
-            <Card key={index} className="bg-card backdrop-blur-sm border-border/50">
-              <CardHeader className="flex flex-row items-center gap-4 pb-4">
-                <div className="bg-primary/10 p-3 rounded-full">
-                  <item.icon className="h-6 w-6 text-primary" />
+        <h2 className="text-[36px] font-[700] text-[#1e3a8a] text-center mb-[48px]">
+          From tasks to tangible results
+        </h2>
+        
+        <div className="max-w-4xl mx-auto relative mb-[48px]">
+          {/* Connector Line */}
+          <div className="absolute top-[24px] left-0 right-0 h-[2px] bg-[#bfdbfe] z-0 hidden md:block"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
+            {steps.map((step, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center relative pointer-events-none md:pointer-events-auto">
+                <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full bg-[#2563eb] text-white text-[18px] font-[700] relative z-10 shadow-sm border-[4px] border-white md:border-transparent md:bg-clip-padding md:shadow-none">
+                  {step.num}
                 </div>
-                <CardTitle className="text-xl text-foreground">{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-foreground/80">{item.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+                <h3 className="text-[15px] font-[600] text-[#1e40af] mt-[12px]">
+                  {step.title}
+                </h3>
+                <p className="text-[13px] text-[#6b7280] mt-[4px]">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
+
+        <p className="text-center text-[#374151] max-w-2xl mx-auto text-[16px] font-[400] leading-[1.8]">
+          At Axzron, we believe in a transparent and iterative process. We focus on early alignment, rapid prototyping, and rigorous testing so the final solution systematically tackles your bottlenecks and drives long-term efficiency.
+        </p>
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '/#features', label: 'Axzron’s AI Services' },
+    { href: '/#how-it-works', label: 'Our Services' },
     { href: '/#our-process', label: 'Our Process' },
     { href: '/#industries', label: 'Industries We Serve' },
   ];
@@ -33,21 +33,21 @@ export default function Header() {
         scrolled ? 'bg-background/80 backdrop-blur-sm border-b' : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg" prefetch={true}>
-          <Image src="/logo.png?v=2" alt="AXZRON Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
-          <span style={{ color: '#5e17eb' }}>AXZRON</span>
+      <div className="container mx-auto flex h-[72px] items-center justify-between px-4 md:px-6">
+        <Link href="/" className="flex items-center gap-0 font-bold text-lg" prefetch={true}>
+          <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
+          <span style={{ color: '#2563eb' }}>AXZRON</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-             <Link key={link.href} href={link.href} className="text-foreground/80 hover:text-foreground transition-colors" prefetch={true}>
+            <Link key={link.href} href={link.href} className="text-[15px] font-medium text-[#1e40af] hover:text-[#2563eb] transition-colors" prefetch={true}>
               {link.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <Button asChild className="hidden sm:inline-flex">
-             <Link href="/#contact" prefetch={true}>Contact Us</Link>
+          <Button asChild className="hidden sm:inline-flex h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] bg-[#2563eb] text-white hover:bg-[#1d4ed8]">
+            <Link href="/#contact" prefetch={true}>Get a free demo</Link>
           </Button>
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -62,11 +62,11 @@ export default function Header() {
                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col items-start p-6">
-                   <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-8" onClick={() => setMobileMenuOpen(false)}>
-                      <Image src="/logo.png?v=2" alt="AXZRON Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
-                      <span style={{ color: '#5e17eb' }}>AXZRON</span>
-                   </Link>
-                   <nav className="flex flex-col items-start gap-6 text-lg font-medium">
+                  <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-8" onClick={() => setMobileMenuOpen(false)}>
+                    <Image src="/logo.png?v=2" alt="AXZRON Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
+                    <span style={{ color: '#1a6cff' }}>AXZRON</span>
+                  </Link>
+                  <nav className="flex flex-col items-start gap-6 text-lg font-medium">
                     {navLinks.map((link) => (
                       <Link key={link.href} href={link.href} className="text-foreground/80 hover:text-foreground transition-colors" onClick={() => setMobileMenuOpen(false)} prefetch={true}>
                         {link.label}

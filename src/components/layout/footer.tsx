@@ -28,73 +28,71 @@ const WhatsAppLogo = () => (
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'linear-gradient(to right, #7a65ff, #c1baff)' }} className="border-t border-transparent overflow-hidden text-white">
-      <div className="container mx-auto px-4 md:px-6 py-12">
-        <div className="flex flex-col md:flex-row justify-between gap-12">
-          {/* Left Side */}
-          <div className="flex-1 max-w-xl">
-            <div className="flex flex-col gap-8 md:items-start items-center text-center md:text-left">
-              <div className="flex flex-col gap-4 items-center md:items-start">
-                <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-                  <Image src="/logo.png?v=2" alt="AXZRON Logo" width={28} height={28} className="h-7 w-7 text-primary rounded-full" quality={100} />
-                  <span className="text-white">AXZRON</span>
-                </Link>
-                <p className="text-white max-w-xs">
-                  AI automation, agents, and chatbots for business success
-                </p>
-              </div>
-              
-              <div className="flex flex-col gap-8">
-                <div>
-                  <h4 className="font-semibold text-white mb-4">Company</h4>
-                  <ul className="space-y-2">
-                    <li><Link href="#features" className="text-white hover:text-white/80 transition-colors">Axzron’s AI Services</Link></li>
-                    <li><Link href="#our-process" className="text-white hover:text-white/80 transition-colors">Our process</Link></li>
-                    <li><Link href="#industries" className="text-white hover:text-white/80 transition-colors">Industries We Serve</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-4">Contact Us</h4>
-                  <div className="flex space-x-4 justify-center md:justify-start">
-                    <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-                      <Linkedin className="h-6 w-6" />
-                    </Link>
-                    <Link href="https://www.instagram.com/axzron.ai/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-                      <Instagram className="h-6 w-6" />
-                    </Link>
-                    <Link href="https://x.com/Axzron_ai" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-                      <XLogo />
-                    </Link>
-                     <Link href="https://wa.me/0781626515" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-                      <WhatsAppLogo />
-                    </Link>
-                    <Link href="mailto:axzron.ai@gmail.com" className="text-white hover:text-white/80 transition-colors">
-                      <Mail className="h-6 w-6" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+    <footer className="bg-white border-t border-slate-100 pt-[60px] pb-[32px]">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+          {/* Column 1: Logo & Text */}
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex items-center gap-2 font-[800] text-xl">
+              <Image src="/logo.png?v=2" alt="AXZRON" width={32} height={32} className="h-8 w-8 text-[#2563eb] rounded-full object-contain" quality={100} />
+              <span className="text-[#1e40af]">AXZRON</span>
+            </Link>
+            <p className="text-[14px] text-[#4b5563] mt-2 leading-[1.7]">
+              AI, Web & Mobile solutions built for your business
+            </p>
           </div>
-          
-          {/* Right Side */}
-          <div className="relative flex-1 flex items-center justify-center min-h-[250px] md:min-h-0">
-             <div className="group relative text-7xl md:text-8xl lg:text-9xl font-extrabold whitespace-nowrap">
-                <h2 className="absolute top-0 left-0 w-full h-full text-white/10 -translate-y-[150%] text-center">AXZRON</h2>
-                <h2 className="absolute top-0 left-0 w-full h-full text-white/20 -translate-y-[75%] text-center">AXZRON</h2>
-                <h2 className="relative text-white text-center" style={{
-                  textShadow:
-                    '0 0 5px hsl(0 0% 100% / 0.2), 0 0 10px hsl(0 0% 100% / 0.1)'
-                }}>AXZRON</h2>
-                <h2 className="absolute top-0 left-0 w-full h-full text-white/20 translate-y-[75%] text-center">AXZRON</h2>
-                <h2 className="absolute top-0 left-0 w-full h-full text-white/10 translate-y-[150%] text-center">AXZRON</h2>
-             </div>
+
+          {/* Column 2: Services */}
+          <div>
+            <h4 className="text-[15px] font-[600] text-[#1e40af] mb-[16px]">Services</h4>
+            <ul className="space-y-2 text-[14px] text-[#4b5563] leading-[2]">
+              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Automation</Link></li>
+              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">AI Agents</Link></li>
+              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Web Apps</Link></li>
+              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Mobile Apps</Link></li>
+              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Data Intelligence</Link></li>
+              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">API Integration</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Company */}
+          <div>
+            <h4 className="text-[15px] font-[600] text-[#1e40af] mb-[16px]">Company</h4>
+            <ul className="space-y-2 text-[14px] text-[#4b5563] leading-[2]">
+              <li><Link href="#" className="hover:text-[#2563eb] transition-colors">About</Link></li>
+              <li><Link href="#" className="hover:text-[#2563eb] transition-colors">Industries</Link></li>
+              <li><Link href="#" className="hover:text-[#2563eb] transition-colors">Case Studies</Link></li>
+              <li><Link href="#" className="hover:text-[#2563eb] transition-colors">Blog</Link></li>
+              <li><Link href="#" className="hover:text-[#2563eb] transition-colors">Careers</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Contact */}
+          <div>
+            <h4 className="text-[15px] font-[600] text-[#1e40af] mb-[16px]">Contact</h4>
+            <ul className="space-y-2 text-[14px] text-[#4b5563] leading-[2] mb-6">
+              <li><a href="mailto:axzron.ai@gmail.com" className="hover:text-[#2563eb] transition-colors">axzron.ai@gmail.com</a></li>
+              <li><a href="tel:+0123456789" className="hover:text-[#2563eb] transition-colors">+0123456789</a></li>
+            </ul>
+            <div className="flex items-center gap-4 mt-[16px]">
+              <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-[#6b7280] hover:text-[#2563eb] transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </Link>
+              <Link href="https://x.com/Axzron_ai" target="_blank" rel="noopener noreferrer" className="text-[#6b7280] hover:text-[#2563eb] transition-colors">
+                <XLogo />
+              </Link>
+              <Link href="https://www.instagram.com/axzron.ai/" target="_blank" rel="noopener noreferrer" className="text-[#6b7280] hover:text-[#2563eb] transition-colors">
+                <Instagram className="h-5 w-5" />
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/20 text-center text-white/60 text-sm">
-          <p>© {new Date().getFullYear()} Axzron. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="border-t border-slate-200 mt-[48px] pt-[32px] pb-[8px] text-center">
+          <p className="text-[13px] text-[#9ca3af]">
+            © {new Date().getFullYear()} Axzron. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
