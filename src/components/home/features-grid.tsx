@@ -44,9 +44,12 @@ export default function FeaturesGrid() {
   return (
     <section id="features" className="py-[100px] bg-[#f0f4ff]">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 text-center mb-16">
-          Our Services
-        </h2>
+        <div className="text-center mb-16">
+          <span className="text-[#2563eb] font-bold text-sm uppercase tracking-wider mb-2 block text-center">Our Services</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+            Our Services
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] max-w-5xl mx-auto mb-10">
           {services.map((service, index) => (
@@ -63,7 +66,7 @@ export default function FeaturesGrid() {
                   {service.title}
                 </h3>
                 <p className="text-[15px] text-[#4b5563] leading-[1.7]">
-                  {service.description}
+                   {service.description}
                 </p>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description: 'Automate smarter, faster, seamlessly with AI workflows, agents & chatbots.',
   icons: {
     icon: [
-      { url: '/logo.png?v=2', sizes: 'any', type: 'image/png' },
+      { url: '/icon.png?v=3', sizes: 'any', type: 'image/png' },
     ],
     apple: [
-      { url: '/logo.png?v=2', type: 'image/png' },
+      { url: '/icon.png?v=3', type: 'image/png' },
     ],
   },
 };

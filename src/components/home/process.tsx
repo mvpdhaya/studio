@@ -73,6 +73,7 @@ export default function Process() {
 
         <div id="industries">
             <div className="max-w-3xl mx-auto text-center mb-16">
+                <span className="text-[#2563eb] font-bold text-sm uppercase tracking-wider mb-2 block">Industries</span>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Industries We Serve</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
                     We design automation, AI agents, and data-driven solutions tailored for multiple industries.

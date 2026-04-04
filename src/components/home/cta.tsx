@@ -19,7 +19,7 @@ export default function Cta() {
           </p>
           <div className="flex flex-col items-center justify-center">
             <Button className="h-[50px] px-[32px] text-[15px] bg-white text-[#1d4ed8] font-[600] hover:bg-slate-50 transition-all rounded-[8px]" asChild>
-                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSe7pkZTCTyDpeucHvWNnyQPEFBw2tWUMF389LQCVajKhHKAcg/viewform" target="_blank" rel="noopener noreferrer">
+                <Link href="https://calendly.com/axzron-ai/30min" target="_blank" rel="noopener noreferrer">
                   Book your free call →
                 </Link>
             </Button>

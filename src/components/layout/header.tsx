@@ -21,9 +21,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '/#how-it-works', label: 'Our Services' },
-    { href: '/#our-process', label: 'Our Process' },
-    { href: '/#industries', label: 'Industries We Serve' },
+    { href: '/#features', label: 'Our Services', description: 'Our Services' },
+    { href: '/#how-it-works', label: 'Our Process', description: 'From tasks to tangible results' },
+    { href: '/#industries', label: 'Industries We Serve', description: 'Industries We Serve' },
   ];
 
   return (
@@ -66,10 +66,21 @@ export default function Header() {
                     <Image src="/logo.png?v=2" alt="AXZRON Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
                     <span style={{ color: '#1a6cff' }}>AXZRON</span>
                   </Link>
-                  <nav className="flex flex-col items-start gap-6 text-lg font-medium">
+                  <nav className="flex flex-col items-start gap-8">
                     {navLinks.map((link) => (
-                      <Link key={link.href} href={link.href} className="text-foreground/80 hover:text-foreground transition-colors" onClick={() => setMobileMenuOpen(false)} prefetch={true}>
-                        {link.label}
+                      <Link 
+                        key={link.href} 
+                        href={link.href} 
+                        className="flex flex-col gap-1 group w-full" 
+                        onClick={() => setMobileMenuOpen(false)} 
+                        prefetch={true}
+                      >
+                        <span className="text-lg font-bold text-[#1e40af] group-hover:text-[#2563eb] transition-colors">
+                          {link.label}
+                        </span>
+                        <span className="text-sm font-medium text-slate-500 group-hover:text-slate-700 transition-colors">
+                          {link.description}
+                        </span>
                       </Link>
                     ))}
                   </nav>

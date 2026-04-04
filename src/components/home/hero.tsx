@@ -24,19 +24,19 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-[16px] py-[6px] rounded-full bg-[#eff6ff] text-[#1d4ed8] text-[13px] font-medium mb-[24px]">
             AI-powered business solutions
           </div>
-          
+
           <h1 className="text-[52px] leading-[1.15] font-[800] text-[#1e3a8a] tracking-tight mb-[20px]">
             We automate your ops so your team builds{' '}
             <span className="text-[#2563eb]">what actually matters</span>
           </h1>
-          
+
           <p className="max-w-[560px] mx-auto text-[17px] text-[#374151] mb-[32px] leading-[1.8] text-center">
             Axzron builds AI agents, chatbots, and intelligent web & mobile apps that cut manual work and accelerate your growth.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-[64px]">
             <Button className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] bg-[#2563eb] text-white hover:bg-[#1d4ed8]" asChild>
-              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSe7pkZTCTyDpeucHvWNnyQPEFBw2tWUMF389LQCVajKhHKAcg/viewform" target="_blank" rel="noopener noreferrer">
+              <Link href="https://calendly.com/axzron-ai/30min" target="_blank" rel="noopener noreferrer">
                 Book a free demo
               </Link>
             </Button>
@@ -49,9 +49,9 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full mt-[20px]">
+      {/* <div className="relative z-10 w-full mt-[20px]">
         <StatsBar />
-      </div>
+      </div> */}
     </section>
   );
 }

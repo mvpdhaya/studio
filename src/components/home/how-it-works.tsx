@@ -9,9 +9,12 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-[100px] bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-[36px] font-[700] text-[#1e3a8a] text-center mb-[48px]">
-          From tasks to tangible results
-        </h2>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <span className="text-[#2563eb] font-bold text-sm uppercase tracking-wider mb-2 block">Our Process</span>
+          <h2 className="text-[36px] font-[700] text-[#1e3a8a]">
+            From tasks to tangible results
+          </h2>
+        </div>
         
         <div className="max-w-4xl mx-auto relative mb-[48px]">
           {/* Connector Line */}
