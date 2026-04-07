@@ -45,8 +45,8 @@ export default function FeaturesGrid() {
     <section id="features" className="py-[100px] bg-[#f0f4ff]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <span className="text-[#2563eb] font-bold text-sm uppercase tracking-wider mb-2 block text-center">Our Services</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+          <span className="text-[#2563eb] font-[600] text-[13px] uppercase tracking-wider mb-2 block text-center">Expertise</span>
+          <h2 className="text-[32px] md:text-[38px] font-[700] text-[#111827] leading-[1.2]">
             Our Services
           </h2>
         </div>
@@ -62,10 +62,10 @@ export default function FeaturesGrid() {
               </div>
               
               <div className="mt-[20px]">
-                <h3 className="text-[20px] font-[700] text-[#1e40af] mb-[10px]">
+                <h3 className="text-[20px] md:text-[22px] font-[700] text-[#111827] mb-[12px] leading-[1.3]">
                   {service.title}
                 </h3>
-                <p className="text-[15px] text-[#4b5563] leading-[1.7]">
+                <p className="text-[15px] text-[#6b7280] leading-[1.65]">
                    {service.description}
                 </p>
               </div>

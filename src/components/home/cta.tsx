@@ -11,16 +11,17 @@ export default function Cta() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-[40px] font-[800] text-[#ffffff] mb-6 leading-tight">
+          <h2 className="text-[32px] md:text-[40px] font-[700] text-[#ffffff] mb-6 leading-[1.2]">
             Ready to build AI that delivers real business value?
           </h2>
-          <p className="max-w-2xl mx-auto text-[17px] text-[#bfdbfe] mb-10 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-[17px] md:text-[18px] text-[#bfdbfe] mb-10 leading-[1.6]">
             Book a free 30-minute strategy call — no commitment, just clarity.
           </p>
           <div className="flex flex-col items-center justify-center">
-            <Button className="h-[50px] px-[32px] text-[15px] bg-white text-[#1d4ed8] font-[600] hover:bg-slate-50 transition-all rounded-[8px]" asChild>
-                <Link href="https://calendly.com/axzron-ai/30min" target="_blank" rel="noopener noreferrer">
-                  Book your free call →
+            <Button className="group h-[50px] px-[32px] text-[15px] bg-white text-[#1d4ed8] font-[600] hover:bg-slate-50 transition-all rounded-[8px]" asChild>
+                <Link href="https://calendly.com/axzron-ai/30min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  Book your free call
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
             </Button>
             <p className="text-[13px] text-[#dbeafe] mt-[14px]">

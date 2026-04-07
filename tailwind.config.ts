@@ -10,8 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['var(--font-inter)', 'sans-serif'],
-        heading: ['var(--font-poppins)', 'sans-serif'],
+        body: ['Satoshi', 'Inter', 'sans-serif'],
+        heading: ['Satoshi', 'Poppins', 'sans-serif'],
+        accent: ['"Playfair Display"', 'serif'],
         code: ['monospace'],
       },
       colors: {

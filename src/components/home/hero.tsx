@@ -25,12 +25,12 @@ export default function Hero() {
             AI-powered business solutions
           </div>
 
-          <h1 className="text-[52px] leading-[1.15] font-[800] text-[#1e3a8a] tracking-tight mb-[20px]">
+          <h1 className="text-[42px] md:text-[54px] lg:text-[68px] leading-[1.1] font-[700] text-[#111827] tracking-tight mb-[24px]">
             We automate your ops so your team builds{' '}
             <span className="text-[#2563eb]">what actually matters</span>
           </h1>
 
-          <p className="max-w-[560px] mx-auto text-[17px] text-[#374151] mb-[32px] leading-[1.8] text-center">
+          <p className="max-w-[620px] mx-auto text-[18px] md:text-[20px] text-[#6b7280] mb-[40px] leading-[1.6] text-center">
             Axzron builds AI agents, chatbots, and intelligent web & mobile apps that cut manual work and accelerate your growth.
           </p>
 

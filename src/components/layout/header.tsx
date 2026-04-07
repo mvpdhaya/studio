@@ -36,11 +36,11 @@ export default function Header() {
       <div className="container mx-auto flex h-[72px] items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-0 font-bold text-lg" prefetch={true}>
           <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
-          <span style={{ color: '#2563eb' }}>AXZRON</span>
+          <span className="text-[#111827]">AXZRON</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-[15px] font-medium text-[#1e40af] hover:text-[#2563eb] transition-colors" prefetch={true}>
+            <Link key={link.href} href={link.href} className="text-[14px] md:text-[15px] font-[500] text-[#374151] hover:text-[#2563eb] transition-colors" prefetch={true}>
               {link.label}
             </Link>
           ))}

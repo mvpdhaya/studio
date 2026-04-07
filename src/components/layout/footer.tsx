@@ -44,8 +44,8 @@ export default function Footer() {
 
           {/* Column 2: Services */}
           <div>
-            <h4 className="text-[15px] font-[600] text-[#1e40af] mb-[16px]">Services</h4>
-            <ul className="space-y-2 text-[14px] text-[#4b5563] leading-[2]">
+            <h4 className="text-[15px] font-[600] text-[#111827] mb-[20px]">Services</h4>
+            <ul className="space-y-3 text-[14px] text-[#6b7280]">
               <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Automation</Link></li>
               <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">AI Agents</Link></li>
               <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Web Apps</Link></li>
@@ -57,8 +57,8 @@ export default function Footer() {
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="text-[15px] font-[600] text-[#1e40af] mb-[16px]">Company</h4>
-            <ul className="space-y-2 text-[14px] text-[#4b5563] leading-[2]">
+            <h4 className="text-[15px] font-[600] text-[#111827] mb-[20px]">Company</h4>
+            <ul className="space-y-3 text-[14px] text-[#6b7280]">
               <li><Link href="/#how-it-works" className="hover:text-[#2563eb] transition-colors">Our Process</Link></li>
               <li><Link href="/#industries" className="hover:text-[#2563eb] transition-colors">Industries</Link></li>
               <li><Link href="/#faq" className="hover:text-[#2563eb] transition-colors">FAQ</Link></li>
@@ -68,19 +68,19 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h4 className="text-[15px] font-[600] text-[#1e40af] mb-[16px]">Contact</h4>
-            <ul className="space-y-2 text-[14px] text-[#4b5563] leading-[2] mb-6">
+            <h4 className="text-[15px] font-[600] text-[#111827] mb-[20px]">Contact</h4>
+            <ul className="space-y-3 text-[14px] text-[#6b7280] mb-6">
               <li><a href="mailto:axzron.ai@gmail.com" className="hover:text-[#2563eb] transition-colors">axzron.ai@gmail.com</a></li>
               <li><a href="tel:+0123456789" className="hover:text-[#2563eb] transition-colors">+94 781626515</a></li>
             </ul>
             <div className="flex items-center gap-4 mt-[16px]">
-              <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-[#6b7280] hover:text-[#2563eb] transition-colors">
+              <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#2563eb] transition-colors">
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="https://x.com/Axzron_ai" target="_blank" rel="noopener noreferrer" className="text-[#6b7280] hover:text-[#2563eb] transition-colors">
+              <Link href="https://x.com/Axzron_ai" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#2563eb] transition-colors">
                 <XLogo />
               </Link>
-              <Link href="https://www.instagram.com/axzron.ai/" target="_blank" rel="noopener noreferrer" className="text-[#6b7280] hover:text-[#2563eb] transition-colors">
+              <Link href="https://www.instagram.com/axzron.ai/" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#2563eb] transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
             </div>
@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-200 mt-[48px] pt-[32px] pb-[8px] text-center">
+        <div className="border-t border-slate-100 mt-[48px] pt-[32px] pb-[8px] text-center">
           <p className="text-[13px] text-[#9ca3af]">
             © {new Date().getFullYear()} Axzron. All rights reserved.
           </p>

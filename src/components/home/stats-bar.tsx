@@ -56,14 +56,14 @@ const StatCell = ({ stat, idx, isVisible }: { stat: any, idx: number, isVisible:
       style={{ transitionDelay: `${idx * 150}ms` }}
     >
       <div className="flex items-baseline">
-        <span className="text-[56px] font-[800] text-[#1e40af] leading-none tracking-tight">
+        <span className="text-[48px] md:text-[56px] font-[700] text-[#111827] leading-none tracking-tight">
           <AnimatedNumber target={stat.target} duration={stat.duration} isVisible={isVisible} onComplete={() => setComplete(true)} />
         </span>
-        <span className={`text-[56px] font-[700] text-[#2563eb] leading-none tracking-tight ${complete ? 'opacity-100' : 'opacity-0'}`}>
+        <span className={`text-[48px] md:text-[56px] font-[700] text-[#2563eb] leading-none tracking-tight ${complete ? 'opacity-100' : 'opacity-0'}`}>
           {stat.suffix}
         </span>
       </div>
-      <span className="text-[12px] font-[600] tracking-[0.08em] uppercase text-[#6b7280] mt-[8px] text-center">
+      <span className="text-[12px] font-[600] tracking-[0.05em] uppercase text-[#6b7280] mt-[10px] text-center">
         {stat.label}
       </span>
     </div>

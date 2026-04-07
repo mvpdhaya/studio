@@ -32,7 +32,7 @@ export default function Faq() {
   return (
     <section className="py-[100px] bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-[36px] font-[700] text-[#1e3a8a] text-center mb-[48px]">
+        <h2 className="text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[48px] leading-[1.2]">
           Frequently Asked Questions
         </h2>
 
@@ -40,8 +40,8 @@ export default function Faq() {
             <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((item, index) => (
                     <AccordionItem key={index} value={`item-${index}`} className="border-b border-[#e5e7eb]">
-                        <AccordionTrigger className="py-[20px] text-[16px] text-left hover:no-underline font-[600] text-[#1e40af]">{item.question}</AccordionTrigger>
-                        <AccordionContent className="pb-[20px] text-[15px] text-[#374151] leading-[1.8]">
+                        <AccordionTrigger className="py-[24px] text-[17px] md:text-[18px] text-left hover:no-underline font-[600] text-[#111827] leading-[1.4] transition-colors hover:text-[#2563eb]">{item.question}</AccordionTrigger>
+                        <AccordionContent className="pb-[24px] text-[15px] md:text-[16px] text-[#6b7280] leading-[1.65]">
                             {item.answer}
                         </AccordionContent>
                     </AccordionItem>
