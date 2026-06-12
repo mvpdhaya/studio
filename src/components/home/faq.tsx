@@ -31,10 +31,10 @@ const faqItems = [
 
 export default function Faq() {
   return (
-    <section className="py-[100px] bg-white">
+    <section className="py-[60px] md:py-[100px] bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <FadeInSection>
-          <h2 className="text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[48px] leading-[1.2]">
+          <h2 className="text-[28px] sm:text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[36px] md:mb-[48px] leading-[1.2]">
             Frequently Asked Questions
           </h2>
         </FadeInSection>

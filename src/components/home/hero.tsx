@@ -14,7 +14,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="bg-white relative pt-[172px] pb-[60px] min-h-[600px] flex flex-col justify-center overflow-hidden">
+    <section className="bg-white relative pt-[120px] md:pt-[172px] pb-[40px] md:pb-[60px] min-h-[600px] flex flex-col justify-center overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none" />
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none" />
@@ -23,22 +23,22 @@ export default function Hero() {
       <div className="container mx-auto px-4 md:px-6 relative z-10 flex-grow">
         <div className="max-w-4xl mx-auto text-center">
           <FadeInSection delay={0.1}>
-            <div className="inline-flex items-center gap-2 px-[16px] py-[6px] rounded-full bg-[#eff6ff] text-[#1d4ed8] text-[13px] font-medium mb-[24px]">
+            <div className="inline-flex items-center gap-2 px-[16px] py-[6px] rounded-full bg-[#eff6ff] text-[#1d4ed8] text-[12px] sm:text-[13px] font-medium mb-[20px] md:mb-[24px]">
               AI-powered business solutions
             </div>
           </FadeInSection>
 
           <FadeInSection delay={0.2}>
-            <h1 className="text-[42px] md:text-[54px] lg:text-[68px] leading-[1.1] font-[700] text-[#111827] tracking-tight mb-[24px]">
+            <h1 className="text-[30px] sm:text-[42px] md:text-[54px] lg:text-[68px] leading-[1.15] font-[700] text-[#111827] tracking-tight mb-[18px] md:mb-[24px]">
               We automate your ops so your team builds{' '}
               <span className="text-[#2563eb]">what actually matters</span>
             </h1>
 
-            <p className="max-w-[620px] mx-auto text-[18px] md:text-[20px] text-[#6b7280] mb-[40px] leading-[1.6] text-center">
+            <p className="max-w-[620px] mx-auto text-[16px] sm:text-[18px] md:text-[20px] text-[#6b7280] mb-[32px] md:mb-[40px] leading-[1.6] text-center px-2 sm:px-0">
               Axzron builds AI agents, chatbots, and intelligent web & mobile apps that cut manual work and accelerate your growth.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-[64px]">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-[40px] md:mb-[64px] px-4 sm:px-0">
               <Button className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] bg-[#2563eb] text-white hover:bg-[#1d4ed8]" asChild>
                 <Link href="https://calendly.com/axzron-ai/30min" target="_blank" rel="noopener noreferrer">
                   Book a free demo

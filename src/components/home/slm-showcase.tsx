@@ -20,29 +20,29 @@ export default function SlmShowcase() {
   ];
 
   return (
-    <section className="py-[100px] bg-white">
+    <section className="py-[60px] md:py-[100px] bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <FadeInSection>
-          <h2 className="text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[48px] leading-[1.2]">
+          <h2 className="text-[28px] sm:text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[36px] md:mb-[48px] leading-[1.2]">
             Real results for real businesses
           </h2>
         </FadeInSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[16px] md:gap-[24px] max-w-5xl mx-auto">
           {scenarios.map((scenario, index) => (
             <FadeInSection key={index} delay={index * 0.1}>
               <div
-                className="bg-white border rounded-[16px] p-[28px] h-full flex flex-col shadow-sm"
+                className="bg-white border rounded-[16px] p-[20px] md:p-[28px] h-full flex flex-col shadow-sm"
               >
                 <div className="flex items-start justify-between mb-4">
                   <span className="inline-block px-3 py-1 bg-[#eff6ff] text-[#1d4ed8] text-[11px] font-[600] uppercase tracking-wider rounded-full">
                     {scenario.tag}
                   </span>
                 </div>
-                <h3 className="text-[20px] font-bold text-[#111827] mb-[12px] leading-[1.3]">
+                <h3 className="text-[18px] md:text-[20px] font-bold text-[#111827] mb-[10px] md:mb-[12px] leading-[1.3]">
                   {scenario.title}
                 </h3>
-                <p className="text-[15px] text-[#6b7280] leading-[1.65]">
+                <p className="text-[14px] md:text-[15px] text-[#6b7280] leading-[1.65]">
                   {scenario.description}
                 </p>
               </div>

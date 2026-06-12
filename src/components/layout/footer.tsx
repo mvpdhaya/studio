@@ -1,7 +1,9 @@
+"use client";
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Linkedin, Instagram, Mail } from 'lucide-react';
+import { Linkedin, Instagram, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
 
 const XLogo = () => (
   <svg
@@ -25,14 +27,41 @@ const WhatsAppLogo = () => (
   </svg>
 );
 
+function FooterAccordion({ title, children }: { title: string; children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border-b border-slate-100 md:border-none">
+      {/* Mobile toggle header */}
+      <button
+        className="flex w-full items-center justify-between py-4 md:hidden"
+        onClick={() => setOpen((prev) => !prev)}
+        aria-expanded={open}
+      >
+        <span className="text-[15px] font-[600] text-[#111827]">{title}</span>
+        <ChevronDown
+          className={`h-4 w-4 text-[#6b7280] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      {/* Desktop heading — always visible on md+ */}
+      <h4 className="hidden md:block text-[15px] font-[600] text-[#111827] mb-[20px]">{title}</h4>
+
+      {/* Content — always visible on md+, collapsible on mobile */}
+      <div className={`overflow-hidden transition-all duration-300 md:block ${open ? 'max-h-[500px] pb-4' : 'max-h-0 md:max-h-none'}`}>
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-slate-100 pt-[60px] pb-[32px]">
+    <footer className="bg-white border-t border-slate-100 pt-[48px] md:pt-[60px] pb-[32px]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
-          {/* Column 1: Logo & Text */}
-          <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-8 lg:gap-12 mb-6 md:mb-12">
+          {/* Column 1: Logo & Text — always visible, no accordion */}
+          <div className="flex flex-col gap-4 pb-6 md:pb-0 border-b border-slate-100 md:border-none mb-2 md:mb-0">
             <Link href="/" className="flex items-center gap-0 font-bold text-lg" prefetch={true}>
               <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
               <span className="text-[#111827]">AXZRON</span>
@@ -43,8 +72,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Services */}
-          <div>
-            <h4 className="text-[15px] font-[600] text-[#111827] mb-[20px]">Services</h4>
+          <FooterAccordion title="Services">
             <ul className="space-y-3 text-[14px] text-[#6b7280]">
               <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Automation</Link></li>
               <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">AI Agents</Link></li>
@@ -53,25 +81,23 @@ export default function Footer() {
               <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Data Intelligence</Link></li>
               <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">API Integration</Link></li>
             </ul>
-          </div>
+          </FooterAccordion>
 
           {/* Column 3: Company */}
-          <div>
-            <h4 className="text-[15px] font-[600] text-[#111827] mb-[20px]">Company</h4>
+          <FooterAccordion title="Company">
             <ul className="space-y-3 text-[14px] text-[#6b7280]">
               <li><Link href="/#how-it-works" className="hover:text-[#2563eb] transition-colors">Our Process</Link></li>
               <li><Link href="/#industries" className="hover:text-[#2563eb] transition-colors">Industries</Link></li>
               <li><Link href="/#faq" className="hover:text-[#2563eb] transition-colors">FAQ</Link></li>
               <li><Link href="#" className="hover:text-[#2563eb] transition-colors">Careers</Link></li>
             </ul>
-          </div>
+          </FooterAccordion>
 
           {/* Column 4: Contact */}
-          <div>
-            <h4 className="text-[15px] font-[600] text-[#111827] mb-[20px]">Contact</h4>
+          <FooterAccordion title="Contact">
             <ul className="space-y-3 text-[14px] text-[#6b7280] mb-6">
               <li><a href="mailto:axzron.ai@gmail.com" className="hover:text-[#2563eb] transition-colors">axzron.ai@gmail.com</a></li>
-              <li><a href="tel:+0123456789" className="hover:text-[#2563eb] transition-colors">+94 781626515</a></li>
+              <li><a href="tel:+94781626515" className="hover:text-[#2563eb] transition-colors">+94 781626515</a></li>
             </ul>
             <div className="flex items-center gap-4 mt-[16px]">
               <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#2563eb] transition-colors">
@@ -84,11 +110,11 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </Link>
             </div>
-          </div>
+          </FooterAccordion>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-100 mt-[48px] pt-[32px] pb-[8px] text-center">
+        <div className="border-t border-slate-100 mt-[32px] md:mt-[48px] pt-[32px] pb-[8px] text-center">
           <p className="text-[13px] text-[#9ca3af]">
             © {new Date().getFullYear()} Axzron. All rights reserved.
           </p>

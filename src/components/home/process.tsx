@@ -74,24 +74,24 @@ export default function Process() {
 
         <div id="industries">
           <FadeInSection>
-            <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="max-w-3xl mx-auto text-center mb-10 md:mb-16">
               <span className="text-[#2563eb] font-[600] text-[13px] uppercase tracking-wider mb-2 block">Industries</span>
-              <h2 className="text-[32px] md:text-[38px] font-[700] tracking-tight text-[#111827] leading-[1.2]">Industries We Serve</h2>
-              <p className="mt-4 max-w-2xl mx-auto text-[16px] md:text-[18px] text-[#6b7280] leading-[1.6]">
+              <h2 className="text-[28px] sm:text-[32px] md:text-[38px] font-[700] tracking-tight text-[#111827] leading-[1.2]">Industries We Serve</h2>
+              <p className="mt-4 max-w-2xl mx-auto text-[15px] md:text-[18px] text-[#6b7280] leading-[1.6]">
                 We design automation, AI agents, and data-driven solutions tailored for multiple industries.
               </p>
             </div>
           </FadeInSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {industries.map((industry, index) => (
               <FadeInSection key={industry.title} delay={index * 0.1}>
-                <Card className="bg-slate-50 flex flex-col justify-start text-center items-center p-6 border-slate-100 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300 h-full">
+                <Card className="bg-slate-50 flex flex-col justify-start text-center items-center p-4 md:p-6 border-slate-100 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300 h-full">
                   <CardHeader className="items-center pb-4 text-center">
                     <div className="bg-blue-100 p-3 rounded-full mb-3 text-blue-600">
                       <industry.icon className="h-6 w-6" />
                     </div>
-                    <CardTitle className="text-[20px] md:text-[22px] font-[700] text-[#111827] leading-[1.3]">{industry.title}</CardTitle>
+                    <CardTitle className="text-[18px] md:text-[22px] font-[700] text-[#111827] leading-[1.3]">{industry.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <p className="text-[15px] text-[#6b7280] leading-[1.65]">{industry.description}</p>
