@@ -1,3 +1,4 @@
+import FadeInSection from "@/components/ui/fade-in-section";
 import {
   Accordion,
   AccordionContent,
@@ -32,11 +33,14 @@ export default function Faq() {
   return (
     <section className="py-[100px] bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[48px] leading-[1.2]">
-          Frequently Asked Questions
-        </h2>
+        <FadeInSection>
+          <h2 className="text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[48px] leading-[1.2]">
+            Frequently Asked Questions
+          </h2>
+        </FadeInSection>
 
         <div className="max-w-3xl mx-auto">
+          <FadeInSection delay={0.2}>
             <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((item, index) => (
                     <AccordionItem key={index} value={`item-${index}`} className="border-b border-[#e5e7eb]">
@@ -47,6 +51,7 @@ export default function Faq() {
                     </AccordionItem>
                 ))}
             </Accordion>
+          </FadeInSection>
         </div>
       </div>
     </section>

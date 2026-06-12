@@ -33,9 +33,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Column 1: Logo & Text */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2 font-[800] text-xl">
-              <Image src="/logo.png?v=2" alt="AXZRON" width={32} height={32} className="h-8 w-8 text-[#2563eb] rounded-full object-contain" quality={100} />
-              <span className="text-[#1e40af]">AXZRON</span>
+            <Link href="/" className="flex items-center gap-0 font-bold text-lg" prefetch={true}>
+              <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
+              <span className="text-[#111827]">AXZRON</span>
             </Link>
             <p className="text-[14px] text-[#4b5563] mt-2 leading-[1.7]">
               AI, Web & Mobile solutions built for your business

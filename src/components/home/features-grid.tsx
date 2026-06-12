@@ -1,5 +1,6 @@
 import { Zap, Bot, Globe, Smartphone, Database, Blocks } from "lucide-react";
 import Link from "next/link";
+import FadeInSection from "@/components/ui/fade-in-section";
 
 const services = [
   {
@@ -44,40 +45,45 @@ export default function FeaturesGrid() {
   return (
     <section id="features" className="py-[100px] bg-[#f0f4ff]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <span className="text-[#2563eb] font-[600] text-[13px] uppercase tracking-wider mb-2 block text-center">Expertise</span>
-          <h2 className="text-[32px] md:text-[38px] font-[700] text-[#111827] leading-[1.2]">
-            Our Services
-          </h2>
-        </div>
+        <FadeInSection>
+          <div className="text-center mb-16">
+            <span className="text-[#2563eb] font-[600] text-[13px] uppercase tracking-wider mb-2 block text-center">Expertise</span>
+            <h2 className="text-[32px] md:text-[38px] font-[700] text-[#111827] leading-[1.2]">
+              Our Services
+            </h2>
+          </div>
+        </FadeInSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] max-w-5xl mx-auto mb-10">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white border-none rounded-[16px] p-[32px] shadow-sm hover:shadow-md hover:-translate-y-[4px] transition-all duration-200 flex flex-col items-start"
-            >
-              <div className="w-[56px] h-[56px] bg-[#eff6ff] rounded-full flex items-center justify-center text-[#2563eb] flex-shrink-0">
-                <service.icon size={24} className="text-[#2563eb]" />
+            <FadeInSection key={index} delay={index * 0.1}>
+              <div
+                className="bg-white border-none rounded-[16px] p-[32px] h-full shadow-sm hover:shadow-md hover:-translate-y-[4px] transition-all duration-200 flex flex-col items-start"
+              >
+                <div className="w-[56px] h-[56px] bg-[#eff6ff] rounded-full flex items-center justify-center text-[#2563eb] flex-shrink-0">
+                  <service.icon size={24} className="text-[#2563eb]" />
+                </div>
+                
+                <div className="mt-[20px]">
+                  <h3 className="text-[20px] md:text-[22px] font-[700] text-[#111827] mb-[12px] leading-[1.3]">
+                    {service.title}
+                  </h3>
+                  <p className="text-[15px] text-[#6b7280] leading-[1.65]">
+                     {service.description}
+                  </p>
+                </div>
               </div>
-              
-              <div className="mt-[20px]">
-                <h3 className="text-[20px] md:text-[22px] font-[700] text-[#111827] mb-[12px] leading-[1.3]">
-                  {service.title}
-                </h3>
-                <p className="text-[15px] text-[#6b7280] leading-[1.65]">
-                   {service.description}
-                </p>
-              </div>
-            </div>
+            </FadeInSection>
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <Link href="#contact" className="inline-block text-[#2563eb] text-[15px] font-[600] hover:underline">
-            View all 12 services →
-          </Link>
-        </div>
+        <FadeInSection delay={0.4}>
+          <div className="text-center mt-8">
+            <Link href="#contact" className="inline-block text-[#2563eb] text-[15px] font-[600] hover:underline">
+              View all 12 services →
+            </Link>
+          </div>
+        </FadeInSection>
       </div>
     </section>
   );

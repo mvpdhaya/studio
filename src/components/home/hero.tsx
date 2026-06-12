@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Bot, Brain, Globe, Smartphone, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import StatsBar from './stats-bar';
+import FadeInSection from '@/components/ui/fade-in-section';
 
 export default function Hero() {
   const stats = [
@@ -21,31 +22,35 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 flex-grow">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-[16px] py-[6px] rounded-full bg-[#eff6ff] text-[#1d4ed8] text-[13px] font-medium mb-[24px]">
-            AI-powered business solutions
-          </div>
+          <FadeInSection delay={0.1}>
+            <div className="inline-flex items-center gap-2 px-[16px] py-[6px] rounded-full bg-[#eff6ff] text-[#1d4ed8] text-[13px] font-medium mb-[24px]">
+              AI-powered business solutions
+            </div>
+          </FadeInSection>
 
-          <h1 className="text-[42px] md:text-[54px] lg:text-[68px] leading-[1.1] font-[700] text-[#111827] tracking-tight mb-[24px]">
-            We automate your ops so your team builds{' '}
-            <span className="text-[#2563eb]">what actually matters</span>
-          </h1>
+          <FadeInSection delay={0.2}>
+            <h1 className="text-[42px] md:text-[54px] lg:text-[68px] leading-[1.1] font-[700] text-[#111827] tracking-tight mb-[24px]">
+              We automate your ops so your team builds{' '}
+              <span className="text-[#2563eb]">what actually matters</span>
+            </h1>
 
-          <p className="max-w-[620px] mx-auto text-[18px] md:text-[20px] text-[#6b7280] mb-[40px] leading-[1.6] text-center">
-            Axzron builds AI agents, chatbots, and intelligent web & mobile apps that cut manual work and accelerate your growth.
-          </p>
+            <p className="max-w-[620px] mx-auto text-[18px] md:text-[20px] text-[#6b7280] mb-[40px] leading-[1.6] text-center">
+              Axzron builds AI agents, chatbots, and intelligent web & mobile apps that cut manual work and accelerate your growth.
+            </p>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-[64px]">
-            <Button className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] bg-[#2563eb] text-white hover:bg-[#1d4ed8]" asChild>
-              <Link href="https://calendly.com/axzron-ai/30min" target="_blank" rel="noopener noreferrer">
-                Book a free demo
-              </Link>
-            </Button>
-            <Button variant="outline" className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] border-[1.5px] border-[#2563eb] text-[#2563eb] bg-white hover:bg-[#eff6ff]" asChild>
-              <Link href="#features">
-                See our work
-              </Link>
-            </Button>
-          </div>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-[64px]">
+              <Button className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] bg-[#2563eb] text-white hover:bg-[#1d4ed8]" asChild>
+                <Link href="https://calendly.com/axzron-ai/30min" target="_blank" rel="noopener noreferrer">
+                  Book a free demo
+                </Link>
+              </Button>
+              <Button variant="outline" className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] border-[1.5px] border-[#2563eb] text-[#2563eb] bg-white hover:bg-[#eff6ff]" asChild>
+                <Link href="#features">
+                  See our work
+                </Link>
+              </Button>
+            </div>
+          </FadeInSection>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Search, TestTube2, Rocket, Settings, Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Building, Factory } from "lucide-react";
 import Image from "next/image";
+import FadeInSection from "@/components/ui/fade-in-section";
 
 const processSteps = [
     {
@@ -72,65 +73,76 @@ export default function Process() {
       <div className="container mx-auto px-4 md:px-6">
 
         <div id="industries">
+          <FadeInSection>
             <div className="max-w-3xl mx-auto text-center mb-16">
-                <span className="text-[#2563eb] font-[600] text-[13px] uppercase tracking-wider mb-2 block">Industries</span>
-                <h2 className="text-[32px] md:text-[38px] font-[700] tracking-tight text-[#111827] leading-[1.2]">Industries We Serve</h2>
-                <p className="mt-4 max-w-2xl mx-auto text-[16px] md:text-[18px] text-[#6b7280] leading-[1.6]">
-                    We design automation, AI agents, and data-driven solutions tailored for multiple industries.
-                </p>
+              <span className="text-[#2563eb] font-[600] text-[13px] uppercase tracking-wider mb-2 block">Industries</span>
+              <h2 className="text-[32px] md:text-[38px] font-[700] tracking-tight text-[#111827] leading-[1.2]">Industries We Serve</h2>
+              <p className="mt-4 max-w-2xl mx-auto text-[16px] md:text-[18px] text-[#6b7280] leading-[1.6]">
+                We design automation, AI agents, and data-driven solutions tailored for multiple industries.
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {industries.map((industry) => (
-                    <Card key={industry.title} className="bg-slate-50 flex flex-col justify-start text-center items-center p-6 border-slate-100 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300 min-h-[180px]">
-                        <CardHeader className="items-center pb-4 text-center">
-                            <div className="bg-blue-100 p-3 rounded-full mb-3 text-blue-600">
-                                <industry.icon className="h-6 w-6" />
-                            </div>
-                            <CardTitle className="text-[20px] md:text-[22px] font-[700] text-[#111827] leading-[1.3]">{industry.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                            <p className="text-[15px] text-[#6b7280] leading-[1.65]">{industry.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+          </FadeInSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((industry, index) => (
+              <FadeInSection key={industry.title} delay={index * 0.1}>
+                <Card className="bg-slate-50 flex flex-col justify-start text-center items-center p-6 border-slate-100 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300 h-full">
+                  <CardHeader className="items-center pb-4 text-center">
+                    <div className="bg-blue-100 p-3 rounded-full mb-3 text-blue-600">
+                      <industry.icon className="h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-[20px] md:text-[22px] font-[700] text-[#111827] leading-[1.3]">{industry.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-[15px] text-[#6b7280] leading-[1.65]">{industry.description}</p>
+                  </CardContent>
+                </Card>
+              </FadeInSection>
+            ))}
+          </div>
         </div>
 
         <div id="partnership" className="mt-28 relative">
-            <div className="absolute inset-x-0 -top-14 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+          <div className="absolute inset-x-0 -top-14 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+          <FadeInSection>
             <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">Example Scenario</h3>
-            <div className="space-y-6 max-w-2xl mx-auto">
-                <Card className="p-6 bg-white border-slate-200 shadow-sm relative">
-                    <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white border border-slate-200 rotate-45 border-r-0 border-t-0 hidden sm:block"></div>
-                    <div className="flex items-start gap-4">
-                        <div className="bg-slate-100 rounded-full p-3 flex-shrink-0 flex items-center justify-center text-slate-600">
-                           <Building className="h-6 w-6" />
-                        </div>
-                        <div className="pt-2">
-                           <p className="text-slate-800 italic leading-relaxed">"We need an AI agent to automate invoice extraction and reconciliation."</p>
-                        </div>
-                    </div>
-                </Card>
-                
-                <div className="flex justify-center my-2">
-                    <div className="w-px h-8 bg-slate-300 rounded-full"></div>
+          </FadeInSection>
+          
+          <div className="space-y-6 max-w-2xl mx-auto">
+            <FadeInSection direction="left">
+              <Card className="p-6 bg-white border-slate-200 shadow-sm relative">
+                <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-white border border-slate-200 rotate-45 border-r-0 border-t-0 hidden sm:block"></div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-slate-100 rounded-full p-3 flex-shrink-0 flex items-center justify-center text-slate-600">
+                    <Building className="h-6 w-6" />
+                  </div>
+                  <div className="pt-2">
+                    <p className="text-slate-800 italic leading-relaxed">"We need an AI agent to automate invoice extraction and reconciliation."</p>
+                  </div>
                 </div>
-
-                <Card className="p-6 shadow-md border-0 bg-blue-600 text-white relative">
-                    <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-600 rotate-45 hidden sm:block"></div>
-                    <div className="flex items-start gap-4">
-                         <div className="bg-white rounded-full flex-shrink-0 flex items-center justify-center h-12 w-12 p-1 shadow-sm">
-                            <Image src="/logo.png?v=2" alt="Axzron Logo" width={40} height={40} className="rounded-full" quality={100} />
-                        </div>
-                        <div className="pt-1">
-                           <p className="font-medium leading-relaxed tracking-wide">"Axzron can build a POC, deploy an AI agent, and integrate it with your systems for fast, accurate results."</p>
-                        </div>
-                    </div>
-                </Card>
+              </Card>
+            </FadeInSection>
+            
+            <div className="flex justify-center my-2">
+              <div className="w-px h-8 bg-slate-300 rounded-full"></div>
             </div>
-        </div>
 
+            <FadeInSection direction="right" delay={0.2}>
+              <Card className="p-6 shadow-md border-0 bg-blue-600 text-white relative">
+                <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-blue-600 rotate-45 hidden sm:block"></div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-white rounded-full flex-shrink-0 flex items-center justify-center h-12 w-12 p-1 shadow-sm">
+                    <Image src="/logo.png?v=2" alt="Axzron Logo" width={40} height={40} className="rounded-full" quality={100} />
+                  </div>
+                  <div className="pt-1">
+                    <p className="font-medium leading-relaxed tracking-wide">"Axzron can build a POC, deploy an AI agent, and integrate it with your systems for fast, accurate results."</p>
+                  </div>
+                </div>
+              </Card>
+            </FadeInSection>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
