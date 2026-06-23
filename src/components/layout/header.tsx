@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
 
 export default function Header() {
@@ -29,11 +29,15 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled ? 'bg-background/80 backdrop-blur-sm border-b' : 'bg-transparent'
+        'fixed top-4 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8',
       )}
     >
-      <div className="container mx-auto flex h-[72px] items-center justify-between px-4 md:px-6">
+      <div className={cn(
+        'container mx-auto flex h-[64px] items-center justify-between px-6 rounded-2xl transition-all duration-300',
+        scrolled 
+          ? 'bg-white/70 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]' 
+          : 'bg-white/40 backdrop-blur-md border border-white/10 shadow-sm'
+      )}>
         <Link href="/" className="flex items-center gap-0 font-bold text-lg" prefetch={true}>
           <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
           <span className="text-[#111827]">AXZRON</span>
@@ -57,25 +61,28 @@ export default function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
-                <SheetHeader className="p-6 pb-0">
-                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-0 p-0">
+                <SheetHeader className="sr-only">
+                  <SheetTitle>Mobile Navigation</SheetTitle>
+                  <SheetDescription>Access the services, process, and industry pages.</SheetDescription>
                 </SheetHeader>
-                <div className="flex flex-col items-start p-6">
-                  <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-8" onClick={() => setMobileMenuOpen(false)}>
-                    <Image src="/logo.png?v=2" alt="AXZRON Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
-                    <span style={{ color: '#1a6cff' }}>AXZRON</span>
-                  </Link>
-                  <nav className="flex flex-col items-start gap-8">
+                <div className="flex flex-col h-full bg-white">
+                  <div className="p-8 pb-4">
+                    <Link href="/" className="flex items-center gap-0 font-bold text-lg mb-10" onClick={() => setMobileMenuOpen(false)}>
+                      <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
+                      <span className="text-[#111827]">AXZRON</span>
+                    </Link>
+                  </div>
+                  <nav className="flex flex-col gap-2 px-6">
                     {navLinks.map((link) => (
                       <Link 
                         key={link.href} 
                         href={link.href} 
-                        className="flex flex-col gap-1 group w-full" 
+                        className="flex flex-col gap-1 p-4 rounded-xl hover:bg-slate-50 transition-all group" 
                         onClick={() => setMobileMenuOpen(false)} 
                         prefetch={true}
                       >
-                        <span className="text-lg font-bold text-[#1e40af] group-hover:text-[#2563eb] transition-colors">
+                        <span className="text-[17px] font-bold text-black group-hover:text-[#2563eb] transition-colors">
                           {link.label}
                         </span>
                         <span className="text-sm font-medium text-slate-500 group-hover:text-slate-700 transition-colors">
@@ -84,9 +91,11 @@ export default function Header() {
                       </Link>
                     ))}
                   </nav>
-                  <Button asChild className="mt-8" onClick={() => setMobileMenuOpen(false)}>
-                    <Link href="/#contact" prefetch={true}>Contact Us</Link>
-                  </Button>
+                  <div className="mt-auto p-8 border-t border-slate-100">
+                    <Button asChild className="w-full h-[54px] rounded-xl bg-[#2563eb] text-white hover:bg-[#1d4ed8]" onClick={() => setMobileMenuOpen(false)}>
+                      <Link href="/#contact" prefetch={true}>Get a free demo</Link>
+                    </Button>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
