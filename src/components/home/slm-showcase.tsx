@@ -1,30 +1,16 @@
 import FadeInSection from "@/components/ui/fade-in-section";
 
+import { homePage } from "@/lib/content";
+
 export default function SlmShowcase() {
-  const scenarios = [
-    {
-      title: 'Automating invoice processing',
-      tag: 'Finance & Banking',
-      description: 'A regional finance firm spent 40+ hours weekly on manual invoicing. We deployed an AI workflow that reduced processing time by 80%.',
-    },
-    {
-      title: 'AI support chatbot for e-commerce',
-      tag: 'E-Commerce',
-      description: 'An online retailer struggled with high support ticket volume. Our AI chatbot now handles 70% of queries automatically, 24/7.',
-    },
-    {
-      title: 'Predictive analytics for healthcare',
-      tag: 'Healthcare',
-      description: 'A healthcare provider needed faster patient risk assessment. We built a dashboard that flags high-risk cases in real time.',
-    },
-  ];
+  const scenarios = homePage.scenarios.items;
 
   return (
-    <section className="py-[60px] md:py-[100px] bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <FadeInSection>
           <h2 className="text-[28px] sm:text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[36px] md:mb-[48px] leading-[1.2]">
-            Real results for real businesses
+            {homePage.scenarios.title}
           </h2>
         </FadeInSection>
 
@@ -35,7 +21,7 @@ export default function SlmShowcase() {
                 className="bg-white border rounded-[16px] p-[20px] md:p-[28px] h-full flex flex-col shadow-sm"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <span className="inline-block px-3 py-1 bg-[#eff6ff] text-[#1d4ed8] text-[11px] font-[600] uppercase tracking-wider rounded-full">
+                  <span className="inline-block px-3 py-1 bg-[#f3f4f6] text-[#374151] text-[11px] font-[600] uppercase tracking-wider rounded-full">
                     {scenario.tag}
                   </span>
                 </div>

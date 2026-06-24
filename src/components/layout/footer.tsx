@@ -1,13 +1,14 @@
 "use client";
 
+import { siteConfig, navigation } from '@/lib/content';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Linkedin, Instagram, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { Linkedin, Instagram, Facebook, ChevronDown, Mail, Phone, MapPin } from 'lucide-react';
 
 const XLogo = () => (
   <svg
-    className="h-6 w-6"
+    className="h-5 w-5"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,7 @@ const XLogo = () => (
 
 const WhatsAppLogo = () => (
   <svg
-    className="h-6 w-6"
+    className="h-5 w-5"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -27,97 +28,122 @@ const WhatsAppLogo = () => (
   </svg>
 );
 
-function FooterAccordion({ title, children }: { title: string; children: React.ReactNode }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="border-b border-slate-100 md:border-none">
-      {/* Mobile toggle header */}
-      <button
-        className="flex w-full items-center justify-between py-4 md:hidden"
-        onClick={() => setOpen((prev) => !prev)}
-        aria-expanded={open}
-      >
-        <span className="text-[15px] font-[600] text-[#111827]">{title}</span>
-        <ChevronDown
-          className={`h-4 w-4 text-[#6b7280] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
-        />
-      </button>
-
-      {/* Desktop heading — always visible on md+ */}
-      <h4 className="hidden md:block text-[15px] font-[600] text-[#111827] mb-[20px]">{title}</h4>
-
-      {/* Content — always visible on md+, collapsible on mobile */}
-      <div className={`overflow-hidden transition-all duration-300 md:block ${open ? 'max-h-[500px] pb-4' : 'max-h-0 md:max-h-none'}`}>
-        {children}
-      </div>
-    </div>
-  );
-}
-
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-slate-100 pt-[48px] md:pt-[60px] pb-[32px]">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-8 lg:gap-12 mb-6 md:mb-12">
-          {/* Column 1: Logo & Text — always visible, no accordion */}
-          <div className="flex flex-col gap-4 pb-6 md:pb-0 border-b border-slate-100 md:border-none mb-2 md:mb-0">
-            <Link href="/" className="flex items-center gap-0 font-bold text-lg" prefetch={true}>
-              <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
-              <span className="text-[#111827]">AXZRON</span>
+    <footer className="relative bg-white pt-16 pb-8 overflow-hidden border-t border-slate-100">
+      {/* Gradient Grid Background Look */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.4]" style={{ 
+        backgroundImage: `radial-gradient(circle at 2px 2px, #e5e7eb 1px, transparent 0)`,
+        backgroundSize: '24px 24px',
+        maskImage: 'radial-gradient(ellipse at center, black, transparent 80%)',
+        WebkitMaskImage: 'radial-gradient(ellipse at center, black, transparent 80%)'
+      }}></div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+          {/* Column 1: Brand */}
+          <div className="lg:col-span-4 flex flex-col items-start gap-4">
+            <Link href="/" className="flex items-center gap-2 group">
+              <Image 
+                src="/logo.png?v=2" 
+                alt={`${siteConfig.name} Logo`} 
+                width={36} 
+                height={36} 
+                className="h-9 w-9 rounded-full shadow-sm group-hover:rotate-12 transition-transform duration-300" 
+                quality={100} 
+              />
+              <span className="text-xl font-bold tracking-tight text-[#111827]">{siteConfig.name}</span>
             </Link>
-            <p className="text-[14px] text-[#4b5563] mt-2 leading-[1.7]">
-              AI, Web & Mobile solutions built for your business
+            <p className="text-sm text-[#6b7280] leading-relaxed max-w-xs">
+              {siteConfig.tagline}
             </p>
-          </div>
-
-          {/* Column 2: Services */}
-          <FooterAccordion title="Services">
-            <ul className="space-y-3 text-[14px] text-[#6b7280]">
-              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Automation</Link></li>
-              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">AI Agents</Link></li>
-              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Web Apps</Link></li>
-              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Mobile Apps</Link></li>
-              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">Data Intelligence</Link></li>
-              <li><Link href="#features" className="hover:text-[#2563eb] transition-colors">API Integration</Link></li>
-            </ul>
-          </FooterAccordion>
-
-          {/* Column 3: Company */}
-          <FooterAccordion title="Company">
-            <ul className="space-y-3 text-[14px] text-[#6b7280]">
-              <li><Link href="/#how-it-works" className="hover:text-[#2563eb] transition-colors">Our Process</Link></li>
-              <li><Link href="/#industries" className="hover:text-[#2563eb] transition-colors">Industries</Link></li>
-              <li><Link href="/#faq" className="hover:text-[#2563eb] transition-colors">FAQ</Link></li>
-              <li><Link href="#" className="hover:text-[#2563eb] transition-colors">Careers</Link></li>
-            </ul>
-          </FooterAccordion>
-
-          {/* Column 4: Contact */}
-          <FooterAccordion title="Contact">
-            <ul className="space-y-3 text-[14px] text-[#6b7280] mb-6">
-              <li><a href="mailto:axzron.ai@gmail.com" className="hover:text-[#2563eb] transition-colors">axzron.ai@gmail.com</a></li>
-              <li><a href="tel:+94781626515" className="hover:text-[#2563eb] transition-colors">+94 781626515</a></li>
-            </ul>
-            <div className="flex items-center gap-4 mt-[16px]">
-              <Link href="https://www.linkedin.com/company/axzron/" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#2563eb] transition-colors">
-                <Linkedin className="h-5 w-5" />
+            <div className="flex items-center gap-3 mt-2">
+              <Link href={siteConfig.social.linkedin} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-white transition-all duration-200">
+                <Linkedin className="h-4 w-4" />
               </Link>
-              <Link href="https://x.com/Axzron_ai" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#2563eb] transition-colors">
+              <Link href={siteConfig.social.x} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-white transition-all duration-200">
                 <XLogo />
               </Link>
-              <Link href="https://www.instagram.com/axzron.ai/" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#2563eb] transition-colors">
-                <Instagram className="h-5 w-5" />
+              <Link href={siteConfig.social.instagram} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-white transition-all duration-200">
+                <Instagram className="h-4 w-4" />
+              </Link>
+              <Link href={siteConfig.social.facebook} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-white transition-all duration-200">
+                <Facebook className="h-4 w-4" />
               </Link>
             </div>
-          </FooterAccordion>
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div className="lg:col-span-2">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Services</h4>
+            <ul className="space-y-3">
+              {[
+                { label: 'AI Automation', href: '/services' },
+                { label: 'AI Agents', href: '/services' },
+                { label: 'Web & Mobile Apps', href: '/services' },
+                { label: 'Data Intelligence', href: '/services' },
+                { label: 'API Integrations', href: '/services' },
+                { label: 'AI+IoT Solutions', href: '/services' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors">{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Company */}
+          <div className="lg:col-span-2">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Company</h4>
+            <ul className="space-y-3">
+              {[
+                { label: 'About Us', href: '/about' },
+                { label: 'Our Process', href: '/about#our-process' },
+                { label: 'Industries', href: '/services#industries' },
+                { label: 'FAQ', href: '/about#faq' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors">{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact */}
+          <div className="lg:col-span-4 rounded-2xl bg-slate-50/50 border border-slate-100 p-6">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Get in Touch</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Mail className="h-4 w-4 text-[#111827] mt-[2px]" />
+                <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors font-medium">
+                  {siteConfig.contact.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="h-4 w-4 text-[#111827] mt-[2px]" />
+                <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors font-medium">
+                  {siteConfig.contact.phone}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="h-4 w-4 text-[#111827] mt-[2px]" />
+                <span className="text-sm text-[#6b7280]">
+                  Remote First · Solutions Worldwide
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-slate-100 mt-[32px] md:mt-[48px] pt-[32px] pb-[8px] text-center">
-          <p className="text-[13px] text-[#9ca3af]">
-            © {new Date().getFullYear()} Axzron. All rights reserved.
+        {/* Bottom bar */}
+        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <p className="text-xs text-[#9ca3af] font-medium">
+            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="text-xs text-[#9ca3af] hover:text-[#111827] transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-xs text-[#9ca3af] hover:text-[#111827] transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

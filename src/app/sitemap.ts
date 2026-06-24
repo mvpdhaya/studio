@@ -1,8 +1,7 @@
 export default function sitemap() {
-    return [
-        {
-            url: 'https://axzron.com',
-            lastModified: new Date(),
-        },
-    ];
+    const routes = ['', '/services', '/about', '/contact'].map((route) => ({
+        url: `https://axzron.com${route}`,
+        lastModified: new Date(),
+    }));
+    return routes;
 }

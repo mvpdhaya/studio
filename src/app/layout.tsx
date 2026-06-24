@@ -3,6 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { Inter, Poppins, Playfair_Display } from 'next/font/google';
 
+import { siteConfig } from '@/lib/content';
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -20,8 +22,11 @@ const playfair = Playfair_Display({
 const satoshi = inter; 
 
 export const metadata: Metadata = {
-  title: 'Axzron',
-  description: 'Automate smarter, faster, seamlessly with AI workflows, agents & chatbots.',
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.tagline,
   icons: {
     icon: [
       { url: '/icon.png?v=3', sizes: 'any', type: 'image/png' },

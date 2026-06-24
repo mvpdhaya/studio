@@ -1,13 +1,16 @@
-
 import Header from '@/components/layout/header';
 import Hero from '@/components/home/hero';
 import SlmShowcase from '@/components/home/slm-showcase';
-import HowItWorks from '@/components/home/how-it-works';
 import FeaturesGrid from '@/components/home/features-grid';
-import Process from '@/components/home/process';
-import Faq from '@/components/home/faq';
 import Cta from '@/components/home/cta';
 import Footer from '@/components/layout/footer';
+import { homePage } from '@/lib/content';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: homePage.seo.title,
+  description: homePage.seo.description,
+};
 
 export default function Home() {
   return (
@@ -16,10 +19,7 @@ export default function Home() {
       <main>
         <Hero />
         <SlmShowcase />
-        <HowItWorks />
-        <FeaturesGrid />
-        <Process />
-        <Faq />
+        <FeaturesGrid limit={3} />
         <Cta />
       </main>
       <Footer />

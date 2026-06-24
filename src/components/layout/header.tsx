@@ -4,9 +4,11 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Menu } from 'lucide-react';
+import { Menu, Home, Briefcase, Info, Mail, ArrowRight } from 'lucide-react';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
+
+import { siteConfig, navigation } from '@/lib/content';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,9 +23,10 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '/#features', label: 'Our Services', description: 'Our Services' },
-    { href: '/#how-it-works', label: 'Our Process', description: 'From tasks to tangible results' },
-    { href: '/#industries', label: 'Industries We Serve', description: 'Industries We Serve' },
+    { ...navigation.links[0], icon: Home },
+    { ...navigation.links[1], icon: Briefcase },
+    { ...navigation.links[2], icon: Info },
+    { ...navigation.links[3], icon: Mail },
   ];
 
   return (
@@ -33,73 +36,95 @@ export default function Header() {
       )}
     >
       <div className={cn(
-        'container mx-auto flex h-[64px] items-center justify-between px-6 rounded-2xl transition-all duration-300',
-        scrolled 
-          ? 'bg-white/70 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]' 
+        'max-w-3xl mx-auto flex h-[64px] items-center justify-center gap-8 px-6 rounded-2xl transition-all duration-300',
+        scrolled
+          ? 'bg-white/70 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]'
           : 'bg-white/40 backdrop-blur-md border border-white/10 shadow-sm'
       )}>
-        <Link href="/" className="flex items-center gap-0 font-bold text-lg" prefetch={true}>
-          <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
-          <span className="text-[#111827]">AXZRON</span>
+        {/* Brand Group */}
+        <Link href="/" className="flex items-center gap-0 font-bold text-lg shrink-0" prefetch={true}>
+          <Image src="/logo.png?v=2" alt={`${siteConfig.name} Logo`} width={32} height={32} className="h-8 w-8 text-primary rounded-full transition-transform hover:rotate-12" quality={100} />
+          <span className="text-[#111827] text-[16px] tracking-tight">{siteConfig.name}</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6">
+
+        {/* Navigation Links */}
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-[14px] md:text-[15px] font-[500] text-[#374151] hover:text-[#2563eb] transition-colors" prefetch={true}>
+            <Link key={link.href} href={link.href} className="text-[14px] md:text-[15px] font-[500] text-[#374151] hover:text-[#2563eb] transition-colors shrink-0" prefetch={true}>
               {link.label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-4">
-          <Button asChild className="hidden sm:inline-flex h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] bg-[#2563eb] text-white hover:bg-[#1d4ed8]">
-            <Link href="/#contact" prefetch={true}>Get a free demo</Link>
-          </Button>
-          <div className="md:hidden">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle Menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-0 p-0">
-                <SheetHeader className="sr-only">
-                  <SheetTitle>Mobile Navigation</SheetTitle>
-                  <SheetDescription>Access the services, process, and industry pages.</SheetDescription>
-                </SheetHeader>
-                <div className="flex flex-col h-full bg-white">
-                  <div className="p-8 pb-4">
-                    <Link href="/" className="flex items-center gap-0 font-bold text-lg mb-10" onClick={() => setMobileMenuOpen(false)}>
-                      <Image src="/logo.png?v=2" alt="AXZRON Logo" width={40} height={40} className="h-10 w-10 text-primary rounded-full" quality={100} />
-                      <span className="text-[#111827]">AXZRON</span>
-                    </Link>
-                  </div>
-                  <nav className="flex flex-col gap-2 px-6">
-                    {navLinks.map((link) => (
-                      <Link 
-                        key={link.href} 
-                        href={link.href} 
-                        className="flex flex-col gap-1 p-4 rounded-xl hover:bg-slate-50 transition-all group" 
-                        onClick={() => setMobileMenuOpen(false)} 
+
+        {/* CTA Button */}
+        <Button asChild className="hidden sm:inline-flex h-[40px] px-5 text-[14px] font-[600] rounded-lg bg-[#2563eb] text-white hover:bg-[#1d4ed8] shrink-0">
+          <Link href="/contact" prefetch={true}>{navigation.cta}</Link>
+        </Button>
+
+        {/* Mobile Menu Trigger */}
+        <div className="md:hidden ml-auto">
+          <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-[#111827] h-10 w-10 rounded-xl hover:bg-slate-100 transition-all active:scale-95">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-0 p-0">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Mobile Navigation</SheetTitle>
+                <SheetDescription>Access the services, process, and industry pages.</SheetDescription>
+              </SheetHeader>
+              <div className="flex flex-col h-full bg-white/95 backdrop-blur-xl">
+                <div className="p-8 pb-4">
+                  <Link href="/" className="flex items-center gap-2 font-bold text-lg mb-8" onClick={() => setMobileMenuOpen(false)}>
+                    <div className="bg-primary/10 p-1 rounded-lg">
+                      <Image src="/logo.png?v=2" alt={`${siteConfig.name} Logo`} width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
+                    </div>
+                    <span className="text-[#111827] text-xl tracking-tight">{siteConfig.name}</span>
+                  </Link>
+                </div>
+
+                <div className="px-6 mb-4">
+                  <p className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mb-4 px-4">Menu</p>
+                  <nav className="flex flex-col gap-1">
+                    {navLinks.map((link, index) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all group relative overflow-hidden animate-in slide-in-from-right-4 duration-300 fill-mode-forwards"
+                        style={{ animationDelay: `${index * 50}ms` }}
+                        onClick={() => setMobileMenuOpen(false)}
                         prefetch={true}
                       >
-                        <span className="text-[17px] font-bold text-black group-hover:text-[#2563eb] transition-colors">
-                          {link.label}
-                        </span>
-                        <span className="text-sm font-medium text-slate-500 group-hover:text-slate-700 transition-colors">
-                          {link.description}
-                        </span>
+                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#2563eb]/10 transition-colors">
+                          <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#2563eb] transition-colors" />
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#2563eb] transition-colors">
+                            {link.label}
+                          </span>
+                        </div>
+                        <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-[#2563eb] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
                       </Link>
                     ))}
                   </nav>
-                  <div className="mt-auto p-8 border-t border-slate-100">
-                    <Button asChild className="w-full h-[54px] rounded-xl bg-[#2563eb] text-white hover:bg-[#1d4ed8]" onClick={() => setMobileMenuOpen(false)}>
-                      <Link href="/#contact" prefetch={true}>Get a free demo</Link>
-                    </Button>
-                  </div>
                 </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+
+                <div className="mt-auto p-8 bg-slate-50/50 border-t border-slate-100">
+                  <Button asChild className="w-full h-[56px] rounded-2xl bg-[#2563eb] text-white hover:bg-[#1d4ed8] shadow-lg shadow-blue-500/20 group text-[16px] font-semibold" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/contact" className="flex items-center justify-center gap-2" prefetch={true}>
+                      {navigation.cta}
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                  <p className="text-center text-[13px] text-slate-400 mt-4 font-medium">
+                    Available for new projects
+                  </p>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

@@ -60,13 +60,6 @@
 }
 
 @layer utilities {
-  .text-gradient-blue {
-    background: linear-gradient(135deg, #1d4ed8, #2563eb, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   .glow-blue {
     box-shadow: 0 0 40px rgba(37, 99, 235, 0.15);
   }
@@ -77,6 +70,30 @@
   .card-hover:hover {
     @apply -translate-y-1 bg-white border-blue-100;
     box-shadow: 0 12px 40px -12px rgba(37, 99, 235, 0.15);
+  }
+
+  .section-dark {
+    @apply bg-[#111827] text-white;
+  }
+
+  .section-dark h1,
+  .section-dark h2,
+  .section-dark h3,
+  .section-dark .section-title {
+    @apply text-white;
+  }
+
+  .section-dark p,
+  .section-dark .section-description {
+    @apply text-[#9ca3af];
+  }
+
+  .no-blue-text {
+    @apply text-[#111827] !important;
+  }
+  
+  .no-blue-text-muted {
+    @apply text-[#6b7280] !important;
   }
 
   .section-light {

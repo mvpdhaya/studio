@@ -5,48 +5,63 @@ import Link from 'next/link';
 import StatsBar from './stats-bar';
 import FadeInSection from '@/components/ui/fade-in-section';
 
+import { homePage, siteConfig } from '@/lib/content';
+
 export default function Hero() {
-  const stats = [
-    { value: "50", suffix: "+", label: "Projects delivered" },
-    { value: "98", suffix: "%", label: "Client satisfaction" },
-    { value: "3", suffix: "x", label: "Faster deployment" },
-    { value: "24", suffix: "/7", label: "Support available" },
-  ];
+  const { hero } = homePage;
 
   return (
     <section className="bg-white relative pt-[120px] md:pt-[172px] pb-[40px] md:pb-[60px] min-h-[600px] flex flex-col justify-center overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none" />
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/4 left-0 -translate-x-1/4 w-[500px] h-[500px] bg-cyan-100/40 rounded-full blur-[100px] pointer-events-none" />
+      {/* Modern Grid Line Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.6] z-0" style={{ 
+        backgroundImage: `
+          linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+          linear-gradient(to bottom, #f1f5f9 1px, transparent 1px)
+        `,
+        backgroundSize: '40px 40px',
+        maskImage: 'radial-gradient(ellipse at center, black, transparent 85%)',
+        WebkitMaskImage: 'radial-gradient(ellipse at center, black, transparent 85%)'
+      }}></div>
+      
+      {/* Subtle secondary grid for refinement */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.2] z-0" style={{ 
+        backgroundImage: `
+          linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+          linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
+        `,
+        backgroundSize: '200px 200px',
+      }}></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 flex-grow">
         <div className="max-w-4xl mx-auto text-center">
           <FadeInSection delay={0.1}>
-            <div className="inline-flex items-center gap-2 px-[16px] py-[6px] rounded-full bg-[#eff6ff] text-[#1d4ed8] text-[12px] sm:text-[13px] font-medium mb-[20px] md:mb-[24px]">
-              AI-powered business solutions
+            <div className="inline-flex items-center gap-2 px-[16px] py-[6px] rounded-full bg-[#f3f4f6] text-[#111827] text-[12px] sm:text-[13px] font-medium mb-[20px] md:mb-[24px]">
+              {hero.badge}
             </div>
           </FadeInSection>
 
           <FadeInSection delay={0.2}>
             <h1 className="text-[30px] sm:text-[42px] md:text-[54px] lg:text-[68px] leading-[1.15] font-[700] text-[#111827] tracking-tight mb-[18px] md:mb-[24px]">
-              We automate your ops so your team builds{' '}
-              <span className="text-[#2563eb]">what actually matters</span>
+              {hero.title.split('what actually matters')[0]}
+              <span className="relative inline-block">
+                what actually matters
+                <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#f3f4f6] -z-10"></span>
+              </span>
             </h1>
 
             <p className="max-w-[620px] mx-auto text-[16px] sm:text-[18px] md:text-[20px] text-[#6b7280] mb-[32px] md:mb-[40px] leading-[1.6] text-center px-2 sm:px-0">
-              Axzron builds AI agents, chatbots, and intelligent web & mobile apps that cut manual work and accelerate your growth.
+              {hero.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-[40px] md:mb-[64px] px-4 sm:px-0">
               <Button className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] bg-[#2563eb] text-white hover:bg-[#1d4ed8]" asChild>
-                <Link href="https://calendly.com/axzron-ai/30min" target="_blank" rel="noopener noreferrer">
-                  Book a free demo
+                <Link href={siteConfig.calendly} target="_blank" rel="noopener noreferrer">
+                  {hero.primaryCta}
                 </Link>
               </Button>
               <Button variant="outline" className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] border-[1.5px] border-[#2563eb] text-[#2563eb] bg-white hover:bg-[#eff6ff]" asChild>
-                <Link href="#features">
-                  See our work
+                <Link href="/services">
+                  {hero.secondaryCta}
                 </Link>
               </Button>
             </div>
