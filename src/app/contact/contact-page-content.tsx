@@ -54,7 +54,7 @@ export default function ContactPageContent() {
                       href={method.href} 
                       className="flex flex-col items-center p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-white hover:shadow-lg transition-all duration-300 group"
                     >
-                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#111827] shadow-sm mb-4 group-hover:bg-[#111827] group-hover:text-white transition-colors">
+                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#111827] shadow-sm mb-4 group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-colors">
                         <method.icon className="h-5 w-5" />
                       </div>
                       <span className="text-xs font-semibold text-[#6b7280] uppercase tracking-wider mb-1">{method.label}</span>
