@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const testimonialsRow1 = [
   {
-    quote: "HexaCore transformed our legacy systems into a modern cloud architecture. Their expertise is unmatched.",
+    quote: "axzron transformed our legacy systems into a modern cloud architecture. Their expertise is unmatched.",
     author: "Daniel Wu",
     title: "CTO, Horizon FinTech",
   },
@@ -20,7 +20,7 @@ const testimonialsRow1 = [
     title: "CEO, BrightPath Logistics",
   },
   {
-    quote: "Transparent, professional, and result-oriented. HexaCore is our go-to for all IT modernization.",
+    quote: "Transparent, professional, and result-oriented. axzron is our go-to for all IT modernization.",
     author: "Sarah Jenkins",
     title: "VP of Engineering, CloudStream",
   },
@@ -28,12 +28,12 @@ const testimonialsRow1 = [
 
 const testimonialsRow2 = [
   {
-    quote: "The ROI we've seen since implementing HexaCore's data solutions has been phenomenal.",
+    quote: "The ROI we've seen since implementing axzron's data solutions has been phenomenal.",
     author: "James Chen",
     title: "Director of Ops, TechFlow",
   },
   {
-    quote: "Cybersecurity was a major concern for us until we partnered with HexaCore. Now we're future-proof.",
+    quote: "Cybersecurity was a major concern for us until we partnered with axzron. Now we're future-proof.",
     author: "Elena Rodriguez",
     title: "CISO, GlobalSecure",
   },

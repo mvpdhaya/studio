@@ -59,7 +59,7 @@ const StatCell = ({ stat, idx, isVisible }: { stat: any, idx: number, isVisible:
         <span className="text-[48px] md:text-[56px] font-[700] text-[#111827] leading-none tracking-tight">
           <AnimatedNumber target={stat.target} duration={stat.duration} isVisible={isVisible} onComplete={() => setComplete(true)} />
         </span>
-        <span className={`text-[48px] md:text-[56px] font-[700] text-[#2563eb] leading-none tracking-tight ${complete ? 'opacity-100' : 'opacity-0'}`}>
+        <span className={`text-[48px] md:text-[56px] font-[700] text-[#111827] leading-none tracking-tight ${complete ? 'opacity-100' : 'opacity-0'}`}>
           {stat.suffix}
         </span>
       </div>
@@ -83,7 +83,7 @@ export default function StatsBar() {
 
   const badges = [
     { icon: ShieldCheck, color: "text-[#059669]", text: "On-premise & cloud ready" },
-    { icon: TrendingUp, color: "text-[#2563eb]", text: "Proven ROI across industries" },
+    { icon: TrendingUp, color: "text-[#111827]", text: "Proven ROI across industries" },
     { icon: Zap, color: "text-[#d97706]", text: "Fast delivery, high quality" },
   ];
 

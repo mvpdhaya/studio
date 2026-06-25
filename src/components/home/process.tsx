@@ -49,7 +49,7 @@ export default function Process({ hideHeader }: ProcessProps) {
                     {/* Circle Container */}
                     <div className="relative mb-8">
                       <div className="w-20 h-20 rounded-3xl bg-white border border-slate-100 flex items-center justify-center text-[#111827] shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 group-hover:rotate-6 z-10 relative">
-                        <Icon className="h-9 w-9 text-[#111827] group-hover:text-[#2563eb] transition-colors duration-300" />
+                        <Icon className="h-9 w-9 text-[#111827] group-hover:text-black transition-colors duration-300" />
                       </div>
                       
                       {/* Step Number Badge */}
@@ -58,10 +58,10 @@ export default function Process({ hideHeader }: ProcessProps) {
                       </div>
 
                       {/* Animated Glow Effect */}
-                      <div className="absolute inset-0 bg-[#2563eb] opacity-0 blur-2xl rounded-full transition-opacity duration-500 group-hover:opacity-20 -z-10"></div>
+                      <div className="absolute inset-0 bg-[#111827] opacity-0 blur-2xl rounded-full transition-opacity duration-500 group-hover:opacity-10 -z-10"></div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#111827] mb-4 tracking-tight group-hover:text-[#2563eb] transition-colors">
+                    <h3 className="text-xl font-bold text-[#111827] mb-4 tracking-tight group-hover:text-black transition-colors">
                       {step.title}
                     </h3>
                     <p className="text-[#64748b] text-[15px] leading-relaxed max-w-[220px]">

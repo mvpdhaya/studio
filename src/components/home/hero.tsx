@@ -53,13 +53,13 @@ export default function Hero() {
               {hero.subtitle}
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-[40px] md:mb-[64px] px-4 sm:px-0">
-              <Button className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] bg-[#2563eb] text-white hover:bg-[#1d4ed8]" asChild>
+            <div className="flex flex-row justify-center items-center gap-2 sm:gap-4 mb-[40px] md:mb-[64px] px-2 sm:px-0">
+              <Button className="flex-1 sm:flex-none sm:w-auto h-[44px] sm:h-[48px] px-2 sm:px-[28px] text-[12px] sm:text-[15px] font-[600] rounded-[8px] bg-[#111827] text-white hover:bg-slate-800 shadow-lg shadow-slate-200/20 transition-all duration-300" asChild>
                 <Link href={siteConfig.calendly} target="_blank" rel="noopener noreferrer">
                   {hero.primaryCta}
                 </Link>
               </Button>
-              <Button variant="outline" className="w-full sm:w-auto h-[48px] px-[28px] text-[15px] font-[600] rounded-[8px] border-[1.5px] border-[#2563eb] text-[#2563eb] bg-white hover:bg-[#eff6ff]" asChild>
+              <Button variant="outline" className="flex-1 sm:flex-none sm:w-auto h-[44px] sm:h-[48px] px-2 sm:px-[28px] text-[12px] sm:text-[15px] font-[600] rounded-[8px] border-[1.5px] border-[#111827] text-[#111827] bg-white hover:bg-slate-50" asChild>
                 <Link href="/services">
                   {hero.secondaryCta}
                 </Link>

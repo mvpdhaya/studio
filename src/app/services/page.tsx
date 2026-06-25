@@ -3,13 +3,14 @@ import Footer from '@/components/layout/footer';
 import FeaturesGrid from '@/components/home/features-grid';
 import Industries from '@/components/home/industries';
 import Cta from '@/components/home/cta';
+import { servicesMetadata } from '@/lib/metadata';
 import { servicesPage } from '@/lib/content';
 import { Metadata } from 'next';
 import FadeInSection from '@/components/ui/fade-in-section';
 
 export const metadata: Metadata = {
-  title: servicesPage.seo.title,
-  description: servicesPage.seo.description,
+  title: servicesMetadata.title,
+  description: servicesMetadata.description,
 };
 
 export default function ServicesPage() {

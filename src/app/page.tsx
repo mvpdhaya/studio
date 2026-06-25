@@ -4,12 +4,13 @@ import SlmShowcase from '@/components/home/slm-showcase';
 import FeaturesGrid from '@/components/home/features-grid';
 import Cta from '@/components/home/cta';
 import Footer from '@/components/layout/footer';
+import { homeMetadata } from '@/lib/metadata';
 import { homePage } from '@/lib/content';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: homePage.seo.title,
-  description: homePage.seo.description,
+  title: homeMetadata.title,
+  description: homeMetadata.description,
 };
 
 export default function Home() {

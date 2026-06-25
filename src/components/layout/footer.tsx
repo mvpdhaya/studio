@@ -49,7 +49,7 @@ export default function Footer() {
                 alt={`${siteConfig.name} Logo`} 
                 width={36} 
                 height={36} 
-                className="h-9 w-9 rounded-full shadow-sm group-hover:rotate-12 transition-transform duration-300" 
+                className="h-9 w-9 rounded-lg shadow-sm group-hover:rotate-12 transition-transform duration-300" 
                 quality={100} 
               />
               <span className="text-xl font-bold tracking-tight text-[#111827]">{siteConfig.name}</span>
@@ -73,37 +73,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div className="lg:col-span-2">
-            <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Services</h4>
+          {/* Column 2: Navigation */}
+          <div className="lg:col-span-4">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Navigation</h4>
             <ul className="space-y-3">
-              {[
-                { label: 'AI Automation', href: '/services' },
-                { label: 'AI Agents', href: '/services' },
-                { label: 'Web & Mobile Apps', href: '/services' },
-                { label: 'Data Intelligence', href: '/services' },
-                { label: 'API Integrations', href: '/services' },
-                { label: 'AI+IoT Solutions', href: '/services' }
-              ].map((item) => (
+              {navigation.links.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors">{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Company */}
-          <div className="lg:col-span-2">
-            <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Company</h4>
-            <ul className="space-y-3">
-              {[
-                { label: 'About Us', href: '/about' },
-                { label: 'Our Process', href: '/about#our-process' },
-                { label: 'Industries', href: '/services#industries' },
-                { label: 'FAQ', href: '/about#faq' }
-              ].map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors">{item.label}</Link>
+                  <Link href={item.href} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors font-medium">{item.label}</Link>
                 </li>
               ))}
             </ul>

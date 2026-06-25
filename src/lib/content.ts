@@ -5,6 +5,7 @@ export interface Service {
   title: string;
   description: string;
   category: string;
+  features: string[];
 }
 
 export interface Industry {
@@ -26,7 +27,7 @@ export interface FaqItem {
 }
 
 export const siteConfig = {
-  name: "axzron",
+  name: "Axzron",
   tagline: "AI, Web & Mobile solutions built for your business",
   contact: {
     email: "hi@axzron.com",
@@ -99,44 +100,51 @@ export const servicesPage = {
     {
       icon: Zap,
       title: "Business Automation",
-      description: "Streamline workflows with custom automation scripts. We identify repetitive tasks and build intelligent triggers to save your team hundreds of hours.",
+      description: "Streamline workflows with custom automation scripts.",
       category: "Automation",
+      features: ["Workflow Optimization", "Custom triggers", "Data entry automation", "CRM integrations"],
     },
     {
       icon: Bot,
       title: "AI Agents & Chatbots",
-      description: "Intelligent, context-aware conversational agents that handle customer support, internal queries, and lead generation 24/7.",
+      description: "Intelligent, context-aware conversational agents.",
       category: "AI",
+      features: ["24/7 Support bots", "Lead generation agents", "Context-aware replies", "Multi-step conversations"],
     },
     {
       icon: Globe,
       title: "Web App Development",
-      description: "Scalable, high-performance web applications built with modern frameworks. We focus on speed, security, and exceptional user experience.",
+      description: "Scalable, high-performance web applications.",
       category: "Development",
+      features: ["High-performance React", "Responsive dashboards", "Secure authentication", "Real-time updates"],
     },
     {
       icon: Smartphone,
       title: "Mobile App Development",
-      description: "Native and cross-platform applications for iOS and Android. From ideation to App Store launch, we handle the full lifecycle.",
+      description: "Native and cross-platform mobile applications.",
       category: "Development",
+      features: ["iOS & Android apps", "Fluid animations", "Push notifications", "Offline functionality"],
     },
     {
       icon: Database,
       title: "Data Intelligence",
-      description: "Integrate and analyze data for actionable insights. We build custom dashboards and predictive models to help you make data-driven decisions.",
+      description: "Integrate and analyze data for actionable insights.",
       category: "Analytics",
+      features: ["Predictive insights", "Custom dashboards", "Dataset processing", "Visual analytics"],
     },
     {
       icon: Blocks,
       title: "API & Integrations",
-      description: "Seamless connections across all your internal tools. We bridge the gap between your legacy systems and modern AI solutions.",
+      description: "Seamless connections across all your tools.",
       category: "Infrastructure",
+      features: ["Legacy synchronization", "Custom API layers", "Webhook architecture", "Third-party ecosystems"],
     },
     {
       icon: Cpu,
       title: "AI+IoT Solutions",
-      description: "Connect and automate your physical assets with intelligent IoT ecosystems. We integrate smart sensors with AI models for real-time monitoring and predictive maintenance.",
+      description: "Automate your physical assets with intelligent IoT.",
       category: "Smart Systems",
+      features: ["Real-time sensor data", "Predictive maintenance", "Smart ecosystem design", "Remote asset control"],
     },
   ] as Service[],
   industries: {

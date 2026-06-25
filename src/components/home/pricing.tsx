@@ -83,7 +83,7 @@ export default function Pricing() {
               onClick={() => setBillingCycle('monthly')}
               className={cn(
                 "px-6 py-2 rounded-full text-sm font-medium transition-all",
-                billingCycle === 'monthly' ? "bg-cyan-500 text-black shadow-lg shadow-cyan-500/20" : "text-slate-400 hover:text-white"
+                billingCycle === 'monthly' ? "bg-white text-black shadow-lg shadow-white/10" : "text-slate-400 hover:text-white"
               )}
             >
               Monthly
@@ -92,7 +92,7 @@ export default function Pricing() {
               onClick={() => setBillingCycle('annually')}
               className={cn(
                 "px-6 py-2 rounded-full text-sm font-medium transition-all",
-                billingCycle === 'annually' ? "bg-cyan-500 text-black shadow-lg shadow-cyan-500/20" : "text-slate-400 hover:text-white"
+                billingCycle === 'annually' ? "bg-white text-black shadow-lg shadow-white/10" : "text-slate-400 hover:text-white"
               )}
             >
               Annually
@@ -109,14 +109,13 @@ export default function Pricing() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               className={cn(
-                "relative p-8 rounded-3xl border flex flex-col justify-between transition-all duration-300",
                 plan.featured 
-                  ? "bg-slate-900 border-cyan-500/50 shadow-2xl shadow-cyan-500/10 scale-105 z-10" 
+                  ? "bg-slate-900 border-white/20 shadow-2xl shadow-white/5 scale-105 z-10" 
                   : "bg-slate-900/40 border-slate-800 hover:border-slate-700"
               )}
             >
               {plan.featured && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-cyan-500 text-black px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                   Popular
                 </div>
               )}
@@ -134,8 +133,8 @@ export default function Pricing() {
                 <div className="space-y-4 mb-8">
                   {plan.features.map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-cyan-500" />
+                      <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-white" />
                       </div>
                       <span className="text-sm text-slate-300">{feature}</span>
                     </div>

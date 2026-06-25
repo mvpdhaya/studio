@@ -38,22 +38,34 @@ export default function FeaturesGrid({ limit, hideHeader }: FeaturesGridProps) {
             return (
               <FadeInSection key={index} delay={index * 0.1}>
                 <div
-                  className="bg-white border border-slate-100 rounded-[24px] p-8 h-full shadow-sm hover:border-slate-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start group"
+                  className="bg-white border border-slate-100 rounded-[24px] p-7 md:p-8 h-full shadow-sm hover:border-slate-300 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-start group"
                 >
-                  <div className="w-14 h-14 bg-[#f3f4f6] rounded-2xl flex items-center justify-center text-[#111827] flex-shrink-0 group-hover:bg-[#111827] group-hover:text-white transition-all duration-300 mb-6">
+                  <div className="w-14 h-14 bg-[#f3f4f6] rounded-2xl flex items-center justify-center text-[#111827] flex-shrink-0 group-hover:bg-[#111827] group-hover:text-white transition-all duration-500 mb-6 shadow-inner">
                     <Icon size={24} />
                   </div>
                   
-                  <div className="flex-grow">
-                    <h3 className="text-xl md:text-2xl font-bold text-[#111827] mb-4 group-hover:text-black transition-colors">{service.title}</h3>
-                    <p className="text-[#6b7280] text-base leading-relaxed mb-6">
+                  <div className="flex-grow w-full">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#111827] mb-2 group-hover:text-black transition-colors tracking-tight">{service.title}</h3>
+                    <p className="text-[#6b7280] text-[15px] leading-relaxed mb-6 font-medium">
                       {service.description}
                     </p>
+                    
+                    <div className="space-y-2.5 mb-6 border-t border-slate-50 pt-6">
+                      {service.features.map((feature, fIndex) => (
+                        <div key={fIndex} className="flex items-center gap-2.5 text-[14px] text-[#4b5563] group/item">
+                          <span className="text-[#111827] font-bold text-base leading-none">+</span>
+                          <span className="font-medium group-hover/item:text-[#111827] transition-colors">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   
-                  <div className="flex items-center gap-2 text-sm font-bold text-[#111827] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+                  <Link 
+                    href="#contact"
+                    className="mt-auto flex items-center gap-2 text-xs font-bold text-[#111827] uppercase tracking-[0.2em] transform transition-all duration-300 hover:translate-x-2 group-hover:text-black"
+                  >
                     Learn More <ArrowRight size={14} />
-                  </div>
+                  </Link>
                 </div>
               </FadeInSection>
             );
@@ -65,7 +77,7 @@ export default function FeaturesGrid({ limit, hideHeader }: FeaturesGridProps) {
             <div className="text-center mt-12 md:mt-16">
               <Link 
                 href="/services" 
-                className="inline-flex items-center gap-2 h-[48px] px-8 text-[15px] font-[600] rounded-lg bg-[#2563eb] text-white hover:bg-[#1d4ed8] transition-all shadow-md hover:shadow-lg group"
+                className="inline-flex items-center gap-2 h-[48px] px-8 text-[15px] font-[600] rounded-lg bg-[#111827] text-white border border-[#111827] hover:bg-white hover:text-[#111827] transition-all duration-300 shadow-md hover:shadow-lg group"
               >
                 View all services
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

@@ -127,7 +127,7 @@ export default function BentoGrid() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Why Companies Choose HexaCore
+            Why Companies Choose axzron
           </motion.h2>
         </div>
 

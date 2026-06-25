@@ -42,22 +42,22 @@ export default function Header() {
           : 'bg-white/40 backdrop-blur-md border border-white/10 shadow-sm'
       )}>
         {/* Brand Group */}
-        <Link href="/" className="flex items-center gap-0 font-bold text-lg shrink-0" prefetch={true}>
-          <Image src="/logo.png?v=2" alt={`${siteConfig.name} Logo`} width={32} height={32} className="h-8 w-8 text-primary rounded-full transition-transform hover:rotate-12" quality={100} />
-          <span className="text-[#111827] text-[16px] tracking-tight -ml-1">{siteConfig.name}</span>
+        <Link href="/" className="flex items-center gap-1 font-bold text-lg shrink-0" prefetch={true}>
+          <Image src="/logo.png?v=2" alt={`${siteConfig.name} Logo`} width={32} height={32} className="h-8 w-8 text-primary rounded-lg transition-transform hover:rotate-12" quality={100} />
+          <span className="text-[#111827] text-[18px] tracking-tight ">{siteConfig.name}</span>
         </Link>
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-[14px] md:text-[15px] font-[500] text-[#374151] hover:text-[#2563eb] transition-colors shrink-0" prefetch={true}>
+            <Link key={link.href} href={link.href} className="text-[14px] md:text-[15px] font-[500] text-[#374151] hover:text-[#111827] transition-colors shrink-0" prefetch={true}>
               {link.label}
             </Link>
           ))}
         </nav>
 
         {/* CTA Button */}
-        <Button asChild className="hidden sm:inline-flex h-[40px] px-5 text-[14px] font-[600] rounded-lg bg-[#2563eb] text-white hover:bg-[#1d4ed8] shrink-0">
+        <Button asChild className="hidden sm:inline-flex h-[40px] px-5 text-[14px] font-[600] rounded-lg bg-[#111827] text-white hover:bg-slate-800 transition-all duration-300 shrink-0">
           <Link href="/contact" prefetch={true}>{navigation.cta}</Link>
         </Button>
 
@@ -97,22 +97,22 @@ export default function Header() {
                         onClick={() => setMobileMenuOpen(false)}
                         prefetch={true}
                       >
-                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#2563eb]/10 transition-colors">
-                          <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#2563eb] transition-colors" />
+                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#111827]/10 transition-colors">
+                          <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#111827] transition-colors" />
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#2563eb] transition-colors">
+                          <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#111827] transition-colors">
                             {link.label}
                           </span>
                         </div>
-                        <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-[#2563eb] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
+                        <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-[#111827] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
                       </Link>
                     ))}
                   </nav>
                 </div>
 
                 <div className="mt-auto p-8 bg-slate-50/50 border-t border-slate-100">
-                  <Button asChild className="w-full h-[56px] rounded-2xl bg-[#2563eb] text-white hover:bg-[#1d4ed8] shadow-lg shadow-blue-500/20 group text-[16px] font-semibold" onClick={() => setMobileMenuOpen(false)}>
+                  <Button asChild className="w-full h-[56px] rounded-2xl bg-[#111827] text-white hover:bg-slate-800 shadow-lg shadow-slate-200/20 group text-[16px] font-semibold transition-all duration-300" onClick={() => setMobileMenuOpen(false)}>
                     <Link href="/contact" className="flex items-center justify-center gap-2" prefetch={true}>
                       {navigation.cta}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

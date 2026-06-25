@@ -3,13 +3,14 @@ import Footer from '@/components/layout/footer';
 import Process from '@/components/home/process';
 import Faq from '@/components/home/faq';
 import Cta from '@/components/home/cta';
+import { aboutMetadata } from '@/lib/metadata';
 import { aboutPage } from '@/lib/content';
 import { Metadata } from 'next';
 import FadeInSection from '@/components/ui/fade-in-section';
 
 export const metadata: Metadata = {
-  title: aboutPage.seo.title,
-  description: aboutPage.seo.description,
+  title: aboutMetadata.title,
+  description: aboutMetadata.description,
 };
 
 export default function AboutPage() {
