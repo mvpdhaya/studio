@@ -21,7 +21,7 @@ export default function SlmShowcase() {
                 className="bg-white border rounded-[16px] p-[20px] md:p-[28px] h-full flex flex-col shadow-sm"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <span className="inline-block px-3 py-1 bg-[#f3f4f6] text-[#374151] text-[11px] font-[600] uppercase tracking-wider rounded-full">
+                  <span className="inline-block px-3 py-1 bg-[#f3f4f6] text-[#ff881e] text-[11px] font-[600] uppercase tracking-wider rounded-full">
                     {scenario.tag}
                   </span>
                 </div>

@@ -97,7 +97,7 @@ export default function Services() {
               variants={itemVariants}
               className="glass-card p-8 rounded-3xl group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-[#ff881e]/10 flex items-center justify-center text-[#ff881e] mb-6 group-hover:scale-110 transition-transform duration-300">
                 <service.icon className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
@@ -106,7 +106,7 @@ export default function Services() {
               </p>
               <Link 
                 href="#" 
-                className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-500 group/link"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#ff881e] group/link"
               >
                 Learn more 
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />

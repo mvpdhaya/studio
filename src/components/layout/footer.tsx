@@ -58,16 +58,16 @@ export default function Footer() {
               {siteConfig.tagline}
             </p>
             <div className="flex items-center gap-3 mt-2">
-              <Link href={siteConfig.social.linkedin} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-white transition-all duration-200">
+              <Link href={siteConfig.social.linkedin} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-200">
                 <Linkedin className="h-4 w-4" />
               </Link>
-              <Link href={siteConfig.social.x} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-white transition-all duration-200">
+              <Link href={siteConfig.social.x} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-200">
                 <XLogo />
               </Link>
-              <Link href={siteConfig.social.instagram} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-white transition-all duration-200">
+              <Link href={siteConfig.social.instagram} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-200">
                 <Instagram className="h-4 w-4" />
               </Link>
-              <Link href={siteConfig.social.facebook} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-white transition-all duration-200">
+              <Link href={siteConfig.social.facebook} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-200">
                 <Facebook className="h-4 w-4" />
               </Link>
             </div>
@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {navigation.links.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors font-medium">{item.label}</Link>
+                  <Link href={item.href} className="text-sm text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">{item.label}</Link>
                 </li>
               ))}
             </ul>
@@ -89,20 +89,20 @@ export default function Footer() {
           <div className="lg:col-span-4 rounded-2xl bg-slate-50/50 border border-slate-100 p-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Get in Touch</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <Mail className="h-4 w-4 text-[#111827] mt-[2px]" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors font-medium">
+              <li className="flex items-start gap-3 group/item">
+                <Mail className="h-4 w-4 text-[#ff881e] mt-[2px]" />
+                <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">
                   {siteConfig.contact.email}
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="h-4 w-4 text-[#111827] mt-[2px]" />
-                <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors font-medium">
+              <li className="flex items-start gap-3 group/item">
+                <Phone className="h-4 w-4 text-[#ff881e] mt-[2px]" />
+                <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="text-sm text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">
                   {siteConfig.contact.phone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 text-[#111827] mt-[2px]" />
+                <MapPin className="h-4 w-4 text-[#ff881e] mt-[2px]" />
                 <span className="text-sm text-[#6b7280]">
                   Remote First · Solutions Worldwide
                 </span>

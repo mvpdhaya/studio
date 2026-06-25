@@ -40,7 +40,7 @@ export default function FeaturesGrid({ limit, hideHeader }: FeaturesGridProps) {
                 <div
                   className="bg-white border border-slate-100 rounded-[24px] p-7 md:p-8 h-full shadow-sm hover:border-slate-300 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-start group"
                 >
-                  <div className="w-14 h-14 bg-[#f3f4f6] rounded-2xl flex items-center justify-center text-[#111827] flex-shrink-0 group-hover:bg-[#111827] group-hover:text-white transition-all duration-500 mb-6 shadow-inner">
+                  <div className="w-14 h-14 bg-[#f3f4f6] rounded-2xl flex items-center justify-center text-[#111827] flex-shrink-0 group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-all duration-500 mb-6 shadow-inner">
                     <Icon size={24} />
                   </div>
                   
@@ -62,7 +62,7 @@ export default function FeaturesGrid({ limit, hideHeader }: FeaturesGridProps) {
                   
                   <Link 
                     href="#contact"
-                    className="mt-auto flex items-center gap-2 text-xs font-bold text-[#111827] uppercase tracking-[0.2em] transform transition-all duration-300 hover:translate-x-2 group-hover:text-black"
+                    className="mt-auto flex items-center gap-2 text-xs font-bold text-[#ff881e] uppercase tracking-[0.2em] transform transition-all duration-300 hover:translate-x-2 group-hover:text-[#ff881e]/80"
                   >
                     Learn More <ArrowRight size={14} />
                   </Link>

@@ -50,7 +50,7 @@ export default function Header() {
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-[14px] md:text-[15px] font-[500] text-[#374151] hover:text-[#111827] transition-colors shrink-0" prefetch={true}>
+            <Link key={link.href} href={link.href} className="text-[14px] md:text-[15px] font-[500] text-[#374151] hover:text-[#ff881e] transition-colors shrink-0" prefetch={true}>
               {link.label}
             </Link>
           ))}
@@ -98,14 +98,14 @@ export default function Header() {
                         prefetch={true}
                       >
                         <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#111827]/10 transition-colors">
-                          <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#111827] transition-colors" />
+                          <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#ff881e] transition-colors" />
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#111827] transition-colors">
+                          <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#ff881e] transition-colors">
                             {link.label}
                           </span>
                         </div>
-                        <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-[#111827] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
+                        <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-[#ff881e] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
                       </Link>
                     ))}
                   </nav>
