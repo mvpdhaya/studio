@@ -26,10 +26,10 @@ export interface FaqItem {
 }
 
 export const siteConfig = {
-  name: "Axzron",
+  name: "axzron",
   tagline: "AI, Web & Mobile solutions built for your business",
   contact: {
-    email: "axzron.ai@gmail.com",
+    email: "hi@axzron.com",
     phone: "+94 781626515",
     whatsapp: "+94 781626515",
   },

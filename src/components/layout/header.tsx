@@ -44,7 +44,7 @@ export default function Header() {
         {/* Brand Group */}
         <Link href="/" className="flex items-center gap-0 font-bold text-lg shrink-0" prefetch={true}>
           <Image src="/logo.png?v=2" alt={`${siteConfig.name} Logo`} width={32} height={32} className="h-8 w-8 text-primary rounded-full transition-transform hover:rotate-12" quality={100} />
-          <span className="text-[#111827] text-[16px] tracking-tight">{siteConfig.name}</span>
+          <span className="text-[#111827] text-[16px] tracking-tight -ml-1">{siteConfig.name}</span>
         </Link>
 
         {/* Navigation Links */}
