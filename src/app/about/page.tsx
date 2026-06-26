@@ -29,7 +29,7 @@ export default function AboutPage() {
             WebkitMaskImage: 'radial-gradient(ellipse at center, black, transparent 85%)'
           }}></div>
 
-          <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+          <div className="container mx-auto text-center relative z-10">
             <FadeInSection>
               <span className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#ff881e] bg-[#ff881e]/10 border border-[#ff881e]/20 rounded-full px-4 py-1.5 mb-6">
                 <Rocket className="h-3.5 w-3.5" />
@@ -65,7 +65,7 @@ export default function AboutPage() {
 
         {/* ── Our Story ────────────────────────────────────────── */}
         <section className="py-20 md:py-28 bg-white border-b border-slate-100">
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center max-w-5xl mx-auto">
               <FadeInSection>
                 <span className="inline-block text-[12px] font-bold text-[#ff881e] uppercase tracking-widest mb-4">Our Story</span>
@@ -116,7 +116,7 @@ export default function AboutPage() {
 
         {/* ── Vision & Mission ─────────────────────────────────── */}
         <section className="py-20 md:py-28 bg-slate-50 border-b border-slate-100">
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container mx-auto">
             <FadeInSection>
               <div className="text-center mb-14">
                 <span className="inline-block text-[12px] font-bold text-[#ff881e] uppercase tracking-widest mb-3">What drives us</span>

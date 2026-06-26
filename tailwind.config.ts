@@ -8,6 +8,18 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.5rem',
+        sm: '3rem',
+        lg: '5rem',
+        xl: '8rem',
+      },
+      screens: {
+        '2xl': '1320px',
+      },
+    },
     extend: {
       fontFamily: {
         body: ['Satoshi', 'Inter', 'sans-serif'],

@@ -39,7 +39,7 @@ export default function ServicesPage() {
             backgroundSize: '200px 200px',
           }}></div>
 
-          <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+          <div className="container mx-auto text-center relative z-10">
             <FadeInSection>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-6">
                 {servicesPage.hero.title}

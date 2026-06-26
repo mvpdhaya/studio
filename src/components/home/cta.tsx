@@ -13,7 +13,7 @@ export default function Cta() {
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-white opacity-10 blur-3xl rounded-full pointer-events-none"></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400 opacity-20 blur-3xl rounded-full pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <FadeInSection>
             <h2 className="text-[26px] sm:text-[32px] md:text-[40px] font-[700] text-[#ffffff] mb-5 leading-[1.2]">

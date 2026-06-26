@@ -10,7 +10,7 @@ export default function Industries() {
 
   return (
     <section id="industries" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto">
         <FadeInSection>
           <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
             <span className="text-[#111827] font-[600] text-[13px] uppercase tracking-wider mb-2 block">Industries</span>
@@ -23,7 +23,7 @@ export default function Industries() {
           </div>
         </FadeInSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
           {industries.items.map((industry, index) => {
             const Icon = industry.icon;
             return (

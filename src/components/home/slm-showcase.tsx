@@ -7,7 +7,7 @@ export default function SlmShowcase() {
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto">
         <FadeInSection>
           <h2 className="text-[28px] sm:text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[36px] md:mb-[48px] leading-[1.2]">
             {homePage.scenarios.title}

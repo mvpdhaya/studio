@@ -36,7 +36,7 @@ export default function ContactPageContent() {
       <Header />
       <main className="pt-20">
         <section className="py-16 md:py-24 bg-white border-b border-slate-100 relative overflow-hidden">
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container mx-auto">
             <div className="max-w-4xl mx-auto text-center">
               <FadeInSection>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-6">

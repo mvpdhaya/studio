@@ -32,7 +32,7 @@ export default function Hero() {
         backgroundSize: '200px 200px',
       }}></div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10 flex-grow">
+      <div className="container mx-auto relative z-10 flex-grow">
         <div className="max-w-4xl mx-auto text-center">
           <FadeInSection delay={0.1}>
             <div className="inline-flex items-center gap-2 px-[16px] py-[6px] rounded-full bg-[#f3f4f6] text-[#111827] text-[12px] sm:text-[13px] font-medium mb-[20px] md:mb-[24px]">
