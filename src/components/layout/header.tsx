@@ -6,9 +6,15 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Menu, Home, Briefcase, Info, Mail, ArrowRight } from 'lucide-react';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Image from 'next/image';
 
-import { siteConfig, navigation } from '@/lib/content';
+import { siteConfig, navigation, servicesPage } from '@/lib/content';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -70,14 +76,14 @@ export default function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-0 p-0">
+            <SheetContent side="top" className="h-[90vh] border-b-0 p-0 rounded-b-[2rem] overflow-hidden">
               <SheetHeader className="sr-only">
                 <SheetTitle>Mobile Navigation</SheetTitle>
                 <SheetDescription>Access the services, process, and industry pages.</SheetDescription>
               </SheetHeader>
               <div className="flex flex-col h-full bg-white/95 backdrop-blur-xl">
-                <div className="p-8 pb-4">
-                  <Link href="/" className="flex items-center gap-2 font-bold text-lg mb-8" onClick={() => setMobileMenuOpen(false)}>
+                <div className="p-8 pb-4 flex items-center justify-between">
+                  <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setMobileMenuOpen(false)}>
                     <div className="bg-primary/10 p-1 rounded-lg">
                       <Image src="/logo.png?v=2" alt={`${siteConfig.name} Logo`} width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
                     </div>
@@ -85,33 +91,71 @@ export default function Header() {
                   </Link>
                 </div>
 
-                <div className="px-6 mb-4">
+                <div className="px-6 flex-1 overflow-y-auto">
                   <p className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mb-4 px-4">Menu</p>
                   <nav className="flex flex-col gap-1">
-                    {navLinks.map((link, index) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all group relative overflow-hidden animate-in slide-in-from-right-4 duration-300 fill-mode-forwards"
-                        style={{ animationDelay: `${index * 50}ms` }}
-                        onClick={() => setMobileMenuOpen(false)}
-                        prefetch={true}
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#111827]/10 transition-colors">
-                          <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#ff881e] transition-colors" />
-                        </div>
-                        <div className="flex flex-col">
-                          <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#ff881e] transition-colors">
-                            {link.label}
-                          </span>
-                        </div>
-                        <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-[#ff881e] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
-                      </Link>
-                    ))}
+                    {navLinks.map((link, index) => {
+                      if (link.label === "Services") {
+                        return (
+                          <div key={link.href} className="flex flex-col">
+                            <Accordion type="single" collapsible className="w-full border-none">
+                              <AccordionItem value="services" className="border-none">
+                                <AccordionTrigger className="flex items-center p-4 rounded-2xl hover:bg-slate-50 transition-all group hover:no-underline py-4">
+                                  <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#111827]/10 transition-colors">
+                                      <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#ff881e] transition-colors" />
+                                    </div>
+                                    <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#ff881e] transition-colors">
+                                      {link.label}
+                                    </span>
+                                  </div>
+                                </AccordionTrigger>
+                                <AccordionContent>
+                                  <div className="grid grid-cols-1 gap-2 pl-4 pr-4 pb-4">
+                                    {servicesPage.services.map((service) => (
+                                      <Link
+                                        key={service.title}
+                                        href="/services"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-all"
+                                      >
+                                        <div className="p-2 rounded-lg bg-slate-50">
+                                          <service.icon className="h-4 w-4 text-slate-400" />
+                                        </div>
+                                        <span className="text-[14px] font-medium text-slate-600">{service.title}</span>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </AccordionContent>
+                              </AccordionItem>
+                            </Accordion>
+                          </div>
+                        );
+                      }
+                      return (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all group relative overflow-hidden"
+                          onClick={() => setMobileMenuOpen(false)}
+                          prefetch={true}
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#111827]/10 transition-colors">
+                            <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#ff881e] transition-colors" />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#ff881e] transition-colors">
+                              {link.label}
+                            </span>
+                          </div>
+                          <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-[#ff881e] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
+                        </Link>
+                      );
+                    })}
                   </nav>
                 </div>
 
-                <div className="mt-auto p-8 bg-slate-50/50 border-t border-slate-100">
+                <div className="p-8 pt-4 bg-slate-50/50 border-t border-slate-100">
                   <Button asChild className="w-full h-[56px] rounded-2xl bg-[#111827] text-white hover:bg-slate-800 shadow-lg shadow-slate-200/20 group text-[16px] font-semibold transition-all duration-300" onClick={() => setMobileMenuOpen(false)}>
                     <Link href="/contact" className="flex items-center justify-center gap-2" prefetch={true}>
                       {navigation.cta}

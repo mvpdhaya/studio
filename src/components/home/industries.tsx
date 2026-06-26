@@ -28,7 +28,7 @@ export default function Industries() {
             const Icon = industry.icon;
             return (
               <FadeInSection key={industry.title} delay={index * 0.1}>
-                <Card className="bg-slate-50 flex flex-col justify-start text-center items-center p-4 md:p-6 border-slate-100 hover:bg-white hover:border-slate-300 hover:shadow-lg transition-all duration-300 h-full group">
+                <Card className="bg-white flex flex-col justify-start text-center items-center p-4 md:p-6 border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all duration-300 h-full group">
                   <CardHeader className="items-center pb-4 text-center">
                     <div className="bg-white p-3 rounded-xl mb-3 text-[#111827] shadow-sm group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-all duration-300">
                       <Icon className="h-6 w-6" />

@@ -41,11 +41,28 @@ export default function Hero() {
           </FadeInSection>
 
           <FadeInSection delay={0.2}>
-            <h1 className="text-[30px] sm:text-[42px] md:text-[54px] lg:text-[68px] leading-[1.15] font-[700] text-[#111827] tracking-tight mb-[18px] md:mb-[24px]">
-              {hero.title.split('what actually matters')[0]}
+            <h1 className="text-[30px] sm:text-[42px] md:text-[54px] lg:text-[68px] leading-[1.15] font-[700] text-[#111827] mb-[18px] md:mb-[24px] font-heading tracking-normal">
+              {hero.title.split('modern businesses')[0]}
               <span className="relative inline-block">
-                what actually matters
-                <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#f3f4f6] -z-10"></span>
+                modern businesses
+                <svg
+                  className="absolute left-0 w-full overflow-visible pointer-events-none"
+                  style={{ bottom: '-8px', height: '14px' }}
+                  viewBox="0 0 200 14"
+                  preserveAspectRatio="none"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Thick curved line with gap before the end */}
+                  <path
+                    d="M2 10 C 50 14, 130 14, 180 10" 
+                    stroke="#ff881e"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                  {/* Dot after the gap */}
+                  <circle cx="196" cy="9" r="2.5" fill="#ff881e" />
+                </svg>
               </span>
             </h1>
 

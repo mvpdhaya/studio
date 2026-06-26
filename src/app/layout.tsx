@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { Inter, Poppins, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 
 import { siteConfig } from '@/lib/content';
 
@@ -16,10 +16,6 @@ const playfair = Playfair_Display({
   display: 'swap',
   variable: '--font-playfair',
 });
-
-// Assuming Satoshi is managed via a local font or CSS import elsewhere
-// If not found, we use Inter as a high-quality fallback for the 'Satoshi' name in Tailwind
-const satoshi = inter; 
 
 export const metadata: Metadata = {
   title: {
@@ -43,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${satoshi.variable} ${playfair.variable}`}>
-      <body className="font-body antialiased">
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${playfair.variable}`}>
+      <body className="font-heading antialiased">
         {children}
         <Toaster />
       </body>

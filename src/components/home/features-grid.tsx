@@ -19,7 +19,7 @@ export default function FeaturesGrid({ limit, hideHeader }: FeaturesGridProps) {
   }, [limit, allServices]);
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-[#f8fafc]">
+    <section id="services" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         {!hideHeader && (
           <FadeInSection>
@@ -40,7 +40,7 @@ export default function FeaturesGrid({ limit, hideHeader }: FeaturesGridProps) {
                 <div
                   className="bg-white border border-slate-100 rounded-[24px] p-7 md:p-8 h-full shadow-sm hover:border-slate-300 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-start group"
                 >
-                  <div className="w-14 h-14 bg-[#f3f4f6] rounded-2xl flex items-center justify-center text-[#111827] flex-shrink-0 group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-all duration-500 mb-6 shadow-inner">
+                  <div className="w-14 h-14 bg-white border border-slate-100 rounded-2xl flex items-center justify-center text-[#111827] flex-shrink-0 group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-all duration-500 mb-6 shadow-sm">
                     <Icon size={24} />
                   </div>
                   

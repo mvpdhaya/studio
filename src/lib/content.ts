@@ -59,9 +59,9 @@ export const homePage = {
     description: "Automate smarter, faster, seamlessly with AI workflows, agents & chatbots. Axzron builds AI-powered business solutions to accelerate your growth.",
   },
   hero: {
-    badge: "AI-powered business solutions",
-    title: "We automate your ops so your team builds what actually matters",
-    subtitle: "Axzron builds AI agents, chatbots, and intelligent web & mobile apps that cut manual work and accelerate your growth.",
+    badge: "Web • Mobile • AI • Automation • IoT",
+    title: "Smart digital solutions for modern businesses",
+    subtitle: "We build websites, mobile apps, AI systems, and IoT solutions to help your business grow faster and operate efficiently.",
     primaryCta: "Book a free demo",
     secondaryCta: "See our services",
   },
