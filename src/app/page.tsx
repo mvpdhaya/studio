@@ -1,6 +1,7 @@
 import Header from '@/components/layout/header';
 import Hero from '@/components/home/hero';
 import SlmShowcase from '@/components/home/slm-showcase';
+import AboutPreview from '@/components/home/about-preview';
 import FeaturesGrid from '@/components/home/features-grid';
 import Cta from '@/components/home/cta';
 import Footer from '@/components/layout/footer';
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <SlmShowcase />
         <FeaturesGrid limit={3} />
+        <AboutPreview />
         <Cta />
       </main>
       <Footer />

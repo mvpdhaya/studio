@@ -30,7 +30,7 @@ export default function FeaturesGrid({ limit, hideHeader, variant = "default", t
         {!hideHeader && (
           <FadeInSection>
             <div className={`max-w-4xl mx-auto text-center ${isHero ? 'mb-0' : 'mb-10 md:mb-14'}`}>
-              {!isHero && <span className="text-black font-bold text-[13px] uppercase tracking-[0.2em] mb-3 block">Our Services</span>}
+              {!isHero && <span className="text-[#ff881e] font-bold text-[13px] uppercase tracking-[0.2em] mb-3 block">Our Services</span>}
               <h2 className={`${isHero ? 'text-4xl md:text-5xl lg:text-6xl' : 'text-[32px] md:text-[48px]'} font-bold text-[#111827] leading-[1.2] ${subtitle ? 'mb-6' : 'mb-10'}`}>
                 {title || (isHero ? "Our Services" : "Solutions built for the automation era")}
               </h2>
