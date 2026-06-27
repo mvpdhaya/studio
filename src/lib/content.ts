@@ -27,7 +27,7 @@ export interface FaqItem {
 }
 
 export const siteConfig = {
-  name: "Axzron",
+  name: "axzron",
   tagline: "AI, Web & Mobile solutions built for your business",
   contact: {
     email: "hi@axzron.com",

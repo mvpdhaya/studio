@@ -12,13 +12,13 @@ export default function Process({ hideHeader }: ProcessProps) {
   const { process } = aboutPage;
 
   return (
-    <section id="our-process" className="py-16 md:py-24 bg-[#f8fafc] overflow-hidden">
+    <section id="our-process" className="py-10 md:py-12 bg-white overflow-hidden">
       <div className="container mx-auto">
         {!hideHeader && (
           <FadeInSection>
             <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-              <span className="text-black font-bold text-[13px] uppercase tracking-[0.2em] mb-3 block">Workflow</span>
-              <h2 className="text-[32px] md:text-[48px] font-bold text-[#111827] leading-tight">
+              <span className="inline-block text-[12px] font-bold text-[#ff881e] uppercase tracking-widest mb-3">Workflow</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#111827] leading-tight">
                 {process.title}
               </h2>
             </div>
@@ -27,7 +27,7 @@ export default function Process({ hideHeader }: ProcessProps) {
 
         <div className="relative">
           {/* Desktop Connecting Arrows - Hidden on mobile */}
-          <div className="hidden lg:block absolute top-[40px] left-[15%] right-[15%] h-px z-0">
+          <div className="hidden lg:block absolute top-[32px] left-[15%] right-[15%] h-px z-0">
             <div className="absolute inset-0 flex justify-around items-center">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="relative flex items-center justify-center w-full">
@@ -48,12 +48,12 @@ export default function Process({ hideHeader }: ProcessProps) {
                   <div className="flex flex-col items-center text-center group relative">
                     {/* Circle Container */}
                     <div className="relative mb-8">
-                      <div className="w-20 h-20 rounded-3xl bg-white border border-slate-100 flex items-center justify-center text-[#111827] shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 group-hover:rotate-6 z-10 relative">
-                        <Icon className="h-9 w-9 text-[#111827] group-hover:text-black transition-colors duration-300" />
+                      <div className="w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-[#111827] shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:-translate-y-2 group-hover:rotate-6 z-10 relative">
+                        <Icon className="h-7 w-7 text-[#111827] group-hover:text-black transition-colors duration-300" />
                       </div>
                       
                       {/* Step Number Badge */}
-                      <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#111827] text-white text-xs font-bold flex items-center justify-center border-2 border-white shadow-md z-20 transition-transform group-hover:scale-110">
+                      <div className="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-[#111827] text-white text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-md z-20 transition-transform group-hover:scale-110">
                         {index + 1}
                       </div>
 

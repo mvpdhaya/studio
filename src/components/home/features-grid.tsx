@@ -9,25 +9,36 @@ import { ArrowRight } from "lucide-react";
 interface FeaturesGridProps {
   limit?: number;
   hideHeader?: boolean;
+  variant?: "default" | "hero";
+  title?: string;
+  subtitle?: string;
+  className?: string;
 }
 
-export default function FeaturesGrid({ limit, hideHeader }: FeaturesGridProps) {
+export default function FeaturesGrid({ limit, hideHeader, variant = "default", title, subtitle, className }: FeaturesGridProps) {
   const allServices = servicesPage.services;
   
   const services = useMemo(() => {
     return limit ? allServices.slice(0, limit) : allServices;
   }, [limit, allServices]);
 
+  const isHero = variant === "hero";
+
   return (
-    <section id="services" className="py-16 md:py-24 bg-white">
+    <section id="services" className={`py-12 md:py-16 bg-white ${isHero ? 'pt-20' : ''} ${className || ''}`}>
       <div className="container mx-auto">
         {!hideHeader && (
           <FadeInSection>
-            <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
-              <span className="text-black font-bold text-[13px] uppercase tracking-[0.2em] mb-3 block">Our Services</span>
-              <h2 className="text-[32px] md:text-[48px] font-bold text-[#111827] leading-[1.2]">
-                Solutions built for the <span className="text-[#111827]">automation era</span>
+            <div className={`max-w-4xl mx-auto text-center ${isHero ? 'mb-0' : 'mb-10 md:mb-14'}`}>
+              {!isHero && <span className="text-black font-bold text-[13px] uppercase tracking-[0.2em] mb-3 block">Our Services</span>}
+              <h2 className={`${isHero ? 'text-4xl md:text-5xl lg:text-6xl' : 'text-[32px] md:text-[48px]'} font-bold text-[#111827] leading-[1.2] ${subtitle ? 'mb-6' : 'mb-10'}`}>
+                {title || (isHero ? "Our Services" : "Solutions built for the automation era")}
               </h2>
+              {subtitle && (
+                <p className={`text-lg md:text-xl text-[#6b7280] max-w-3xl mx-auto leading-relaxed ${isHero ? 'mb-10' : ''}`}>
+                  {subtitle}
+                </p>
+              )}
             </div>
           </FadeInSection>
         )}

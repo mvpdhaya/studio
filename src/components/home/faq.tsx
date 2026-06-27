@@ -10,7 +10,7 @@ import { aboutPage } from "@/lib/content";
 
 export default function Faq() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-10 md:py-12 bg-white">
       <div className="container mx-auto">
         <FadeInSection>
           <h2 className="text-[28px] sm:text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-10 md:mb-14 leading-[1.2]">

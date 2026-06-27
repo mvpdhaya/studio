@@ -5,10 +5,14 @@ import FadeInSection from "@/components/ui/fade-in-section";
 
 import { contactPage, siteConfig } from "@/lib/content";
 
-export default function Cta() {
+interface CtaProps {
+  className?: string;
+}
+
+export default function Cta({ className }: CtaProps) {
   const { hero } = contactPage;
   return (
-    <section id="contact" className="py-16 md:py-24 section-dark relative overflow-hidden">
+    <section id="contact" className={`py-10 md:py-12 section-dark relative overflow-hidden ${className || ''}`}>
       <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`, backgroundRepeat: 'repeat', backgroundSize: '256px 256px' }}></div>
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-white opacity-10 blur-3xl rounded-full pointer-events-none"></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400 opacity-20 blur-3xl rounded-full pointer-events-none"></div>

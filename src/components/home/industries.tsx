@@ -5,11 +5,15 @@ import FadeInSection from "@/components/ui/fade-in-section";
 import { Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Factory, LucideIcon } from "lucide-react";
 import { servicesPage } from "@/lib/content";
 
-export default function Industries() {
+interface IndustriesProps {
+  className?: string;
+}
+
+export default function Industries({ className }: IndustriesProps) {
   const { industries } = servicesPage;
 
   return (
-    <section id="industries" className="py-16 md:py-24 bg-white">
+    <section id="industries" className={`py-12 md:py-16 bg-white ${className || ''}`}>
       <div className="container mx-auto">
         <FadeInSection>
           <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">

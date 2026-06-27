@@ -20,10 +20,10 @@ export default function AboutPage() {
       <main className="pt-20">
 
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="py-20 md:py-32 bg-white border-b border-slate-100 relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-white relative overflow-hidden">
           {/* Grid background */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.6] z-0" style={{
-            backgroundImage: `linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px)`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 40 0 L 0 0 M 0 0 L 0 40' fill='none' stroke='%23f1f5f9' stroke-width='1' stroke-dasharray='4,4'/%3E%3C/svg%3E")`,
             backgroundSize: '40px 40px',
             maskImage: 'radial-gradient(ellipse at center, black, transparent 85%)',
             WebkitMaskImage: 'radial-gradient(ellipse at center, black, transparent 85%)'
@@ -31,13 +31,9 @@ export default function AboutPage() {
 
           <div className="container mx-auto text-center relative z-10">
             <FadeInSection>
-              <span className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#ff881e] bg-[#ff881e]/10 border border-[#ff881e]/20 rounded-full px-4 py-1.5 mb-6">
-                <Rocket className="h-3.5 w-3.5" />
-                About Us
-              </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-6 leading-tight">
                 We Build AI That Works<br className="hidden md:block" />
-                <span className="text-[#ff881e]"> for Your Business</span>
+                <span className="text-[#111827]"> for Your Business</span>
               </h1>
               <p className="text-lg md:text-xl text-[#6b7280] max-w-2xl mx-auto leading-relaxed">
                 Axzron is a team of engineers and AI specialists passionate about turning complex challenges into elegant, automated solutions.
@@ -64,7 +60,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Our Story ────────────────────────────────────────── */}
-        <section className="py-20 md:py-28 bg-white border-b border-slate-100">
+        <section className="py-10 md:py-12 bg-white">
           <div className="container mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center max-w-5xl mx-auto">
               <FadeInSection>
@@ -115,7 +111,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Vision & Mission ─────────────────────────────────── */}
-        <section className="py-20 md:py-28 bg-slate-50 border-b border-slate-100">
+        <section className="py-20 md:py-28 bg-white">
           <div className="container mx-auto">
             <FadeInSection>
               <div className="text-center mb-14">
