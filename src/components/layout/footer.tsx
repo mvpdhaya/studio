@@ -30,89 +30,96 @@ const WhatsAppLogo = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative bg-white pt-16 pb-8 overflow-hidden border-t border-slate-100">
-      {/* Gradient Grid Background Look */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.4]" style={{ 
-        backgroundImage: `radial-gradient(circle at 2px 2px, #e5e7eb 1px, transparent 0)`,
-        backgroundSize: '24px 24px',
-        maskImage: 'radial-gradient(ellipse at center, black, transparent 80%)',
-        WebkitMaskImage: 'radial-gradient(ellipse at center, black, transparent 80%)'
-      }}></div>
+    <footer className="relative bg-white pt-16 pb-8 overflow-hidden border-t border-slate-100 min-h-[360px] md:min-h-[380px] flex flex-col justify-between">
+      {/* Background Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+        <span className="text-[20vw] font-black text-[#111827] opacity-[0.02] tracking-tighter">
+          {siteConfig.name.toLowerCase()}
+        </span>
+      </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
           {/* Column 1: Brand */}
-          <div className="lg:col-span-4 flex flex-col items-start gap-4">
+          <div className="lg:col-span-7 flex flex-col items-start gap-4">
             <Link href="/" className="flex items-center gap-2 group">
               <Image 
                 src="/logo.png?v=2" 
                 alt={`${siteConfig.name} Logo`} 
-                width={36} 
-                height={36} 
-                className="h-9 w-9 rounded-lg shadow-sm group-hover:rotate-12 transition-transform duration-300" 
+                width={32} 
+                height={32} 
+                className="h-8 w-8 rounded-lg shadow-sm group-hover:rotate-12 transition-transform duration-300" 
                 quality={100} 
               />
               <span className="text-xl font-bold tracking-tight text-[#111827]">{siteConfig.name}</span>
             </Link>
-            <p className="text-sm text-[#6b7280] leading-relaxed max-w-xs">
+            <p className="text-sm text-[#6b7280] leading-relaxed max-w-[280px]">
               {siteConfig.tagline}
             </p>
-            <div className="flex items-center gap-3 mt-2">
-              <Link href={siteConfig.social.linkedin} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-200">
+            <div className="flex items-center gap-2.5 mt-2">
+              <Link href={siteConfig.social.linkedin} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-300">
                 <Linkedin className="h-4 w-4" />
               </Link>
-              <Link href={siteConfig.social.x} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-200">
+              <Link href={siteConfig.social.x} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-300">
                 <XLogo />
               </Link>
-              <Link href={siteConfig.social.instagram} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-200">
+              <Link href={siteConfig.social.instagram} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-300">
                 <Instagram className="h-4 w-4" />
               </Link>
-              <Link href={siteConfig.social.facebook} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-200">
+              <Link href={siteConfig.social.facebook} target="_blank" className="p-2 rounded-lg bg-slate-50 text-[#6b7280] hover:bg-[#111827] hover:text-[#ff881e] transition-all duration-300">
                 <Facebook className="h-4 w-4" />
               </Link>
             </div>
           </div>
 
           {/* Column 2: Navigation */}
-          <div className="lg:col-span-4">
-            <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Navigation</h4>
-            <ul className="space-y-3">
+          <div className="lg:col-span-2">
+            <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#111827] mb-6">Navigation</h4>
+            <ul className="space-y-4">
               {navigation.links.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">{item.label}</Link>
+                  <Link href={item.href} className="text-[14px] text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">{item.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
-          <div className="lg:col-span-4 rounded-2xl bg-slate-50/50 border border-slate-100 p-6">
-            <h4 className="text-sm font-bold uppercase tracking-widest text-[#111827] mb-5">Get in Touch</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 group/item">
-                <Mail className="h-4 w-4 text-[#ff881e] mt-[2px]" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">
+          {/* Column 3: Contact */}
+          <div className="lg:col-span-3">
+            <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#111827] mb-6">Get in Touch</h4>
+            <ul className="space-y-5">
+              <li className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[#ff881e]">
+                  <Mail size={16} />
+                </div>
+                <a href={`mailto:${siteConfig.contact.email}`} className="text-[14px] text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">
                   {siteConfig.contact.email}
                 </a>
               </li>
-              <li className="flex items-start gap-3 group/item">
-                <Phone className="h-4 w-4 text-[#ff881e] mt-[2px]" />
-                <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="text-sm text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">
+              <li className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[#ff881e]">
+                  <Phone size={16} />
+                </div>
+                <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="text-[14px] text-[#6b7280] hover:text-[#ff881e] transition-colors font-medium">
                   {siteConfig.contact.phone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 text-[#ff881e] mt-[2px]" />
-                <span className="text-sm text-[#6b7280]">
-                  Remote First · Solutions Worldwide
-                </span>
+                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[#ff881e] mt-0.5">
+                  <MapPin size={16} />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[14px] text-[#6b7280] font-medium leading-relaxed">
+                    Remote First · Solutions Worldwide
+                  </span>
+                </div>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left relative z-20">
           <p className="text-xs text-[#9ca3af] font-medium">
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
@@ -121,6 +128,13 @@ export default function Footer() {
             <Link href="/terms" className="text-xs text-[#9ca3af] hover:text-[#111827] transition-colors">Terms of Service</Link>
           </div>
         </div>
+      </div>
+
+      {/* Massive Brand Background Text - Absolutely positioned at bottom center */}
+      <div className="absolute bottom-0 left-0 w-full flex justify-center pointer-events-none select-none z-0 overflow-hidden h-[min(20vw,150px)]">
+         <h1 className="text-[16vw] font-black text-[#111827] leading-none tracking-tighter opacity-[0.05] translate-y-1/2">
+          {siteConfig.name.toLowerCase()}
+        </h1>
       </div>
     </footer>
   );
