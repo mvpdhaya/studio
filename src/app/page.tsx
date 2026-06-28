@@ -4,6 +4,7 @@ import Clients from '@/components/home/clients';
 import SlmShowcase from '@/components/home/slm-showcase';
 import AboutPreview from '@/components/home/about-preview';
 import FeaturesGrid from '@/components/home/features-grid';
+import CustomerReviews from '@/components/home/customer-reviews';
 import Cta from '@/components/home/cta';
 import Footer from '@/components/layout/footer';
 import { homeMetadata } from '@/lib/metadata';
@@ -25,6 +26,7 @@ export default function Home() {
         <SlmShowcase />
         <FeaturesGrid limit={3} />
         <AboutPreview />
+        <CustomerReviews />
         <Cta />
       </main>
       <Footer />
