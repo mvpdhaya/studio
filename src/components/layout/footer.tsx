@@ -42,16 +42,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
           {/* Column 1: Brand */}
           <div className="lg:col-span-7 flex flex-col items-start gap-4">
-            <Link href="/" className="flex items-center gap-2 group">
+            <Link href="/" className="flex items-center group">
               <Image 
-                src="/logo.png?v=2" 
-                alt={`${siteConfig.name} Logo`} 
-                width={32} 
-                height={32} 
-                className="h-8 w-8 rounded-lg shadow-sm group-hover:rotate-12 transition-transform duration-300" 
+                src="/nalogo.png" 
+                alt={siteConfig.name} 
+                width={100} 
+                height={24} 
+                style={{ width: 'auto', height: '24px' }}
+                className="transition-opacity hover:opacity-90 duration-300" 
                 quality={100} 
               />
-              <span className="text-xl font-bold tracking-tight text-[#111827]">{siteConfig.name}</span>
             </Link>
             <p className="text-sm text-[#6b7280] leading-relaxed max-w-[280px]">
               {siteConfig.tagline}

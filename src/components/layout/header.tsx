@@ -48,9 +48,17 @@ export default function Header() {
           : 'bg-white/40 backdrop-blur-md border border-white/10 shadow-sm'
       )}>
         {/* Brand Group */}
-        <Link href="/" className="flex items-center gap-1 font-bold text-lg shrink-0" prefetch={true}>
-          <Image src="/logo.png?v=2" alt={`${siteConfig.name} Logo`} width={28} height={28} className="h-7 w-7 text-primary rounded-lg transition-transform hover:rotate-12" quality={100} />
-          <span className="text-[#111827] text-[22px] tracking-tight ">{siteConfig.name}</span>
+        <Link href="/" className="flex items-center shrink-0" prefetch={true}>
+          <Image
+            src="/nalogo.png"
+            alt={siteConfig.name}
+            width={83}
+            height={20}
+            style={{ width: 'auto', height: '20px' }}
+            className="transition-opacity hover:opacity-90"
+            quality={100}
+            priority
+          />
         </Link>
 
         {/* Navigation Links */}
@@ -83,11 +91,16 @@ export default function Header() {
               </SheetHeader>
               <div className="flex flex-col h-full bg-white/95 backdrop-blur-xl">
                 <div className="p-8 pb-4 flex items-center justify-between">
-                  <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setMobileMenuOpen(false)}>
-                    {/* <div className="bg-primary/10 p-1 rounded-lg">
-                      <Image src="/logo.png?v=2" alt={`${siteConfig.name} Logo`} width={32} height={32} className="h-8 w-8 text-primary rounded-full" quality={100} />
-                    </div> */}
-                    <span className="text-[#111827] text-xl tracking-tight">{siteConfig.name}</span>
+                  <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                    <Image
+                      src="/nalogo.png"
+                      alt={siteConfig.name}
+                      width={83}
+                      height={20}
+                      style={{ width: 'auto', height: '20px' }}
+                      quality={100}
+                      priority
+                    />
                   </Link>
                 </div>
 

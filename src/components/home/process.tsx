@@ -2,7 +2,7 @@
 
 import { aboutPage } from "@/lib/content";
 import FadeInSection from "@/components/ui/fade-in-section";
-import { Settings, ChevronRight, ChevronDown } from "lucide-react";
+import { Settings } from "lucide-react";
 
 interface ProcessProps {
   hideHeader?: boolean;
@@ -25,53 +25,66 @@ export default function Process({ hideHeader }: ProcessProps) {
           </FadeInSection>
         )}
 
-        <div className="relative">
-          {/* Desktop Connecting Arrows - Hidden on mobile */}
-          <div className="hidden lg:block absolute top-[32px] left-[15%] right-[15%] h-px z-0">
-            <div className="absolute inset-0 flex justify-around items-center">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="relative flex items-center justify-center w-full">
-                  <div className="w-[80%] h-[2px] bg-gradient-to-r from-transparent via-[#cbd5e1] to-transparent opacity-60"></div>
-                  <div className="absolute right-[10%] animate-pulse-slow">
-                    <ChevronRight className="h-5 w-5 text-[#94a3b8]" />
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* ── Desktop Timeline (lg+) ────────────────────────── */}
+        <div className="hidden lg:block relative max-w-5xl mx-auto">
+          {/* Horizontal connecting line */}
+          <div className="absolute top-[120px] left-[12%] right-[12%] h-[2px] z-0">
+            <div className="w-full h-full bg-gradient-to-r from-slate-200 via-[#ff881e]/25 to-slate-200 rounded-full" />
+            {/* Animated pulse dots */}
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#ff881e]/40 process-dot-anim"
+                style={{
+                  left: `${i * 25}%`,
+                  animationDelay: `${i * 0.6}s`,
+                }}
+              />
+            ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
+          <div className="grid grid-cols-4 gap-6 relative z-10">
             {process.steps.map((step, index) => {
               const Icon = step.icon || Settings;
+              const isEven = index % 2 === 1;
+
               return (
                 <FadeInSection key={index} delay={index * 0.15}>
-                  <div className="flex flex-col items-center text-center group relative">
-                    {/* Circle Container */}
-                    <div className="relative mb-8">
-                      <div className="w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-[#111827] shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:-translate-y-2 group-hover:rotate-6 z-10 relative">
-                        <Icon className="h-7 w-7 text-[#111827] group-hover:text-black transition-colors duration-300" />
+                  <div className={`flex flex-col items-center ${isEven ? 'pt-16' : ''}`}>
+                    {/* Content above circle for odd steps */}
+                    {!isEven && (
+                      <div className="text-center mb-6 min-h-[88px] flex flex-col justify-end">
+                        <h3 className="text-lg font-bold text-[#111827] mb-2 tracking-tight">
+                          {step.title}
+                        </h3>
+                        <p className="text-[#64748b] text-[14px] leading-relaxed max-w-[200px] mx-auto">
+                          {step.description}
+                        </p>
                       </div>
-                      
-                      {/* Step Number Badge */}
-                      <div className="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-[#111827] text-white text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-md z-20 transition-transform group-hover:scale-110">
-                        {index + 1}
-                      </div>
+                    )}
 
-                      {/* Animated Glow Effect */}
-                      <div className="absolute inset-0 bg-[#111827] opacity-0 blur-2xl rounded-full transition-opacity duration-500 group-hover:opacity-10 -z-10"></div>
+                    {/* Step Circle */}
+                    <div className="relative group cursor-default">
+                      <div className="w-[60px] h-[60px] rounded-full bg-[#111827] flex items-center justify-center relative z-10 transition-all duration-500 group-hover:shadow-xl group-hover:shadow-[#111827]/20 group-hover:scale-110 border-[3px] border-white ring-2 ring-slate-100 group-hover:ring-[#ff881e]/40">
+                        <Icon className="h-6 w-6 text-white group-hover:text-[#ff881e] transition-colors duration-300" />
+                      </div>
+                      {/* Step number badge */}
+                      <div className="absolute -top-1 -right-1 w-[22px] h-[22px] rounded-full bg-[#ff881e] text-white text-[10px] font-bold flex items-center justify-center z-20 shadow-sm border-2 border-white transition-transform group-hover:scale-110">
+                        {step.num}
+                      </div>
+                      {/* Hover glow */}
+                      <div className="absolute inset-0 rounded-full bg-[#ff881e] opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-15 -z-10 scale-150" />
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#111827] mb-4 tracking-tight group-hover:text-black transition-colors">
-                      {step.title}
-                    </h3>
-                    <p className="text-[#64748b] text-[15px] leading-relaxed max-w-[220px]">
-                      {step.description}
-                    </p>
-
-                    {/* Mobile/Tablet Arrow - Hidden on Desktop LG */}
-                    {index < process.steps.length - 1 && (
-                      <div className="lg:hidden mt-8 text-[#cbd5e1] animate-bounce-slow">
-                        <ChevronDown className="h-6 w-6" />
+                    {/* Content below circle for even steps */}
+                    {isEven && (
+                      <div className="text-center mt-6 min-h-[88px] flex flex-col justify-start">
+                        <h3 className="text-lg font-bold text-[#111827] mb-2 tracking-tight">
+                          {step.title}
+                        </h3>
+                        <p className="text-[#64748b] text-[14px] leading-relaxed max-w-[200px] mx-auto">
+                          {step.description}
+                        </p>
                       </div>
                     )}
                   </div>
@@ -80,22 +93,54 @@ export default function Process({ hideHeader }: ProcessProps) {
             })}
           </div>
         </div>
+
+        {/* ── Mobile / Tablet Timeline (<lg) ─────────────────── */}
+        <div className="lg:hidden relative max-w-lg mx-auto pl-10">
+          {/* Vertical connecting line */}
+          <div className="absolute left-[19px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-slate-200 via-[#ff881e]/25 to-slate-200 rounded-full z-0" />
+
+          <div className="flex flex-col gap-10">
+            {process.steps.map((step, index) => {
+              const Icon = step.icon || Settings;
+              return (
+                <FadeInSection key={index} delay={index * 0.12}>
+                  <div className="flex items-start gap-5 relative">
+                    {/* Step Circle — sits on the vertical line */}
+                    <div className="relative shrink-0 -ml-10 group cursor-default">
+                      <div className="w-[40px] h-[40px] rounded-full bg-[#111827] flex items-center justify-center relative z-10 transition-all duration-400 group-hover:scale-110 border-[3px] border-white ring-2 ring-slate-100 group-hover:ring-[#ff881e]/40">
+                        <Icon className="h-4 w-4 text-white group-hover:text-[#ff881e] transition-colors duration-300" />
+                      </div>
+                      {/* Step number badge */}
+                      <div className="absolute -top-0.5 -right-0.5 w-[18px] h-[18px] rounded-full bg-[#ff881e] text-white text-[9px] font-bold flex items-center justify-center z-20 border-2 border-white">
+                        {step.num}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="pt-1.5">
+                      <h3 className="text-[16px] font-bold text-[#111827] mb-1.5 tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="text-[#64748b] text-[14px] leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </FadeInSection>
+              );
+            })}
+          </div>
+        </div>
       </div>
-      
+
       <style jsx global>{`
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; transform: translateX(0); }
-          50% { opacity: 1; transform: translateX(10px); }
+        @keyframes process-dot-flow {
+          0% { opacity: 0; transform: translateY(-50%) scale(0.5); }
+          50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+          100% { opacity: 0; transform: translateY(-50%) scale(0.5); }
         }
-        .animate-pulse-slow {
-          animation: pulse-slow 3s infinite ease-in-out;
-        }
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(10px); }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 2s infinite ease-in-out;
+        .process-dot-anim {
+          animation: process-dot-flow 2.5s infinite ease-in-out;
         }
       `}</style>
     </section>
