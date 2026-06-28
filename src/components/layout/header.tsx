@@ -42,7 +42,7 @@ export default function Header() {
       )}
     >
       <div className={cn(
-        'max-w-3xl mx-auto flex h-[64px] items-center justify-center gap-8 px-6 rounded-2xl transition-all duration-300',
+        'max-w-2xl mx-auto flex h-[64px] items-center justify-center gap-8 px-6 rounded-2xl transition-all duration-300',
         scrolled
           ? 'bg-white/70 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]'
           : 'bg-white/40 backdrop-blur-md border border-white/10 shadow-sm'
