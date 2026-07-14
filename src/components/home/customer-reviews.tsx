@@ -15,7 +15,7 @@ const review = {
 
 export default function CustomerReviews() {
   return (
-    <section className="py-16 md:py-24 bg-[#f8fafc]">
+    <section className="py-16 md:py-24 bg-[#f8fafc] md:dashed-border-top">
       <div className="container mx-auto">
         {/* Header */}
         <div className="max-w-2xl mx-auto text-center mb-14">

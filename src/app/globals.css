@@ -130,6 +130,21 @@
     background: #f8fafc; /* subtle slate-50 */
   }
 
+  .dashed-border-top {
+    background-image: linear-gradient(to right, #cbd5e1 50%, transparent 50%);
+    background-position: top;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+  }
+
+  .dashed-border-top-dark {
+    background-image: linear-gradient(to right, #1f2937 50%, transparent 50%);
+    background-position: top;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+  }
+
+
   @keyframes float-up {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }

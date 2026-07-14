@@ -3,7 +3,7 @@ import FadeInSection from "@/components/ui/fade-in-section";
 
 export default function Clients() {
   return (
-    <section className="mt-16 pb-8 md:mt-0 md:py-16 bg-white">
+    <section className="mt-16 pb-8 md:mt-0 md:py-16 bg-white md:dashed-border-top">
       <div className="container mx-auto">
         <FadeInSection>
           <p className="text-center text-[13px] md:text-[14px] font-[600] uppercase tracking-[0.15em] text-[#9ca3af] mb-8 md:mb-10">

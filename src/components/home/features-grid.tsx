@@ -25,7 +25,7 @@ export default function FeaturesGrid({ limit, hideHeader, variant = "default", t
   const isHero = variant === "hero";
 
   return (
-    <section id="services" className={`py-12 md:py-16 bg-white ${isHero ? 'pt-20' : ''} ${className || ''}`}>
+    <section id="services" className={`py-12 md:py-16 bg-white md:dashed-border-top ${isHero ? 'pt-20' : ''} ${className || ''}`}>
       <div className="container mx-auto">
         {!hideHeader && (
           <FadeInSection>

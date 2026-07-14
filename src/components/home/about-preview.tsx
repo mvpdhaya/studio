@@ -11,7 +11,7 @@ const stats = [
 
 export default function AboutPreview() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white md:dashed-border-top">
       <div className="container mx-auto">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
 

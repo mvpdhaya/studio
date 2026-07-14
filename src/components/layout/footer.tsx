@@ -30,7 +30,7 @@ const WhatsAppLogo = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative bg-white pt-16 pb-8 overflow-hidden border-t border-slate-100 min-h-[360px] md:min-h-[380px] flex flex-col justify-between">
+    <footer className="relative bg-white pt-16 pb-8 overflow-hidden border-t border-slate-100 md:dashed-border-top min-h-[360px] md:min-h-[380px] flex flex-col justify-between">
       {/* Background Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
         <span className="text-[20vw] font-black text-[#111827] opacity-[0.02] tracking-tighter">

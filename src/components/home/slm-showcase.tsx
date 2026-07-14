@@ -6,7 +6,7 @@ export default function SlmShowcase() {
   const scenarios = homePage.scenarios.items;
 
   return (
-    <section className="pt-10 pb-16 md:py-24 bg-white">
+    <section className="pt-10 pb-16 md:py-24 bg-white md:dashed-border-top">
       <div className="container mx-auto">
         <FadeInSection>
           <h2 className="text-[28px] sm:text-[32px] md:text-[38px] font-[700] text-[#111827] text-center mb-[36px] md:mb-[48px] leading-[1.2]">
