@@ -3,9 +3,9 @@ import { ArrowRight } from 'lucide-react';
 import FadeInSection from '@/components/ui/fade-in-section';
 
 const stats = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '10k+', label: 'Hours Saved for Clients' },
-  { value: '6+', label: 'Industries Served' },
+  { value: '1+', label: 'Projects Delivered' },
+  { value: '10+', label: 'Hours Saved for Clients' },
+  { value: '1+', label: 'Industries Served' },
   { value: '98%', label: 'Client Satisfaction' },
 ];
 

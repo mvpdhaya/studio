@@ -44,9 +44,9 @@ export default function AboutPage() {
             <FadeInSection>
               <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
                 {[
-                  { label: 'Projects Delivered', value: '50+' },
-                  { label: 'Hours Saved for Clients', value: '10k+' },
-                  { label: 'Industries Served', value: '6+' },
+                  { label: 'Projects Delivered', value: '1+' },
+                  { label: 'Hours Saved for Clients', value: '10+' },
+                  { label: 'Industries Served', value: '1+' },
                   { label: 'Client Satisfaction', value: '98%' },
                 ].map((stat) => (
                   <div key={stat.label} className="flex flex-col items-center p-4 rounded-2xl bg-slate-50 border border-slate-100">
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-[#6b7280] leading-relaxed">
                   <p>
-                    Axzron started in 2022 when our founders — frustrated by the amount of manual, repetitive work consuming teams at every company they worked with — decided to build something different.
+                    Axzron started in 2025 when our founders — frustrated by the amount of manual, repetitive work consuming teams at every company they worked with — decided to build something different.
                   </p>
                   <p>
                     What began as a small automation consultancy quickly evolved into a full-stack AI studio. We realised that the real opportunity wasn't just in saving time — it was in fundamentally changing how businesses operate at scale.
@@ -98,7 +98,7 @@ export default function AboutPage() {
                       <div className="h-9 w-9 rounded-full bg-[#ff881e] flex items-center justify-center font-bold text-sm">A</div>
                       <div>
                         <p className="font-semibold text-sm">Axzron Team</p>
-                        <p className="text-slate-400 text-xs">Founders, 2022</p>
+                        <p className="text-slate-400 text-xs">Founders, 2025</p>
                       </div>
                     </div>
                   </div>

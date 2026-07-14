@@ -1,33 +1,28 @@
-import fs from "fs";
-import path from "path";
-import ClientsMarquee from "./clients-marquee";
-
-// Image extensions to include
-const IMAGE_EXTENSIONS = [".png", ".jpg", ".jpeg", ".svg", ".webp"];
-
-// Files to exclude from the marquee (add filenames here if needed)
-const EXCLUDE_FILES: string[] = [];
+import Image from "next/image";
+import FadeInSection from "@/components/ui/fade-in-section";
 
 export default function Clients() {
-  const companyDir = path.join(process.cwd(), "public", "company");
+  return (
+    <section className="py-12 md:py-16 bg-white">
+      <div className="container mx-auto">
+        <FadeInSection>
+          <p className="text-center text-[13px] md:text-[14px] font-[600] uppercase tracking-[0.15em] text-[#9ca3af] mb-8 md:mb-10">
+            Trusted by innovative companies
+          </p>
+        </FadeInSection>
 
-  let clients: { name: string; logo: string }[] = [];
-
-  try {
-    const files = fs.readdirSync(companyDir);
-    clients = files
-      .filter((file) => {
-        const ext = path.extname(file).toLowerCase();
-        return IMAGE_EXTENSIONS.includes(ext) && !EXCLUDE_FILES.includes(file);
-      })
-      .map((file) => ({
-        // Use the filename without extension as the display name
-        name: path.basename(file, path.extname(file)),
-        logo: `/company/${file}`,
-      }));
-  } catch (e) {
-    console.error("Could not read company logos directory:", e);
-  }
-
-  return <ClientsMarquee clients={clients} />;
+        <FadeInSection delay={0.15}>
+          <div className="flex items-center justify-center">
+            <Image
+              src="/company/logo.png"
+              alt="Trusted Company"
+              width={180}
+              height={72}
+              className="object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+            />
+          </div>
+        </FadeInSection>
+      </div>
+    </section>
+  );
 }
