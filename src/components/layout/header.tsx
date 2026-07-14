@@ -52,8 +52,8 @@ export default function Header() {
           <Image
             src="/nalogo.png"
             alt={siteConfig.name}
-            width={83}
-            height={20}
+            width={1282}
+            height={310}
             style={{ width: 'auto', height: '20px' }}
             className="transition-opacity hover:opacity-90"
             quality={100}
@@ -95,8 +95,8 @@ export default function Header() {
                     <Image
                       src="/nalogo.png"
                       alt={siteConfig.name}
-                      width={83}
-                      height={20}
+                      width={1282}
+                      height={310}
                       style={{ width: 'auto', height: '20px' }}
                       quality={100}
                       priority

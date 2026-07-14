@@ -154,6 +154,9 @@
   .animate-scroll-marquee {
     animation: scroll-marquee 25s linear infinite;
   }
+  .animate-scroll-marquee-reverse {
+    animation: scroll-marquee 25s linear infinite reverse;
+  }
 
   @keyframes scroll-reviews {
     0% { transform: translateX(0); }

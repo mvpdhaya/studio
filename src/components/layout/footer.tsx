@@ -46,8 +46,8 @@ export default function Footer() {
               <Image 
                 src="/nalogo.png" 
                 alt={siteConfig.name} 
-                width={100} 
-                height={24} 
+                width={1282}
+                height={310}
                 style={{ width: 'auto', height: '24px' }}
                 className="transition-opacity hover:opacity-90 duration-300" 
                 quality={100} 
