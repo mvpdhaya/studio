@@ -50,7 +50,7 @@ export default function AboutPage() {
                   { label: 'Client Satisfaction', value: '98%' },
                 ].map((stat) => (
                   <div key={stat.label} className="flex flex-col items-center p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                    <span className="text-3xl font-bold text-[#111827]">{stat.value}</span>
+                    <span className="text-2xl md:text-3xl font-bold text-[#111827]">{stat.value}</span>
                     <span className="text-[13px] text-slate-500 mt-1 text-center">{stat.label}</span>
                   </div>
                 ))}
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Our Story ────────────────────────────────────────── */}
-        <section className="py-10 md:py-12 bg-white">
+        <section className="py-10 md:py-12 bg-white overflow-hidden">
           <div className="container mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center max-w-5xl mx-auto">
               <FadeInSection>
@@ -111,7 +111,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Vision & Mission ─────────────────────────────────── */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-28 bg-white">
           <div className="container mx-auto">
             <FadeInSection>
               <div className="text-center mb-14">

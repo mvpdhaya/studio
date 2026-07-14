@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Navigation */}
-          <div className="lg:col-span-2">
+          <div className="hidden md:block lg:col-span-2">
             <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#111827] mb-6">Navigation</h4>
             <ul className="space-y-4">
               {navigation.links.map((item) => (
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Contact */}
-          <div className="lg:col-span-3">
+          <div className="hidden md:block lg:col-span-3">
             <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-[#111827] mb-6">Get in Touch</h4>
             <ul className="space-y-5">
               <li className="flex items-center gap-3">

@@ -41,12 +41,12 @@ export default function AboutPreview() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex flex-col items-start p-6 rounded-2xl bg-[#111827] border border-[#1f2937]"
+                  className="flex flex-col items-start p-4 sm:p-6 rounded-2xl bg-[#111827] border border-[#1f2937]"
                 >
-                  <span className="text-[32px] font-bold text-white leading-none mb-2">
+                  <span className="text-[24px] sm:text-[32px] font-bold text-white leading-none mb-2">
                     {stat.value}
                   </span>
-                  <span className="text-[13px] text-slate-400 leading-snug font-medium">
+                  <span className="text-[12px] sm:text-[13px] text-slate-400 leading-snug font-medium">
                     {stat.label}
                   </span>
                 </div>

@@ -52,7 +52,7 @@ export default function ContactPageContent() {
                   <FadeInSection key={index} delay={index * 0.1}>
                     <Link 
                       href={method.href} 
-                      className="flex flex-col items-center p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-white hover:shadow-lg transition-all duration-300 group"
+                      className="flex flex-col items-center p-6 md:p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-white hover:shadow-lg transition-all duration-300 group"
                     >
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#111827] shadow-sm mb-4 group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-colors">
                         <method.icon className="h-5 w-5" />
@@ -74,7 +74,7 @@ export default function ContactPageContent() {
                     </h2>
                     <p className="text-[#9ca3af] text-lg mb-8 max-w-2xl mx-auto">{hero.description}</p>
                     
-                    <Button className="h-[56px] px-10 text-lg bg-white text-[#111827] font-bold hover:bg-slate-50 rounded-xl group transition-all duration-300" asChild>
+                    <Button className="h-[48px] px-6 md:h-[56px] md:px-10 text-base md:text-lg bg-white text-[#111827] font-bold hover:bg-slate-50 rounded-xl group transition-all duration-300" asChild>
                       <Link href={siteConfig.calendly} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                         {hero.cta}
                         <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform text-black" />

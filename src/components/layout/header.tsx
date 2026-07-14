@@ -84,7 +84,7 @@ export default function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="top" className="h-[90vh] border-b-0 p-0 rounded-b-[2rem] overflow-hidden">
+            <SheetContent side="right" className="w-[300px] sm:w-[360px] h-full border-l border-slate-100 p-0 overflow-hidden shadow-2xl">
               <SheetHeader className="sr-only">
                 <SheetTitle>Mobile Navigation</SheetTitle>
                 <SheetDescription>Access the services, process, and industry pages.</SheetDescription>
@@ -106,63 +106,58 @@ export default function Header() {
 
                 <div className="px-6 flex-1 overflow-y-auto">
                   <p className="text-[12px] font-bold text-slate-400 uppercase tracking-wider mb-4 px-4">Menu</p>
-                  <nav className="flex flex-col gap-1">
+                  <nav className="flex flex-col">
                     {navLinks.map((link, index) => {
-                      if (link.label === "Services") {
-                        return (
-                          <div key={link.href} className="flex flex-col">
-                            <Accordion type="single" collapsible className="w-full border-none">
-                              <AccordionItem value="services" className="border-none">
-                                <AccordionTrigger className="flex items-center p-4 rounded-2xl hover:bg-slate-50 transition-all group hover:no-underline py-4">
-                                  <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#111827]/10 transition-colors">
-                                      <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#ff881e] transition-colors" />
-                                    </div>
-                                    <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#ff881e] transition-colors">
-                                      {link.label}
-                                    </span>
-                                  </div>
-                                </AccordionTrigger>
-                                <AccordionContent>
-                                  <div className="grid grid-cols-1 gap-2 pl-4 pr-4 pb-4">
-                                    {servicesPage.services.map((service) => (
-                                      <Link
-                                        key={service.title}
-                                        href="/services"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-all"
-                                      >
-                                        <div className="p-2 rounded-lg bg-slate-50">
-                                          <service.icon className="h-4 w-4 text-slate-400" />
-                                        </div>
-                                        <span className="text-[14px] font-medium text-slate-600">{service.title}</span>
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </AccordionContent>
-                              </AccordionItem>
-                            </Accordion>
-                          </div>
-                        );
-                      }
-                      return (
+                      const isLast = index === navLinks.length - 1;
+                      
+                      const itemContent = link.label === "Services" ? (
+                        <div className="w-full">
+                          <Accordion type="single" collapsible className="w-full border-none">
+                            <AccordionItem value="services" className="border-none">
+                              <AccordionTrigger className="flex items-center justify-between p-4 rounded-xl hover:bg-slate-50 transition-all group hover:no-underline py-4 text-left">
+                                <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#ff881e] transition-colors">
+                                  {link.label}
+                                </span>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <div className="grid grid-cols-1 gap-2 pl-4 pr-4 pb-4">
+                                  {servicesPage.services.map((service) => (
+                                    <Link
+                                      key={service.title}
+                                      href="/services"
+                                      onClick={() => setMobileMenuOpen(false)}
+                                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-all"
+                                    >
+                                      <div className="p-2 rounded-lg bg-slate-50">
+                                        <service.icon className="h-4 w-4 text-slate-400" />
+                                      </div>
+                                      <span className="text-[14px] font-medium text-slate-600">{service.title}</span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </Accordion>
+                        </div>
+                      ) : (
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all group relative overflow-hidden"
+                          className="flex items-center justify-between p-4 rounded-xl hover:bg-slate-50 transition-all group relative overflow-hidden"
                           onClick={() => setMobileMenuOpen(false)}
                           prefetch={true}
                         >
-                          <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#111827]/10 transition-colors">
-                            <link.icon className="w-5 h-5 text-slate-500 group-hover:text-[#ff881e] transition-colors" />
-                          </div>
-                          <div className="flex flex-col">
-                            <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#ff881e] transition-colors">
-                              {link.label}
-                            </span>
-                          </div>
-                          <ArrowRight className="w-4 h-4 ml-auto text-slate-300 group-hover:text-[#ff881e] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
+                          <span className="text-[16px] font-semibold text-[#111827] group-hover:text-[#ff881e] transition-colors">
+                            {link.label}
+                          </span>
+                          <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#ff881e] group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
                         </Link>
+                      );
+
+                      return (
+                        <div key={link.href} className={cn("w-full", !isLast && "border-b border-slate-100")}>
+                          {itemContent}
+                        </div>
                       );
                     })}
                   </nav>
