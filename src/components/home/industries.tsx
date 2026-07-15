@@ -27,20 +27,20 @@ export default function Industries({ className }: IndustriesProps) {
           </div>
         </FadeInSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto">
           {industries.items.map((industry, index) => {
             const Icon = industry.icon;
             return (
               <FadeInSection key={industry.title} delay={index * 0.1}>
-                <Card className="bg-white flex flex-col justify-start text-center items-center p-4 md:p-6 border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all duration-300 h-full group">
-                  <CardHeader className="items-center pb-4 text-center">
-                    <div className="bg-white p-3 rounded-xl mb-3 text-[#111827] shadow-sm group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-all duration-300">
-                      <Icon className="h-6 w-6" />
+                <Card className="bg-white flex flex-col justify-start text-center items-center p-3 sm:p-4 md:p-6 border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all duration-300 h-full group">
+                  <CardHeader className="items-center pb-2 sm:pb-4 text-center">
+                    <div className="bg-white p-2 sm:p-3 rounded-xl mb-2 sm:mb-3 text-[#111827] shadow-sm group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-all duration-300">
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
-                    <CardTitle className="text-[18px] md:text-[22px] font-[700] text-[#111827] leading-[1.3]">{industry.title}</CardTitle>
+                    <CardTitle className="text-[13px] sm:text-[16px] md:text-[22px] font-[700] text-[#111827] leading-[1.3]">{industry.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-[15px] text-[#6b7280] leading-[1.65]">{industry.description}</p>
+                  <CardContent className="flex-grow px-0 sm:px-2">
+                    <p className="text-[11px] sm:text-[13px] md:text-[15px] text-[#6b7280] leading-[1.5] md:leading-[1.65]">{industry.description}</p>
                   </CardContent>
                 </Card>
               </FadeInSection>

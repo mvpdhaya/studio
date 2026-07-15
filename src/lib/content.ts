@@ -1,4 +1,4 @@
-import { Zap, Bot, Globe, Smartphone, Database, Blocks, Search, TestTube2, Rocket, Settings, Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Factory, Cpu, LucideIcon } from "lucide-react";
+import { Zap, Bot, Globe, Smartphone, Database, Search, TestTube2, Rocket, Settings, Landmark, HeartPulse, ShoppingCart, Building2, BookOpen, Factory, Cpu, LucideIcon } from "lucide-react";
 
 export interface Service {
   icon: LucideIcon;
@@ -131,13 +131,6 @@ export const servicesPage = {
       description: "Integrate and analyze data for actionable insights.",
       category: "Analytics",
       features: ["Predictive insights", "Custom dashboards", "Dataset processing", "Visual analytics"],
-    },
-    {
-      icon: Blocks,
-      title: "API & Integrations",
-      description: "Seamless connections across all your tools.",
-      category: "Infrastructure",
-      features: ["Legacy synchronization", "Custom API layers", "Webhook architecture", "Third-party ecosystems"],
     },
     {
       icon: Cpu,

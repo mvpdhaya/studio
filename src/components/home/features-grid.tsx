@@ -19,6 +19,17 @@ export default function FeaturesGrid({ limit, hideHeader, variant = "default", t
   const allServices = servicesPage.services;
   
   const services = useMemo(() => {
+    if (limit === 3) {
+      const baseServices = allServices.slice(0, 3);
+      const iotService = allServices.find(s => s.title === "AI+IoT Solutions");
+      if (iotService) {
+        return [
+          ...baseServices,
+          { ...iotService, isMobileOnly: true }
+        ];
+      }
+      return baseServices;
+    }
     return limit ? allServices.slice(0, limit) : allServices;
   }, [limit, allServices]);
 
@@ -43,29 +54,34 @@ export default function FeaturesGrid({ limit, hideHeader, variant = "default", t
           </FadeInSection>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const isMobileOnly = (service as any).isMobileOnly;
             return (
-              <FadeInSection key={index} delay={index * 0.1}>
+              <FadeInSection 
+                key={index} 
+                delay={index * 0.1}
+                className={isMobileOnly ? "md:hidden" : ""}
+              >
                 <div
-                  className="bg-white border border-slate-100 rounded-[24px] p-7 md:p-8 h-full shadow-sm hover:border-slate-300 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-start group"
+                  className="bg-white border border-slate-100 rounded-[16px] sm:rounded-[24px] p-4 sm:p-6 md:p-8 h-full shadow-sm hover:border-slate-300 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-start group"
                 >
-                  <div className="w-14 h-14 bg-white border border-slate-100 rounded-2xl flex items-center justify-center text-[#111827] flex-shrink-0 group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-all duration-500 mb-6 shadow-sm">
-                    <Icon size={24} />
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-white border border-slate-100 rounded-xl sm:rounded-2xl flex items-center justify-center text-[#111827] flex-shrink-0 group-hover:bg-[#111827] group-hover:text-[#ff881e] transition-all duration-500 mb-4 sm:mb-6 shadow-sm">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   
                   <div className="flex-grow w-full">
-                    <h3 className="text-xl md:text-2xl font-bold text-[#111827] mb-2 group-hover:text-black transition-colors tracking-tight">{service.title}</h3>
-                    <p className="text-[#6b7280] text-[15px] leading-relaxed mb-6 font-medium">
+                    <h3 className="text-[15px] sm:text-lg md:text-2xl font-bold text-[#111827] mb-1 sm:mb-2 group-hover:text-black transition-colors tracking-tight leading-tight">{service.title}</h3>
+                    <p className="text-[#6b7280] text-[11px] sm:text-[13px] md:text-[15px] leading-relaxed mb-4 sm:mb-6 font-medium">
                       {service.description}
                     </p>
                     
-                    <div className="space-y-2.5 mb-6 border-t border-slate-50 pt-6">
+                    <div className="space-y-1.5 sm:space-y-2.5 mb-4 sm:mb-6 border-t border-slate-50 pt-3 sm:pt-6">
                       {service.features.map((feature, fIndex) => (
-                        <div key={fIndex} className="flex items-center gap-2.5 text-[14px] text-[#4b5563] group/item">
-                          <span className="text-[#111827] font-bold text-base leading-none">+</span>
-                          <span className="font-medium group-hover/item:text-[#111827] transition-colors">{feature}</span>
+                        <div key={fIndex} className="flex items-start gap-1.5 sm:gap-2.5 text-[10px] sm:text-[13px] md:text-[14px] text-[#4b5563] group/item">
+                          <span className="text-[#111827] font-bold text-xs sm:text-base leading-none select-none">+</span>
+                          <span className="font-medium group-hover/item:text-[#111827] transition-colors leading-tight">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -73,9 +89,9 @@ export default function FeaturesGrid({ limit, hideHeader, variant = "default", t
                   
                   <Link 
                     href="#contact"
-                    className="mt-auto flex items-center gap-2 text-xs font-bold text-[#ff881e] uppercase tracking-[0.2em] transform transition-all duration-300 hover:translate-x-2 group-hover:text-[#ff881e]/80"
+                    className="mt-auto flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-bold text-[#ff881e] uppercase tracking-[0.15em] sm:tracking-[0.2em] transform transition-all duration-300 hover:translate-x-2 group-hover:text-[#ff881e]/80"
                   >
-                    Learn More <ArrowRight size={14} />
+                    Learn More <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   </Link>
                 </div>
               </FadeInSection>
