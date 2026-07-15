@@ -18,7 +18,7 @@ export default function SlmShowcase() {
             <FadeInSection 
               key={index} 
               delay={index * 0.1}
-              className="w-[calc(50%-8px)] md:w-auto aspect-square md:aspect-auto flex flex-col"
+              className="w-[calc(50%-8px)] md:w-auto aspect-auto sm:aspect-square md:aspect-auto flex flex-col"
             >
               <div
                 className="bg-white border rounded-[16px] p-3 sm:p-5 md:p-[28px] h-full flex flex-col shadow-sm"

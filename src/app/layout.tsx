@@ -25,12 +25,27 @@ export const metadata: Metadata = {
   description: siteConfig.tagline,
   icons: {
     icon: [
-      { url: '/icon.png?v=3', sizes: 'any', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
     ],
+    shortcut: '/favicon.ico',
     apple: [
-      { url: '/icon.png?v=3', type: 'image/png' },
+      { url: '/favicon.ico' },
     ],
   },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteConfig.name,
+  url: 'https://axzron.com',
+  logo: 'https://axzron.com/favicon.ico',
+  sameAs: [
+    siteConfig.social.linkedin,
+    siteConfig.social.x,
+    siteConfig.social.instagram,
+    siteConfig.social.facebook,
+  ],
 };
 
 export default function RootLayout({
@@ -41,6 +56,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${playfair.variable}`}>
       <body className="font-heading antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <Toaster />
       </body>
